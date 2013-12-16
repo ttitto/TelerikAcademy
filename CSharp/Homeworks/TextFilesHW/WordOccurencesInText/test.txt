@@ -1,0 +1,29 @@
+	How it works
+Five second tests help you understand people’s first impressions of your designs.
+By finding out what a person recalls about your design in just 5 seconds you can ensure that your message is 
+being communicated as effectively as possible.
+Tour test
+try a random test or Tour report
+view a sample report
+    Upload designs to test_
+    Upload a screenshot or mockup, set some questions you want answered and wait for the feedback to roll in!
+    Testers complete your test
+    Testers have five seconds to view your image and must then answer the questions you have set.
+    View your results
+    We collect all of the responses for you, extract the frequent keywords and then present the data with 
+beautiful graphs.
+    “Fivesecondtest could easily get addictive. With so much UI feedback available so cheaply, you could 
+try a much riskier UI & iterate.” 
+- Kent Beck, Three Rivers Institute
+Why run five seconds tests?
+Five second tests can be used for a variety of different purposes. Below are some examples of what you 
+can achieve with a five second test.
+Test your brand message
+Make sure users can recall your company slogan or understand what you do from your logo.
+Test first impressions
+Identify if your call to action is working by testing what users remember about your websites.
+Solicit user feedback
+Quickly find out what users like the most and least about your designs and mockups.
+We've completed
+Five Second Tests and counting...
+Be a pal — do a random test. and provide some valuable feedback! 

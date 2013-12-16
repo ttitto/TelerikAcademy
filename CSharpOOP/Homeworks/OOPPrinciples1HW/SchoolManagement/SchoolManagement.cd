@@ -1,0 +1,87 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="FullSignature">
+  <Comment CommentText="1. We are given a school. In the school there are classes of students. Each class has a set of teachers. Each teacher teaches a set of disciplines. Students have name and unique class number. Classes have unique text identifier. Teachers have name. Disciplines have name, number of lectures and number of exercises. Both teachers and students are people. Students, classes, teachers and disciplines could have optional comments (free text block).&#xD;&#xA;&#xD;&#xA;Your task is to identify the classes (in terms of  OOP) and their attributes and operations, encapsulate their fields, define the class hierarchy and create a class diagram with Visual Studio.&#xD;&#xA;">
+    <Position X="0.5" Y="3.89" Height="3.296" Width="3.449" />
+  </Comment>
+  <Class Name="SchoolManagement.School">
+    <Position X="0.5" Y="1.75" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AAEAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>School.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="SchoolClasses" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="SchoolManagement.SchoolClass">
+    <Position X="5.5" Y="0.5" Width="5" />
+    <AssociationLine Name="Students" Type="SchoolManagement.Student">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="-0.974" Y="0.352" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <AssociationLine Name="Teachers" Type="SchoolManagement.Teacher">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="-1.781" Y="0.316" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AC4AAAAMAAAAAAAAACAAAAAAAAAAAAAAAAAAAgACAAI=</HashCode>
+      <FileName>SchoolClass.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="Students" />
+      <Property Name="Teachers" />
+    </ShowAsCollectionAssociation>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="SchoolManagement.SchoolManagement">
+    <Position X="0.5" Y="0.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
+      <FileName>SchoolManagement.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SchoolManagement.Student" BaseTypeListCollapsed="true">
+    <Position X="4.25" Y="4.5" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAwAAAAMAAAAQAAAAEAAAAQAAAAEAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Student.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="SchoolManagement.Teacher" BaseTypeListCollapsed="true">
+    <Position X="7" Y="4.5" Width="3.5" />
+    <TypeIdentifier>
+      <HashCode>AAwAAAAMAAAAAAAAQAAAAEQAAAAEAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Teacher.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="Disciplines" />
+    </ShowAsCollectionAssociation>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="SchoolManagement.Discipline">
+    <Position X="12.75" Y="2.75" Width="4.25" />
+    <TypeIdentifier>
+      <HashCode>AAwAAAAMAAAAAEAAgAAAAAQAAAAEAAAAgAAAAAAAQAA=</HashCode>
+      <FileName>Discipline.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Interface Name="SchoolManagement.ICommentable">
+    <Position X="10.75" Y="0.5" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AAgAAAAMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ICommentable.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="SchoolManagement.IPerson">
+    <Position X="15" Y="0.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>IPerson.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

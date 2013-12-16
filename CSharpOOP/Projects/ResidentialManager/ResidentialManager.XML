@@ -1,0 +1,703 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ResidentialManager</name>
+    </assembly>
+    <members>
+        <member name="T:ResidentialManager.AccommodationWindow">
+            <summary>
+            Interaction logic for AccommodationWindow.xaml
+            </summary>
+            <summary>
+            AccommodationWindow
+            </summary>
+        </member>
+        <member name="M:ResidentialManager.AccommodationWindow.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:ResidentialManager.AddNewAccommodationWindow">
+            <summary>
+            Interaction logic for AddNewAccommodationWindow.xaml
+            </summary>
+            <summary>
+            AddNewAccommodationWindow
+            </summary>
+        </member>
+        <member name="M:ResidentialManager.AddNewAccommodationWindow.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:ResidentialManager.AddNewApartmentWindow">
+            <summary>
+            Interaction logic for AddNewApartmentWindow.xaml
+            </summary>
+            <summary>
+            AddNewApartmentWindow
+            </summary>
+        </member>
+        <member name="M:ResidentialManager.AddNewApartmentWindow.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:ResidentialManager.AddNewGarageWindow">
+            <summary>
+            Interaction logic for AddNewGarageWindow.xaml
+            </summary>
+            <summary>
+            AddNewGarageWindow
+            </summary>
+        </member>
+        <member name="M:ResidentialManager.AddNewGarageWindow.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:ResidentialManager.AddNewInhabitantWindow">
+            <summary>
+            Interaction logic for AddNewInhabitantWindow.xaml
+            </summary>
+            <summary>
+            AddNewInhabitantWindow
+            </summary>
+        </member>
+        <member name="M:ResidentialManager.AddNewInhabitantWindow.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="M:ResidentialManager.InhabitantList.SerializeInhabitants(System.Collections.Generic.IEnumerable{Inhabitant})">
+            <summary>
+            Concatenates the first, last name and the phone number of the inhabitants in a givent list to create an unique identifier
+            </summary>
+            <param name="members">a list of Inhabitants</param>
+            <returns>a string with the identifiers of the inhabitants, separated by double comma ",,"</returns>
+        </member>
+        <member name="M:ResidentialManager.InhabitantList.DeserializeInhabitants(System.String)">
+            <summary>
+            Restores the full information for every Inhabitant in a given list having the identifiers
+            </summary>
+            <param name="myInhabitantIDs"> an array of the Inhabitants identifiers</param>
+            <returns>a List with Inhabitant objects</returns>
+        </member>
+        <member name="T:ResidentialManager.ApartmentWindow">
+            <summary>
+            Interaction logic for ApartmentWindow.xaml
+            </summary>
+            <summary>
+            ApartmentWindow
+            </summary>
+        </member>
+        <member name="M:ResidentialManager.ApartmentWindow.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:ResidentialManager.CashierSelectWindow">
+            <summary>
+            Interaction logic for CashierSelectWindow.xaml
+            </summary>
+            <summary>
+            CashierSelectWindow
+            </summary>
+        </member>
+        <member name="M:ResidentialManager.CashierSelectWindow.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:ResidentialManager.CommissionsParticipantsWindow">
+            <summary>
+            Interaction logic for CommissionsParticipantsWindow.xaml
+            </summary>
+            <summary>
+            CommissionsParticipantsWindow
+            </summary>
+        </member>
+        <member name="M:ResidentialManager.CommissionsParticipantsWindow.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:ResidentialManager.DocumentsViewerWindow">
+            <summary>
+            Interaction logic for DocumentsViewer.xaml
+            </summary>
+            <summary>
+            DocumentsViewerWindow
+            </summary>
+        </member>
+        <member name="M:ResidentialManager.DocumentsViewerWindow.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:ResidentialManager.EventArchiveWindow">
+            <summary>
+            Interaction logic for EventArchiveWindow.xaml
+            </summary>
+            <summary>
+            EventArchiveWindow
+            </summary>
+        </member>
+        <member name="M:ResidentialManager.EventArchiveWindow.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:ResidentialManager.GeneralMeetingWindow">
+            <summary>
+            Interaction logic for GeneralMeetingWindow.xaml
+            </summary>
+            <summary>
+            GeneralMeetingWindow
+            </summary>
+        </member>
+        <member name="M:ResidentialManager.GeneralMeetingWindow.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:ResidentialManager.GarageWindow">
+            <summary>
+            Interaction logic for GarageWindow.xaml
+            </summary>
+            <summary>
+            GarageWindow
+            </summary>
+        </member>
+        <member name="M:ResidentialManager.GarageWindow.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:ResidentialManager.HouseKeeperSelectWindow">
+            <summary>
+            Interaction logic for HouseKeeperSelectWindow.xaml
+            </summary>
+            <summary>
+            HouseKeeperSelectWindow
+            </summary>
+        </member>
+        <member name="M:ResidentialManager.HouseKeeperSelectWindow.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="M:ResidentialManager.Commonhold.GetInhabitants">
+            <summary>
+            Loads the current list of inhabitants in the commonhold from a database/file
+            </summary>
+            <returns>a list of all current inhabitants</returns>
+        </member>
+        <member name="M:ResidentialManager.Commonhold.GetInhabitantsArchive">
+            <summary>
+            Loads the list of all past and current inhabitants of the commonhold from a database/file
+            </summary>
+            <returns>a list of all past and current inhabitants</returns>
+        </member>
+        <member name="M:ResidentialManager.Commonhold.GetHouseKeeper">
+            <summary>
+            Loads the housekeeper from a database/file
+            </summary>
+            <returns>a string with the Housekeeper's data</returns>
+        </member>
+        <member name="M:ResidentialManager.Commonhold.GetCashier">
+            <summary>
+            Loads the cashier from a database/file
+            </summary>
+            <returns>a string with the Cashier's data</returns>
+        </member>
+        <member name="M:ResidentialManager.Commonhold.GetSupervisors">
+            <summary>
+            Loads the Supervisor from a database/file
+            </summary>
+            <returns>a string with the supervisor's data</returns>
+        </member>
+        <member name="M:ResidentialManager.Commonhold.GetAdministrativeBoard">
+            <summary>
+            Loads the members of the administrative board from a database/file
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ResidentialManager.Commonhold.GetCommonholdObjects">
+            <summary>
+            Loads the current list of Objects in the commonhold from a database/file
+            </summary>
+            <returns>a list of all commonhold's objects with their properties</returns>
+        </member>
+        <member name="P:ResidentialManager.Commonhold.Address">
+            <summary>
+            Holds the address of the commonhold
+            </summary>
+        </member>
+        <member name="P:ResidentialManager.Commonhold.MyCashier">
+            <summary>
+            Holds the cashier of the commonhold
+            </summary>
+        </member>
+        <member name="P:ResidentialManager.Commonhold.Board">
+            <summary>
+            Holds the members of the management board of the commonhold
+            </summary>
+        </member>
+        <member name="P:ResidentialManager.Commonhold.Keeper">
+            <summary>
+            Holds the housekeeper of the commonhold
+            </summary>
+        </member>
+        <member name="P:ResidentialManager.Commonhold.Supervisor">
+            <summary>
+            Holds the Supervisor of the commonhold
+            </summary>
+        </member>
+        <member name="P:ResidentialManager.Commonhold.Inhabitants">
+            <summary>
+            Holds all current inhabitants of the commonhold
+            </summary>
+        </member>
+        <member name="P:ResidentialManager.Commonhold.InhabitantsArchive">
+            <summary>
+            Holds all past and current inhabitants of the commonhold
+            </summary>
+        </member>
+        <member name="P:ResidentialManager.Commonhold.CommonholdObjects">
+            <summary>
+            Holds all the objects that the commonhold contains - apartments, garages, buildings etc.
+            </summary>
+        </member>
+        <member name="P:ResidentialManager.Commonhold.CommonholdDocArchive">
+            <summary>
+            Holds the document archive of the commonhold
+            </summary>
+        </member>
+        <member name="P:ResidentialManager.Commonhold.MyCommonhold">
+            <summary>
+            Creates an instance of the commonhold if none already exist
+            </summary>
+        </member>
+        <member name="M:ResidentialManager.Document.#ctor(System.String,System.String,System.DateTime,System.DateTime)">
+            <summary>
+            Constructs a document
+            </summary>
+            <param name="id">document's identification</param>
+            <param name="name">document's name</param>
+            <param name="creationDate">date of the documents's creation</param>
+            <param name="lastChangeDate">date of the document's last change</param>
+        </member>
+        <member name="M:ResidentialManager.Document.ToString">
+            <summary>
+            Holds a string of the document's data
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ResidentialManager.Document.Edit(System.String)">
+            <summary>
+            Edits the content of a document
+            </summary>
+            <param name="newContent">holds the new content of the document</param>
+        </member>
+        <member name="P:ResidentialManager.Document.ID">
+            <summary>
+            Holds the identification of a document
+            </summary>
+        </member>
+        <member name="P:ResidentialManager.Document.Name">
+            <summary>
+            Holds the name of the document
+            </summary>
+        </member>
+        <member name="P:ResidentialManager.Document.Content">
+            <summary>
+            Holds the content of the document
+            </summary>
+        </member>
+        <member name="P:ResidentialManager.Document.CreationDate">
+            <summary>
+            Holds the date of the first time the document has been saved
+            </summary>
+        </member>
+        <member name="P:ResidentialManager.Document.LastChangeDate">
+            <summary>
+            Holds the date of the last change of the document.
+            Validates the date of the last change to be later than the document creation.
+            </summary>
+        </member>
+        <member name="M:ResidentialManager.TextDocument.#ctor(System.String,System.String,System.DateTime,System.DateTime,System.String)">
+            <summary>
+            Constructs a document with content string
+            </summary>
+            <param name="name"></param>
+            <param name="content"></param>
+        </member>
+        <member name="M:ResidentialManager.TextDocument.ToString">
+            <summary>
+            generates a string with the text document's data
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:ResidentialManager.TextDocument.Content">
+            <summary>
+            Holds the content of a document
+            </summary>
+        </member>
+        <member name="M:ResidentialManager.Contract.#ctor(System.String,System.String,System.DateTime,System.DateTime,System.String,System.Collections.Generic.IEnumerable{Inhabitant},System.Collections.Generic.IEnumerable{Inhabitant},System.DateTime,System.DateTime)">
+            <summary>
+            Constructs a contract document
+            </summary>
+            <param name="id">identification of the contract document</param>
+            <param name="name">short name for the contract</param>
+            <param name="creationDate">date of creation of the document</param>
+            <param name="lastChangeDate">date of the last change</param>
+            <param name="content">content of the document</param>
+            <param name="contragentFirst">a side of the contract</param>
+            <param name="contragentSecond">a side of the contract</param>
+            <param name="startingDate">date of the start of the validity of the contract</param>
+            <param name="endingDate">date of the end of the validity of the contract</param>
+        </member>
+        <member name="M:ResidentialManager.Contract.ToString">
+            <summary>
+            Holds a string of a contract's data
+            </summary>
+            <returns>a string with all the data of a contract</returns>
+        </member>
+        <member name="P:ResidentialManager.Contract.ContragentFirst">
+            <summary>
+            Holds the first side of the contract
+            </summary>
+        </member>
+        <member name="P:ResidentialManager.Contract.ContragentSecond">
+            <summary>
+            Holds the second side of the contract
+            </summary>
+        </member>
+        <member name="P:ResidentialManager.Contract.StartingDate">
+            <summary>
+            Holds the starting date of the validity of the contract
+            </summary>
+        </member>
+        <member name="P:ResidentialManager.Contract.EndingDate">
+            <summary>
+            Holds the ending date of the validity of the contract
+            </summary>
+        </member>
+        <member name="M:ResidentialManager.DocArchive.GetDocuments">
+            <summary>
+            Load the commonghold's documents from the storage file
+            </summary>
+            <returns>IEnumerable with all the commonhold's documents</returns>
+        </member>
+        <member name="M:ResidentialManager.DocArchive.SaveDocuments(System.String)">
+            <summary>
+            Saves the commonhold's documents in a text file
+            </summary>
+            <param name="file">full path of the receiving text file</param>
+        </member>
+        <member name="M:ResidentialManager.DocArchive.AddDocument(ResidentialManager.Document)">
+            <summary>
+            Adds a document to the document archive
+            </summary>
+            <param name="doc">the document to be added to the document archive</param>
+        </member>
+        <member name="P:ResidentialManager.DocArchive.Documents">
+            <summary>
+            Holds the documents of the commonhold
+            </summary>
+        </member>
+        <member name="P:ResidentialManager.DocArchive.MyDocArchive">
+            <summary>
+            Creates an instance of the documents archive if none already exist
+            </summary>
+        </member>
+        <member name="T:ResidentialManager.InhabitantWindow">
+            <summary>
+            Interaction logic for InhabitantWindow.xaml
+            </summary>
+            <summary>
+            InhabitantWindow
+            </summary>
+        </member>
+        <member name="M:ResidentialManager.InhabitantWindow.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="M:ResidentialManager.LegalDocument.#ctor(System.String,System.String,System.DateTime,System.DateTime,System.String,System.DateTime,ResidentialManager.LegalDocumentTypes)">
+            <summary>
+            Constructs a Legal document
+            </summary>
+            <param name="id">identification</param>
+            <param name="name">name of the document</param>
+            <param name="creationDate">date of creation</param>
+            <param name="lastChangeDate">date of the last change</param>
+            <param name="content">content of the file</param>
+            <param name="validityDate">date from which the document is valid</param>
+            <param name="type">type of the legal document</param>
+        </member>
+        <member name="M:ResidentialManager.LegalDocument.ToString">
+            <summary>
+            Generates a string with the data of a legal document
+            </summary>
+            <returns>a string with legal document's data</returns>
+        </member>
+        <member name="P:ResidentialManager.LegalDocument.ValidityDate">
+            <summary>
+            Holds the date of validity of the document
+            </summary>
+        </member>
+        <member name="P:ResidentialManager.LegalDocument.LegalDocumentType">
+            <summary>
+            Holds the type of the legal document (law, regulation etc.)
+            </summary>
+        </member>
+        <member name="P:ResidentialManager.LegalDocument.RelatedDocuments">
+            <summary>
+            Holds a list with the related documents (if a regulation is issued based on a law per ex.)
+            </summary>
+        </member>
+        <member name="T:ResidentialManager.LegalDocumentTypes">
+            <summary>
+            Holds the type of legal documents (regulation, laws, directives etc.)
+            </summary>
+        </member>
+        <member name="M:ResidentialManager.Message.#ctor(System.String,System.String,System.DateTime,System.DateTime,System.String,System.String,System.Collections.Generic.IEnumerable{Inhabitant},System.Collections.Generic.IEnumerable{Inhabitant})">
+            <summary>
+            Constructs a message document
+            </summary>
+            <param name="id">identification</param>
+            <param name="name">name of the document</param>
+            <param name="creationDate">date of creation of the message</param>
+            <param name="lastChangeDate">date of the last change of the message</param>
+            <param name="content">the content of the message</param>
+            <param name="theme">the theme of the message</param>
+            <param name="senders">a list of inhabitants that send the message</param>
+            <param name="receivers">a list of inhabitants that the message is addressed to</param>
+        </member>
+        <member name="M:ResidentialManager.Message.ToString">
+            <summary>
+            Generates a string with the message's data
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:ResidentialManager.Message.Theme">
+            <summary>
+            Holds the theme of the message
+            </summary>
+        </member>
+        <member name="P:ResidentialManager.Message.Senders">
+            <summary>
+            Holds a list with Inhabitants that sends the message
+            </summary>
+        </member>
+        <member name="P:ResidentialManager.Message.Receivers">
+            <summary>
+            Holds a list of inhabitants that the message is addressed to
+            </summary>
+        </member>
+        <member name="T:ResidentialManager.MessageCreationWindow">
+            <summary>
+            Interaction logic for MessageCreationWindow.xaml
+            </summary>
+            <summary>
+            MessageCreationWindow
+            </summary>
+        </member>
+        <member name="M:ResidentialManager.MessageCreationWindow.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="M:ResidentialManager.MessageGeneralMeeting.#ctor(System.String,System.String,System.DateTime,System.DateTime,System.String,System.String,System.Collections.Generic.IEnumerable{Inhabitant},System.Collections.Generic.IEnumerable{Inhabitant},System.String,System.DateTime,System.DateTime,System.Collections.Generic.IEnumerable{Inhabitant})">
+            <summary>
+            Constructs a general meeting message
+            </summary>
+            <param name="id">identification of the message</param>
+            <param name="name"> name of the message</param>
+            <param name="creationDate">date of creation of the message</param>
+            <param name="lastChangeDate">date of the last change of the message</param>
+            <param name="content">the content of the message</param>
+            <param name="theme"> the theme of the message</param>
+            <param name="senders">a list of inhabitants that send the message</param>
+            <param name="receivers">a list of inhabitants that should receive the message</param>
+            <param name="meetingPlace">the place of the meeting</param>
+            <param name="meetingDate">the date when the meeting took place</param>
+            <param name="publishmentDate">date when the message has been published</param>
+            <param name="convenants">a list of inhabitants that requested a general meeting</param>
+        </member>
+        <member name="M:ResidentialManager.MessageGeneralMeeting.ToString">
+            <summary>
+            Generates a string that holds the data of a message for a requested general meeting
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:ResidentialManager.MessageGeneralMeeting.MeetingDate">
+            <summary>
+            Holds the date of the meeting
+            </summary>
+        </member>
+        <member name="P:ResidentialManager.MessageGeneralMeeting.MeetingPlace">
+            <summary>
+            Holds the place of the meeting
+            </summary>
+        </member>
+        <member name="P:ResidentialManager.MessageGeneralMeeting.PublishmentDate">
+            <summary>
+            Holds the date when the message has been published
+            </summary>
+        </member>
+        <member name="P:ResidentialManager.MessageGeneralMeeting.Convenants">
+            <summary>
+            Holds a list of inhabitants that requested a general meeting
+            </summary>
+        </member>
+        <member name="M:ResidentialManager.Protocol.#ctor(System.String,System.String,System.DateTime,System.DateTime,System.String,Inhabitant,System.Collections.Generic.IEnumerable{Inhabitant})">
+            <summary>
+            Constructs a protocol
+            </summary>
+            <param name="id"></param>
+            <param name="name"></param>
+            <param name="creationDate"></param>
+            <param name="lastChangeDate"></param>
+            <param name="content"></param>
+            <param name="protocolWriter"></param>
+            <param name="signers"></param>
+        </member>
+        <member name="M:ResidentialManager.Protocol.ToString">
+            <summary>
+            Generates a string with the protocol's data
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:ResidentialManager.Protocol.ProtocolWriter">
+            <summary>
+            Holds the inhabitant that writes the protocol
+            </summary>
+        </member>
+        <member name="P:ResidentialManager.Protocol.Signers">
+            <summary>
+            Holds a list of inhabitants that sign the protocol
+            </summary>
+        </member>
+        <member name="T:ResidentialManager.ProtocolCreationWindow">
+            <summary>
+            Interaction logic for ProtocolCreationWindow.xaml
+            </summary>
+            <summary>
+            ProtocolCreationWindow
+            </summary>
+        </member>
+        <member name="M:ResidentialManager.ProtocolCreationWindow.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="M:ResidentialManager.ProtocolGeneralMeeting.#ctor(System.String,System.String,System.String,System.DateTime,System.DateTime,Inhabitant,System.Collections.Generic.IEnumerable{Inhabitant})">
+            <summary>
+            Constructs a general meeting message
+            </summary>
+            <param name="name"></param>
+            <param name="content"></param>
+            <param name="id"></param>
+            <param name="creationDate"></param>
+            <param name="lastChangeDate"></param>
+            <param name="protocolWriter"></param>
+            <param name="signers"></param>
+        </member>
+        <member name="P:ResidentialManager.ProtocolGeneralMeeting.Meeting">
+            <summary>
+            Holds a general meeting
+            </summary>
+        </member>
+        <member name="T:ResidentialManager.ShowOwnersWindow">
+            <summary>
+            Interaction logic for ShowOwnersWindow.xaml
+            </summary>
+            <summary>
+            ShowOwnersWindow
+            </summary>
+        </member>
+        <member name="M:ResidentialManager.ShowOwnersWindow.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:ResidentialManager.ShowTenantsWindow">
+            <summary>
+            Interaction logic for ShowTenantsWindow.xaml
+            </summary>
+            <summary>
+            ShowTenantsWindow
+            </summary>
+        </member>
+        <member name="M:ResidentialManager.ShowTenantsWindow.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:ResidentialManager.App">
+            <summary>
+            Interaction logic for App.xaml
+            </summary>
+            <summary>
+            App
+            </summary>
+        </member>
+        <member name="M:ResidentialManager.App.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="M:ResidentialManager.App.Main">
+            <summary>
+            Application Entry Point.
+            </summary>
+        </member>
+        <member name="T:ResidentialManager.MainWindow">
+            <summary>
+            Interaction logic for MainWindow.xaml
+            </summary>
+            <summary>
+            MainWindow
+            </summary>
+        </member>
+        <member name="M:ResidentialManager.MainWindow.DeepCopyUIElement(System.Windows.UIElement)">
+            <summary>
+            Creates a deep copy of an UIElement to avoid repetitive initialization of identic properties
+            </summary>
+            <param name="myElement">an UIElement that will be copied</param>
+            <returns>Returns a copy of the UIElement that has another reference in the memory</returns>
+        </member>
+        <member name="M:ResidentialManager.MainWindow.IsWindowOpen``1(System.String)">
+            <summary>
+            Checks if a window of a Window child class with a given title is already open
+            </summary>
+            <typeparam name="T">type of the Window class child</typeparam>
+            <param name="name">the Name of the window</param>
+            <returns></returns>
+        </member>
+        <member name="M:ResidentialManager.MainWindow.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:ResidentialManager.Properties.Resources">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:ResidentialManager.Properties.Resources.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:ResidentialManager.Properties.Resources.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+    </members>
+</doc>

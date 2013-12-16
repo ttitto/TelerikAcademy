@@ -1,0 +1,34 @@
+﻿<Window x:Class="ResidentialManager.AddNewInhabitantWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="AddNewInhabitantWindow" Height="600" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <StackPanel Grid.Column="0">
+            <Label Height="50">Собствено име</Label>
+            <Label Height="50">Фамилия</Label>
+            <Label Height="50">Адрес</Label>
+            <Label Height="50">Телефон</Label>
+            <Label Height="50">Домашен любимец</Label>
+            <Label Height="50">Статут</Label>           
+        </StackPanel>
+        <StackPanel Grid.Column="1">
+            <TextBox Name="FirstName" Height="50"></TextBox>
+            <TextBox Name="LastName" Height="50"></TextBox>
+            <TextBox Name="Address" Height="50"></TextBox>
+            <TextBox Name="Telephone" Height="50"></TextBox>
+            <StackPanel Name="Pet" Orientation="Vertical">
+                <RadioButton Name="Radio2" IsChecked="True" Height="25">True</RadioButton>
+                <RadioButton Height="25">False</RadioButton>
+            </StackPanel>
+            <StackPanel Name="Status" Orientation="Vertical">
+                <RadioButton Name="Radio1" IsChecked="True" Height="25">Owner</RadioButton>
+                <RadioButton Height="25">Tenant</RadioButton>
+            </StackPanel>
+            <Button Name="ChangeButton" Grid.ColumnSpan="2" Click="AddButtonClick">Add</Button>
+        </StackPanel>        
+    </Grid>
+</Window>

@@ -1,0 +1,20 @@
+﻿<Window x:Class="ResidentialManager.ShowOwnersWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="ShowOwnersWindow" Height="600" Width="800">
+    <Grid Name="MainGrid">
+        <StackPanel Name="TodosOwnersContainer"
+                    Grid.Row="1">
+            <DataGrid Name ="DG" IsReadOnly="True" AutoGenerateColumns="False" >
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Собствено име" Binding="{Binding FirstName}" />
+                    <DataGridTextColumn Header="Фамилия" Binding="{Binding LastName}"/>
+                    <DataGridTextColumn Header="Адрес" Binding="{Binding Address}"/>
+                    <DataGridTextColumn Header="Телефон" Binding="{Binding TelephoneNumber}"/>
+                    <DataGridCheckBoxColumn Header="Домашен любимец" Binding="{Binding HasPet}"/>
+                    <DataGridTextColumn Header="Статут" Binding="{Binding Status}"/>
+                </DataGrid.Columns>
+            </DataGrid>
+        </StackPanel>
+    </Grid>
+</Window>

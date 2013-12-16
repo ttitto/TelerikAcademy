@@ -1,0 +1,18 @@
+﻿<Window x:Class="ResidentialManager.DocumentsViewerWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="DocumentsViewer" Name="myDocumentsViewerWindow" Height="313.033" Width="800">
+    <Grid Name="MainGrid">
+        <StackPanel>
+            <DataGrid Name="DocumentsDG" ScrollViewer.CanContentScroll="True" ScrollViewer.HorizontalScrollBarVisibility="Auto" ScrollViewer.VerticalScrollBarVisibility="Auto" AutoGenerateColumns="False">
+                <DataGrid.Columns >
+                    <DataGridTextColumn MinWidth="30" Header="ID" Binding="{Binding Path=ID}"/>
+                    <DataGridTextColumn MinWidth="100" Header="наименование" Binding="{Binding Path=Name}"/>
+                    <DataGridTextColumn MinWidth="100" Header="създаден" Binding="{Binding Path=CreationDate}"/>
+                    <DataGridTextColumn MinWidth="100" Header="последна промяна" Binding="{Binding Path=LastChangeDate}"/>
+                </DataGrid.Columns>
+            </DataGrid>
+        </StackPanel>
+    </Grid>
+
+</Window>

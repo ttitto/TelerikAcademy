@@ -1,0 +1,24 @@
+Exercise 01:
+http://msdn.microsoft.com/en-us/library/system.console.writeline.aspx
+No need to repeat.
+
+Exercise 10:
+- PHP – scripting (interpreted) language most often used for building dynamic web pages. Can be used procedurally 
+or in an object oriented manner.
+- Java – Strongly typed, compiled,object-oriented, cross-platform main-purpose language. Can be used for developing 
+everything from desktop applications through web projects to mobile applications.
+- JavaScript – web browser (client-side) scripting language which brings interactivity to web pages.
+- Python – popular scripting language. Works best under unix os’s.
+- Perl – popular scripting language. Works best under unix os’s.
+- C – precursor to C++ and influence to PHP, Java, C#, JavaScript. Well suited for programming embedded hardware.
+- C++ – object-oriented language. Well suited for developing small and very fast performing applications or
+ building games for example.
+- VisualBasic – part of the .NET family of languages. Doesn’t use a C derived syntax.
+
+Exercise 11:
+C# is a programming language.
+The .NET Framework consists of the common language runtime and the .NET Framework class library. 
+The common language runtime is the foundation of the .NET Framework.
+The class library is a comprehensive, object-oriented collection of reusable types that you can use to develop applications ranging 
+from traditional command-line or graphical user interface (GUI) applications to applications based on the latest innovations provided 
+by ASP.NET, such as Web Forms and XML Web services.

@@ -1,0 +1,23 @@
+﻿<Window x:Class="ResidentialManager.CommissionsParticipantsWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="ChooseCommission" Height="600" Width="800">
+    <Grid Name="MainGrid">
+        <StackPanel Name="TodosInhabitantsContainer"
+                    Grid.Row="1">
+            <DataGrid Name ="DG" IsReadOnly="False" AutoGenerateColumns="False" >
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Собствено име" IsReadOnly="True" Binding="{Binding FirstName}" />
+                    <DataGridTextColumn Header="Фамилия" IsReadOnly="True" Binding="{Binding LastName}"/>
+                    <DataGridTextColumn Header="Адрес" IsReadOnly="True" Binding="{Binding Address}"/>
+                    <DataGridTextColumn Header="Телефон" IsReadOnly="True" Binding="{Binding TelephoneNumber}"/>
+                    <DataGridCheckBoxColumn Header="Домашен любимец" IsReadOnly="True" Binding="{Binding HasPet}"/>
+                    <DataGridTextColumn Header="Статут" IsReadOnly="True" Binding="{Binding Status}"/>
+                    <DataGridCheckBoxColumn Header="Избери членове" IsReadOnly="False"/>                    
+                </DataGrid.Columns>
+            </DataGrid>
+            <Button Click="ChooseSupervisoryClick">Избери контролен орган</Button>
+            <Button Click="ChooseAdministrativeBoardClick">Избери управителен съвет</Button>
+        </StackPanel>
+    </Grid>
+</Window>

@@ -1,0 +1,88 @@
+﻿<Window x:Class="ResidentialManager.MessageCreationWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="СЪЗДАВАНЕ НА СЪОБЩЕНИЕ" Name="myMessageCreationWindow" Height="500" Width="600" Closing="myMessageCreationWindow_Closing">
+    <Grid >
+        <StackPanel Grid.Row="1" Orientation="Vertical">
+            <TextBox Name="id" Text="ID" 
+                    AcceptsReturn="True"
+                    TextWrapping="Wrap"
+                    FontSize="10" 
+                    HorizontalAlignment="Left" 
+                    MaxWidth="600">
+            </TextBox>
+            <TextBox Name="name" Text="Name" 
+                    AcceptsReturn="True"
+                    TextWrapping="Wrap"
+                    FontSize="10" 
+                    HorizontalAlignment="Left" 
+                    MaxWidth="600">
+            </TextBox>
+            <TextBox Name="theme" Text="относно" 
+                    AcceptsReturn="True"
+                    TextWrapping="Wrap"
+                    FontSize="10" 
+                    HorizontalAlignment="Left" 
+                    MaxWidth="600">
+            </TextBox>
+            <TextBox Name="content" Text="съдържание" 
+                    AcceptsReturn="True"
+                    TextWrapping="Wrap"
+                    FontSize="10" 
+                    HorizontalAlignment="Left" 
+                    MaxWidth="600">
+            </TextBox>
+
+            <StackPanel Orientation="Horizontal" VerticalAlignment="Top">
+                <ListBox Name="lstbSenders" 
+                         MinWidth="150" Height="20"
+                         ScrollViewer.VerticalScrollBarVisibility="Auto"
+                         SelectionMode="Extended"  
+                         ItemsSource="{Binding}" 
+                         MouseEnter="lstbSenders_MouseEnter" 
+                         MouseLeave="lstbSenders_MouseLeave"/>
+                <ListBox Name="lstbReceivers"
+                         MinWidth="150" Height="20"
+                         ScrollViewer.VerticalScrollBarVisibility="Auto"
+                         SelectionMode="Extended"  
+                         ItemsSource="{Binding}" 
+                         MouseEnter="lstbReceivers_MouseEnter" 
+                         MouseLeave="lstbReceivers_MouseLeave"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <TextBox Name="senders" Text="изпращач" 
+                    AcceptsReturn="True"
+                    TextWrapping="Wrap"
+                    FontSize="10" 
+                    HorizontalAlignment="Left" 
+                    MaxWidth="200" MinHeight="20">
+                </TextBox>
+                <TextBox Name="receivers" Text="адресат" 
+                    AcceptsReturn="True"
+                    TextWrapping="Wrap"
+                    FontSize="10" 
+                    HorizontalAlignment="Left" 
+                    MaxWidth="200" MinHeight="20">
+                </TextBox>
+            </StackPanel>
+            <TextBox Name="creationDate" Text="създаден на:" 
+                    AcceptsReturn="True"
+                    TextWrapping="Wrap"
+                    FontSize="10" 
+                    HorizontalAlignment="Left" 
+                    MaxWidth="600">
+            </TextBox>
+            <TextBox Name="lastChangeDate" Text="последна промяна на:" 
+                    AcceptsReturn="True"
+                    TextWrapping="Wrap"
+                    FontSize="10" 
+                    HorizontalAlignment="Left" 
+                    MaxWidth="600">
+            </TextBox>
+            <Button Name="btnSave"  HorizontalAlignment="Left" 
+                    Click="OnBtnSaveClick">
+                съхрани в архив
+            </Button>
+        </StackPanel>
+    </Grid>
+</Window>

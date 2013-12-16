@@ -1,0 +1,24 @@
+﻿<Window x:Class="ResidentialManager.AddNewApartmentWindow"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="AddNewApartmentWindow" Height="600" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <StackPanel Grid.Column="0">
+            <Label Height="50">Площ (кв.м)</Label>
+            <Label Height="50">Етаж</Label>
+            <Label Height="50">Номер</Label>
+            <Label Height="50">Брой живущи</Label>
+        </StackPanel>
+        <StackPanel Grid.Column="1">
+            <TextBox Name="Area" Height="50"></TextBox>
+            <TextBox Name="Floor" Height="50"></TextBox>
+            <TextBox Name="Number" Height="50"></TextBox>
+            <TextBox Name="NumPeople" Height="50"></TextBox>
+            <Button Name="ChangeButton" Grid.ColumnSpan="2" Click="AddButtonClick">Add</Button>
+        </StackPanel>
+    </Grid>
+</Window>

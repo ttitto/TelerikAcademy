@@ -1,0 +1,449 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="NameAndType">
+  <Class Name="ResidentialManager.App" Collapsed="true">
+    <Position X="23.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>App.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ResidentialManager.GeneralMeeting" BaseTypeListCollapsed="true">
+    <Position X="40.75" Y="0.75" Width="3" />
+    <TypeIdentifier>
+      <HashCode>AAABAAAEAAAAAAAkAAAALAAgAAVAwAABQEQAAAAAAQQ=</HashCode>
+      <FileName>GeneralMeeting.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Inhabitant">
+    <Position X="7.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAQEAEAABAAAAkAAAAIAAAAAIAAABCAAAACAAAAAg=</HashCode>
+      <FileName>Inhabitant.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ResidentialManager.MainWindow" Collapsed="true">
+    <Position X="29" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ggREAAEAAUAAAACCkAACAAAAEBAAAYACCAgAABEICAA=</HashCode>
+      <FileName>MainWindow.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ResidentialManager.Voting">
+    <Position X="34.25" Y="0.75" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>EAAAABAAAAAAAABABIAAIASAACAAAAAAAAAAAQAAAAE=</HashCode>
+      <FileName>Voting.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ResidentialManager.Properties.Resources" Collapsed="true">
+    <Position X="27.25" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAABEAAAAQAAAAAAAAAAAAAAAIA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ResidentialManager.Properties.Settings" Collapsed="true">
+    <Position X="29" Y="3.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAIAAAAAABAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ResidentialManager.Document">
+    <Position X="15.75" Y="10.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>QAAAAEAAAgAAgAAEAAAAAAQAAAAECAACAAgAAAAAAgA=</HashCode>
+      <FileName>Document.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="ResidentialManager.ScannedDocument">
+    <Position X="10" Y="12" Width="2" />
+    <TypeIdentifier>
+      <HashCode>IAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ScannedDocument.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ResidentialManager.LegalDocument">
+    <Position X="26.5" Y="15" Width="3.25" />
+    <TypeIdentifier>
+      <HashCode>AAABAAQAIQAAAAAEAAAAAAAAAAAAAAAAAAAAAAAIAEA=</HashCode>
+      <FileName>LegalDocument.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ResidentialManager.Message">
+    <Position X="21.5" Y="15" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAABAAAAAUAAAABAAAAAAEAAAABAAAAAAAAAA=</HashCode>
+      <FileName>Message.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ResidentialManager.MessageGeneralMeeting">
+    <Position X="23" Y="19" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AACAABAAgAIQAAAGAAAAAAAAAAAAAABAAAAAQAAAAAA=</HashCode>
+      <FileName>MessageGeneralMeeting.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ResidentialManager.MessagePaymentRequest">
+    <Position X="20" Y="19" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAIAAA=</HashCode>
+      <FileName>MessagePaymentRequest.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ResidentialManager.AdministrativeBoard" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="5" Y="1.75" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>AdministrativeBoard.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ResidentialManager.Cashier">
+    <Position X="5" Y="5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAEAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Cashier.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="ResidentialManager.EventArchive">
+    <Position X="37" Y="3" Width="3.5" />
+    <NestedTypes>
+      <Delegate Name="ResidentialManager.EventArchive.ChangedEventHandler" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>EventArchive.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Delegate>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAEAQAAAAJAAAAAAAAAAgAAAAIAAAAAAAAACAQ=</HashCode>
+      <FileName>EventArchive.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ResidentialManager.HouseKeeper">
+    <Position X="9.25" Y="5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAEAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>HouseKeeper.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="ResidentialManager.SupervisoryCommittee" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="2.25" Y="1.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>SupervisoryCommittee.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ResidentialManager.Cash">
+    <Position X="47" Y="3.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAIQAAAAAAAAAgAAAEAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Cash.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ResidentialManager.Income">
+    <Position X="44.75" Y="1.25" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAEAAQAAAAEAAAAAAAEACAAQABAAEAAQAAAAAA=</HashCode>
+      <FileName>Income.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Accommodation" Collapsed="true">
+    <Position X="18" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAEQAAAAEAAAAAAAAAgAAAAIAAAAAA=</HashCode>
+      <FileName>Accommodation.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ResidentialManager.TextDocument">
+    <Position X="20.5" Y="12" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAgAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>TextDocument.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ResidentialManager.Protocol">
+    <Position X="12.75" Y="15" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>EAAAABABAAAAAQAEAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Protocol.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ResidentialManager.ProtocolGeneralMeeting">
+    <Position X="13" Y="18.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAE=</HashCode>
+      <FileName>ProtocolGeneralMeeting.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ResidentialManager.Contract">
+    <Position X="16" Y="15" Width="3.25" />
+    <TypeIdentifier>
+      <HashCode>EAAAAAAAAAAAAAAEAAAgAAAAIAgQAAAIgAAAAIAAAAA=</HashCode>
+      <FileName>Contract.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ResidentialManager.InhabitantWindow" Collapsed="true">
+    <Position X="27.25" Y="3.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>gAAAAAIQEACAAFQIABACAAAgAAAAAAAAAAAAAEAQAAA=</HashCode>
+      <FileName>InhabitantWindow.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ResidentialManager.MessageCreationWindow" Collapsed="true">
+    <Position X="30.75" Y="2.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAQAAAAAAAAAAAAAAAAAgAAAEAQAAggAAAA=</HashCode>
+      <FileName>MessageCreationWindow.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ResidentialManager.AddNewInhabitantWindow" Collapsed="true">
+    <Position X="29" Y="0.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAQAECAAFAYBBACAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>AddNewInhabitantWindow.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ResidentialManager.Payment">
+    <Position X="47" Y="1.25" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAIAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>_Payment.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ResidentialManager.CashierSelectWindow" Collapsed="true">
+    <Position X="25.5" Y="1.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAEAAAAAAACAAGAAAAAAAAAAAACAAAAAAAAAA=</HashCode>
+      <FileName>CashierSelectWindow.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ResidentialManager.Commonhold">
+    <Position X="42" Y="6.75" Width="5" />
+    <TypeIdentifier>
+      <HashCode>AACUJQAEECUAAAAQAEgACABAABoJAAASKAAAACAQgAA=</HashCode>
+      <FileName>Commonhold.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ResidentialManager.DocArchive">
+    <Position X="37" Y="7" Width="4" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAgAAAAQAAQAEAAAAAAAAIAAAACAAgAAAAABAA=</HashCode>
+      <FileName>DocArchive.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ResidentialManager.HouseKeeperSelectWindow" Collapsed="true">
+    <Position X="23.75" Y="3.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AgAAAAAAEAAAAAAAAAAGAAAAAAAAAAAAAAAAAAAAQAA=</HashCode>
+      <FileName>HouseKeeperSelectWindow.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ResidentialManager.ShowOwnersWindow" Collapsed="true">
+    <Position X="30.75" Y="3.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ShowOwnersWindow.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ResidentialManager.ShowTenantsWindow" Collapsed="true">
+    <Position X="25.5" Y="2.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ShowTenantsWindow.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ResidentialManager.CommissionsParticipantsWindow" Collapsed="true">
+    <Position X="27.25" Y="1.5" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAACAAEAAAAAAAAAIAAAAAAACAAABAAAAAAAACAgA=</HashCode>
+      <FileName>CommissionsParticipantsWindow.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ResidentialManager.DocumentsViewerWindow" Collapsed="true">
+    <Position X="23.75" Y="2.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>DocumentsViewer.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ResidentialManager.EventArchiveWindow" Collapsed="true">
+    <Position X="27.25" Y="2.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>gAAAAAAAAAAAAABAAAAAAAAAAIAAAAAAAEAAAAAAAAA=</HashCode>
+      <FileName>EventArchiveWindow.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ResidentialManager.InhabitantList" Collapsed="true">
+    <Position X="3.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAACAAAAAAAEAAAAAAQAASAAAAAEAAAAAAAAAAg=</HashCode>
+      <FileName>InhabitantList.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Apartment">
+    <Position X="13.5" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAEAAAAAQAAAAAAAAAAAAAAAQAAAAA=</HashCode>
+      <FileName>Apartment.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BlockObject">
+    <Position X="14.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAQAgAAEAIAAAAAAAAAAAAAAAAAQAAAAE=</HashCode>
+      <FileName>BlockObject.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Garage">
+    <Position X="15.75" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAABAAAAAQEQAAAAEAAAAAAAAAgAAAAIAAAAAA=</HashCode>
+      <FileName>Garage.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ResidentialManager.AccommodationWindow">
+    <Position X="47.5" Y="6.75" Width="3.5" />
+    <TypeIdentifier>
+      <HashCode>gAAAAAIAIAAAAAQAABACAAAAAAAAAAAAAEAAAEgAAAA=</HashCode>
+      <FileName>AccommodationWindow.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ResidentialManager.AddNewAccommodationWindow" Collapsed="true">
+    <Position X="23.75" Y="0.5" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAIAAAAAEAAAAAABBACAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>AddNewAccommodationWindow.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ResidentialManager.AddNewApartmentWindow" Collapsed="true">
+    <Position X="25.5" Y="0.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AACAAAAAAEAAAAAABBACAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>AddNewApartmentWindow.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ResidentialManager.AddNewGarageWindow" Collapsed="true">
+    <Position X="27.25" Y="0.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAEgAAAAABBACAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>AddNewGarageWindow.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ResidentialManager.ApartmentWindow" Collapsed="true">
+    <Position X="30.75" Y="0.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>gAABAEIAAAAAACQgABACAAAAAAAAAAAAAAAAAEAAAAA=</HashCode>
+      <FileName>ApartmentWindow.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ResidentialManager.GarageWindow" Collapsed="true">
+    <Position X="29" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gBAAAAIEAAAAAAQAABACgAAAAAAAAAAAAAAAAEAAAIA=</HashCode>
+      <FileName>GarageWindow.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ResidentialManager.ProtocolCreationWindow" Collapsed="true">
+    <Position X="25.5" Y="3.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ProtocolCreationWindow.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ResidentialManager.GeneralMeetingWindow">
+    <Position X="37" Y="0.75" Width="3.5" />
+    <TypeIdentifier>
+      <HashCode>EAQAAQAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>GeneralMeetingWindow.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ResidentialManager.MissingDocumentTypeException">
+    <Position X="34.25" Y="7" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>MissingDocumentTypeException.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ResidentialManager.Building" Collapsed="true">
+    <Position X="11.25" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>oEAwAIAAkAAAACAEQACggEAAAYAAAIAAAAAAAABAAAA=</HashCode>
+      <FileName>Building.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="ResidentialManager.CommonholdObject" Collapsed="true">
+    <Position X="30.75" Y="1.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>kAAAAJAAAAAAACAAAAAggAAAAIAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>CommonholdObject.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Struct Name="ResidentialManager.Pet">
+    <Position X="49.25" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAAAAEIAAAACAAAAAAAAA=</HashCode>
+      <FileName>Pet.cs</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Interface Name="ResidentialManager.IEditable" Collapsed="true">
+    <Position X="23.75" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAA=</HashCode>
+      <FileName>IEditable.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="ResidentialManager.IElection" Collapsed="true">
+    <Position X="25.5" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>IElection.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="ResidentialManager.IEvent" Collapsed="true">
+    <Position X="27.25" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQA=</HashCode>
+      <FileName>IEvent.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="ResidentialManager.IMember" Collapsed="true">
+    <Position X="29" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>IMember.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Enum Name="InhabitantType" Collapsed="true">
+    <Position X="23.75" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAA=</HashCode>
+      <FileName>InhabitantType.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="ResidentialManager.VotingResult" Collapsed="true">
+    <Position X="29" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAgAAAAAAAAAgAAAAAAAAAAAAAAAAAAABAAAAAAAAA=</HashCode>
+      <FileName>VotingResult.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="ResidentialManager.LegalDocumentTypes" Collapsed="true">
+    <Position X="25.5" Y="6.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAQQAAAABAgAAQAAAAAAAAAAAAAAAAAAAAAAAEAAAA=</HashCode>
+      <FileName>LegalDocumentTypes.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="MaterialTypes" Collapsed="true">
+    <Position X="27.25" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAQAAAAA=</HashCode>
+      <FileName>MaterialTypes.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

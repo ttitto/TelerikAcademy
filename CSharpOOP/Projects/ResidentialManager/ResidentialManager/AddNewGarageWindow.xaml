@@ -1,0 +1,31 @@
+﻿<Window x:Class="ResidentialManager.AddNewGarageWindow"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d"
+    Title="AddNewGarageWindow" Height="600" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <StackPanel Grid.Column="0">
+            <Label Height="50">Площ (кв.м)</Label>
+            <Label Height="50">Етаж</Label>
+            <Label Height="50">Номер</Label>
+            <Label Height="50">Ширина</Label>
+            <Label Height="50">Височина</Label>
+            <Label Height="50">Дълбочина</Label>
+        </StackPanel>
+        <StackPanel Grid.Column="1">
+            <TextBox Name="Area" Height="50"></TextBox>
+            <TextBox Name="Floor" Height="50"></TextBox>
+            <TextBox Name="Number" Height="50"></TextBox>
+            <TextBox Name="Width" Height="50"></TextBox>
+            <TextBox Name="Height" Height="50"></TextBox>
+            <TextBox Name="Depth" Height="50"></TextBox>
+            <Button Name="ChangeButton" Grid.ColumnSpan="2" Click="AddButtonClick">Add</Button>
+        </StackPanel>
+    </Grid>
+</Window>

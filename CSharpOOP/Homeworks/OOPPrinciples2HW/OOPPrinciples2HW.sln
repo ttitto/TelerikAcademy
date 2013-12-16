@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShapesCalculateSurface", "ShapesCalculateSurface\ShapesCalculateSurface.csproj", "{A896C640-47D2-46C9-8BC7-E545516F3287}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BankManagement", "BankManagement\BankManagement.csproj", "{BFA3E2CF-3B9E-46DE-822F-81EDFFB2A426}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InvalidRange", "InvalidRange\InvalidRange.csproj", "{12521709-963F-4F63-BEB7-BB3FD3DD6D25}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A896C640-47D2-46C9-8BC7-E545516F3287}.Debug|x86.ActiveCfg = Debug|x86
+		{A896C640-47D2-46C9-8BC7-E545516F3287}.Debug|x86.Build.0 = Debug|x86
+		{A896C640-47D2-46C9-8BC7-E545516F3287}.Release|x86.ActiveCfg = Release|x86
+		{A896C640-47D2-46C9-8BC7-E545516F3287}.Release|x86.Build.0 = Release|x86
+		{BFA3E2CF-3B9E-46DE-822F-81EDFFB2A426}.Debug|x86.ActiveCfg = Debug|x86
+		{BFA3E2CF-3B9E-46DE-822F-81EDFFB2A426}.Debug|x86.Build.0 = Debug|x86
+		{BFA3E2CF-3B9E-46DE-822F-81EDFFB2A426}.Release|x86.ActiveCfg = Release|x86
+		{BFA3E2CF-3B9E-46DE-822F-81EDFFB2A426}.Release|x86.Build.0 = Release|x86
+		{12521709-963F-4F63-BEB7-BB3FD3DD6D25}.Debug|x86.ActiveCfg = Debug|x86
+		{12521709-963F-4F63-BEB7-BB3FD3DD6D25}.Debug|x86.Build.0 = Debug|x86
+		{12521709-963F-4F63-BEB7-BB3FD3DD6D25}.Release|x86.ActiveCfg = Release|x86
+		{12521709-963F-4F63-BEB7-BB3FD3DD6D25}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

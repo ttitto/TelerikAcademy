@@ -1,0 +1,142 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="AcademyEcosystem.Animal">
+    <Position X="7.25" Y="3.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAQAAAAAEAAAAAQQAAAAAAAAAAAAABAAAAMA=</HashCode>
+      <FileName>AcademyEcosystem.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AcademyEcosystem.Bush">
+    <Position X="18.75" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>AcademyEcosystem.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AcademyEcosystem.Deer">
+    <Position X="3" Y="8" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAEAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>AcademyEcosystem.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="AcademyEcosystem.Engine">
+    <Position X="2.25" Y="0.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>CMAAAAAAAAAAAAIAQAAAAAAAFIAAgAAAAAAAAAASUgA=</HashCode>
+      <FileName>AcademyEcosystem.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AcademyEcosystem.Organism">
+    <Position X="10.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQQAAAAAAAAAgAAEAAIAAAAAAAAAAEAAAAAAAAAAAAA=</HashCode>
+      <FileName>AcademyEcosystem.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="AcademyEcosystem.Plant">
+    <Position X="16.5" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAgAAAA=</HashCode>
+      <FileName>AcademyEcosystem.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AcademyEcosystem.Program" Collapsed="true">
+    <Position X="21.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
+      <FileName>AcademyEcosystem.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AcademyEcosystem.Tree">
+    <Position X="16.5" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>AcademyEcosystem.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AcademyEcosystem.Grass" Collapsed="true">
+    <Position X="14.25" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>AcademyEcosystem.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AcademyEcosystem.Zombie" Collapsed="true">
+    <Position X="5.25" Y="8" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>AcademyEcosystem.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AcademyEcosystem.Boar" Collapsed="true">
+    <Position X="7.5" Y="8" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAEAAQACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>AcademyEcosystem.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="AcademyEcosystem.Lion" Collapsed="true">
+    <Position X="9.75" Y="8" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>AcademyEcosystem.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="AcademyEcosystem.Wolf" Collapsed="true">
+    <Position X="12" Y="8" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>AcademyEcosystem.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="AcademyEcosystem.MyEngine" Collapsed="true">
+    <Position X="2.5" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>AcademyEcosystem.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Struct Name="AcademyEcosystem.Point" Collapsed="true">
+    <Position X="21.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAgAAAAAAAAAAAEAAAAAAAAABAAAIAAAAAAAAAAYiA=</HashCode>
+      <FileName>AcademyEcosystem.cs</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Interface Name="AcademyEcosystem.ICarnivore" Collapsed="true">
+    <Position X="21.25" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>AcademyEcosystem.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="AcademyEcosystem.IHerbivore" Collapsed="true">
+    <Position X="23" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>AcademyEcosystem.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="AcademyEcosystem.IOrganism" Collapsed="true">
+    <Position X="21.25" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQQAAAAAAAAAgAAAAAIAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>AcademyEcosystem.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Enum Name="AcademyEcosystem.AnimalState" Collapsed="true">
+    <Position X="21.25" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACEA=</HashCode>
+      <FileName>AcademyEcosystem.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
