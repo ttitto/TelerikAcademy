@@ -103,7 +103,6 @@ namespace Ex11LinkedList
             if (this.FirstItem == null) return;
             else
             {
-                //Removes the first if is==value
                 current = this.FirstItem;
                 if (current.Value.CompareTo(value) == 0)
                 {
@@ -138,12 +137,36 @@ namespace Ex11LinkedList
             }
             return count;
         }
-        //TODO: Implement the indexer
-        //private ListItem this[int index]
-        //{
-        //    get { ;}
-        //    set { ;}
-        //}
+        public T this[int index]
+        {
+            get
+            {
+                int counter = 0;
+                ListItem current = this.FirstItem;
+               // counter = (current == null) ? 0 : 1;
+                while (current.NextItem != null)
+                {
+                    if (counter == index) return current.Value;
+                    counter++;
+                    current = current.NextItem;
+                }
+                throw new ArgumentOutOfRangeException("The supplied index is outside the range of ListItems!");
+            }
+            set
+            {
+                int counter = 0;
+                ListItem current = this.FirstItem;
+               // counter = (current == null) ? 0 : 1;
+                while (current.NextItem != null)
+                {
+                    if (counter == index) value= current.Value;
+                    counter++;
+                    current = current.NextItem;
+                }
+                throw new ArgumentOutOfRangeException("The supplied index is outside the range of ListItems!");
+                
+            }
+        }
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
@@ -169,6 +192,7 @@ namespace Ex11LinkedList
             myLinked.AddLast(5);
             Console.WriteLine(myLinked.ToString());
             Console.WriteLine(myLinked.Count());
+            Console.WriteLine("Value at position 0: {0}",myLinked[0]);
             myLinked.RemoveFirst(5);
             Console.WriteLine(myLinked.ToString());
             myLinked.RemoveFirst();
