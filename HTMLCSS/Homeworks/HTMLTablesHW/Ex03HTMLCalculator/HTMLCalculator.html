@@ -1,0 +1,100 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>HTML Calculator</title>
+    <style>
+        td, tr {
+            width: 30px;
+            height: 30px;
+            padding: 0;
+            margin: 0;
+        }
+
+        .butt {
+            width: 40px;
+            height: 30px;
+            padding: 0;
+            margin: 0;
+        }
+
+        .output {
+            text-align: right;
+            background-color: aliceblue;
+            color: darkblue;
+            font-weight: bold;
+        }
+
+        table {
+            padding: 0;
+            margin: 0;
+            text-align: center;
+            border: thin;
+        }
+    </style>
+</head>
+<body>
+    <table border="1">
+        <tbody>
+            <tr>
+                <td colspan="4">
+                    <input type="text" value="123" class="output" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="button" class="butt" value="1" />
+                </td>
+                <td>
+                    <input type="button" class="butt" value="2" />
+                </td>
+                <td>
+                    <input type="button" class="butt" value="3" />
+                </td>
+                <td>
+                    <input type="button" class="butt" value="+" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="button" class="butt" value="4" />
+                </td>
+                <td>
+                    <input type="button" class="butt" value="5" />
+                </td>
+                <td>
+                    <input type="button" class="butt" value="6" />
+                </td>
+                <td>
+                    <input type="button" class="butt" value="-" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="button" class="butt" value="7" />
+                </td>
+                <td>
+                    <input type="button" class="butt" value="8" />
+                </td>
+                <td>
+                    <input type="button" class="butt" value="9" />
+                </td>
+                <td>
+                    <input type="button" class="butt" value="*" />
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <input type="button" class="butt" value="0" style="width:80px;" />
+                </td>
+                <td>
+                    <input type="button" class="butt" value="." />
+                </td>
+                <td>
+                    <input type="button" class="butt" value="/" />
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>
