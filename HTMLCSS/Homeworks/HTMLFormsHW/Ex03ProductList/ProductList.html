@@ -1,0 +1,184 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Product List</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            border-spacing: 0;
+            border: thin;
+            font-size: 13px;
+        }
+
+        td {
+            padding: 0;
+            padding-left: 4px;
+            margin: 0;
+            border-color: lightgrey;
+        }
+
+        .button {
+            width: 19px;
+            border: none;
+            background-color: #DFE3E8;
+            text-align: center;
+        }
+
+        input[type="image"], input[type="text"] {
+            vertical-align: bottom;
+        }
+    </style>
+</head>
+<body>
+    <table border="1">
+        <thead style="background-color: #DFE3E8;">
+            <tr>
+                <td colspan="6">Drag a column header and drop it here to group by that column</td>
+            </tr>
+            <tr>
+                <td>ProductID</td>
+                <td>Product name</td>
+                <td>Unit price</td>
+                <td>Quantity per unit</td>
+                <td>Units in stock</td>
+                <td>Discontinued</td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="text" style="width:20px;" />
+                </td>
+                <td>
+                    <input type="text" />
+                </td>
+                <td>
+                    <input type="text" style="width:80px;" />
+                    <input type="image" src="filter.png" alt="filter" style="height:20px;" />
+                </td>
+                <td>
+                    <input type="text" style="width:80px;" />
+                </td>
+                <td>
+                    <input type="text" style="width:60px;" />
+                    <input type="image" src="filter.png" alt="filter" style="height:20px;" />
+                </td>
+                <td>
+                    <input type="checkbox" />
+                    <input type="image" src="filter.png" alt="filter" style="height:20px;" />
+                </td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>Chai</td>
+                <td>$18.00</td>
+                <td>10 boxes x 20 bags</td>
+                <td>39</td>
+                <td>
+                    <input type="checkbox" />
+                </td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Chai</td>
+                <td>$18.00</td>
+                <td>10 boxes x 20 bags</td>
+                <td>39</td>
+                <td>
+                    <input type="checkbox" />
+                </td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>Chai</td>
+                <td>$18.00</td>
+                <td>10 boxes x 20 bags</td>
+                <td>39</td>
+                <td>
+                    <input type="checkbox" />
+                </td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>Chai</td>
+                <td>$18.00</td>
+                <td>10 boxes x 20 bags</td>
+                <td>39</td>
+                <td>
+                    <input type="checkbox" />
+                </td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td>Chai</td>
+                <td>$18.00</td>
+                <td>10 boxes x 20 bags</td>
+                <td>39</td>
+                <td>
+                    <input type="checkbox" />
+                </td>
+            </tr>
+            <tr>
+                <td>6</td>
+                <td>Chai</td>
+                <td>$18.00</td>
+                <td>10 boxes x 20 bags</td>
+                <td>39</td>
+                <td>
+                    <input type="checkbox" />
+                </td>
+            </tr>
+            <tr>
+                <td>7</td>
+                <td>Chai</td>
+                <td>$18.00</td>
+                <td>10 boxes x 20 bags</td>
+                <td>39</td>
+                <td>
+                    <input type="checkbox" />
+                </td>
+            </tr>
+            <tr>
+                <td>8</td>
+                <td>Chai</td>
+                <td>$18.00</td>
+                <td>10 boxes x 20 bags</td>
+                <td>39</td>
+                <td>
+                    <input type="checkbox" />
+                </td>
+            </tr>
+        </tbody>
+        <tfoot style="background-color:#DFE3E8;">
+            <tr>
+                <td colspan="6" style="vertical-align:bottom;">
+                    <input type="image" src="first.png" alt="first" />
+                    <input type="image" src="previous.png" alt="previous" />
+                    <input type="button" class="button" value="1" />
+                    <input type="button" class="button" value="2" />
+                    <input type="button" class="button" value="3" />
+                    <input type="button" class="button" value="4" />
+                    <input type="button" class="button" value="5" />
+                    <input type="button" class="button" value="6" />
+                    <input type="button" class="button" value="7" />
+                    <input type="button" class="button" value="8" />
+                    <input type="button" class="button" value="9" />
+                    <input type="button" class="button" value="10" />
+                    <input type="button" class="button" value="..." />
+                    <input type="image" src="next.png" alt="next" />
+                    <input type="image" src="last.png" alt="last" />
+                    <label style="font-size:10px;">Page size</label>
+                    <select style="width:40px;">
+                        <option>10</option>
+                        <option>20</option>
+                        <option>30</option>
+                        <option>50</option>
+                    </select>
+                    <label style="font-size:10px;float:right;">335104 items in 3352 pages</label>
+                </td>
+            </tr>
+        </tfoot>
+    </table>
+</body>
+</html>

@@ -1,0 +1,178 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Personal data form</title>
+    <style>
+        table {
+            border: thin;
+            border-color: grey;
+            margin: 0;
+        }
+
+        .leftCol {
+            text-align: right;
+            max-width: 130px;
+        }
+
+        .rightCol {
+        }
+
+        .lblBold {
+            font-weight: bold;
+            font-size: 11px;
+        }
+
+        .lbl {
+            font-size: 11px;
+        }
+
+        .inputText {
+            font-size: 10px;
+            height: 13px;
+        }
+
+        .inputArea {
+            font-size: 9px;
+            text-align: left;
+            vertical-align: top;
+            text-space-collapse: collapse;
+            min-height: 80px;
+            min-width: 180px;
+        }
+    </style>
+</head>
+<body>
+    <table border="1">
+        <tbody>
+            <tr>
+                <td class="leftCol">
+                    <label class=" lblBold" for="lName">Last Name</label>
+                </td>
+                <td class="rightCol">
+                    <input type="text" class="inputText" id="lName" value="Nakov" />
+                </td>
+            </tr>
+            <tr>
+                <td class="leftCol">
+                    <label class=" lblBold" for="fName">First Name</label>
+                </td>
+                <td class="rightCol">
+                    <input type="text" class="inputText" id="fName" value="Svetlin" />
+                </td>
+            </tr>
+            <tr>
+                <td class="leftCol">
+                    <label class=" lblBold" for="address">Address</label>
+                </td>
+                <td>
+                    <textarea class="inputArea" id="address">17 Hristo Botev Str.
+                        floor 3, apt.12
+                    </textarea>
+                </td>
+            </tr>
+            <tr>
+                <td class="leftCol">
+                    <label for="city" class="lblBold">City</label>
+                </td>
+                <td class="rightCol">
+                    <input type="text" id="city" class="inputText" value="Kaspichan" />
+                    <label for="state" class="lblBold">State</label>
+                    <input type="text" id="state" class="inputText" style="width:30px;" />
+                </td>
+            </tr>
+            <tr>
+                <td class="leftCol">
+                    <label for="zip" class=" lblBold">Zip/Postal Code</label>
+                </td>
+                <td class="rightCol">
+                    <input type="text" id="zip" class="inputText" value="9325" style="width:30px;" />
+                </td>
+            </tr>
+            <tr>
+                <td class="leftCol">
+                    <label class=" lblBold" for="country"> Country</label>
+                </td>
+                <td class=" rightCol">
+                    <select class=" inputText" id="country">
+                        <option selected="selected">Bulgaria</option>
+                        <option>USA</option>
+                        <option>Russia</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td class="leftCol">
+                    <label class=" lblBold" for="ccode">Phone (country code, area code, number)</label>
+                </td>
+                <td class="rightCol">
+                    <label class="lbl">(+</label>
+                    <input type="tel" class="inputText" id="ccode" style=" width:20px;" value="359" />
+                    <label class="lbl">)</label>
+                    <input type="tel" class="inputText" style=" width:20px;" value="88" />
+                    <label class="lbl">-</label>
+                    <input type="tel" class="inputText" style="width:40px;" value="8334343" />
+                </td>
+            </tr>
+            <tr>
+                <td class="leftCol">
+                    <label class="lblBold" for="mail">E-mail</label>
+                </td>
+                <td class="rightCol">
+                    <input type="text" class="inputText" id="mail" value="nakov@kaspichan.org" />
+                </td>
+            </tr>
+            <tr>
+                <td class="leftCol">
+                    <label class="lblBold" for="birthM">Birth date</label>
+                </td>
+                <td class="rightCol">
+                    <label class="lbl" for="birthM">Month</label>
+                    <input type="tel" class="inputText" id="birthM" style="width:20px;" value="06" />
+                    <label class="lbl" for="birthD">Day</label>
+                    <input type="tel" class="inputText" id="birthD" style="width:20px;" value="14" />
+                    <label class="lbl" for="birthY">Year(4 digit)</label>
+                    <input type="tel" class="inputText" id="birthY" style="width:30px;" value="1980" />
+                </td>
+            </tr>
+            <tr>
+                <td class="leftCol">
+                    <label class="lblBold" for="sex">Gender</label>
+                </td>
+                <td class="rightCol">
+                    <select id="sex" class="inputText">
+                        <option selected="selected">Male</option>
+                        <option>Female</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td class="leftCol">
+                    <label class="lblBold">Starting date</label>
+                </td>
+                <td class="rightCol">
+                    <input type="radio" name="stDate" id="spr2006" checked />
+                    <label class="lbl" for="spr2006">Spring 2006</label>
+                    <input type="radio" name="stDate" id="sum2006" />
+                    <label class="lbl" for="sum2006">Summer 2006</label>
+                </td>
+            </tr>
+            <tr>
+                <td class="leftCol">
+                    <label class="lblBold" for="qa">Comments/Questions</label>
+                </td>
+                <td class="rightCol">
+                    <textarea class="inputArea" id="qa">Please send me more information about the lodging.
+                    </textarea>
+                </td>
+            </tr>
+            <tr style="background-color:skyblue;">
+                <td colspan="2" style="text-align: center;">
+                    <input type="submit" style=" font-size: 9px;" />
+                    <input type="reset" value="Clear This Form" style=" font-size: 9px;" />
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>

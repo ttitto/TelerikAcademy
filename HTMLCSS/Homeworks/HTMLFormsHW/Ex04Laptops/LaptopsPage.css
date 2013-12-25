@@ -1,0 +1,36 @@
+﻿header {
+    text-align: center;
+}
+
+hr {
+    height: 2px;
+    color: black;
+    background-color: black;
+}
+
+.outerTable {
+    float:left;
+    outline-color: black;
+    outline-style: solid;
+}
+td{
+    vertical-align:bottom;
+}
+.thickerRow{
+    height:110px;
+}
+
+fieldset{
+  border-color:black;
+}
+.sliders{
+    max-width:250px;
+    font-stretch:expanded;
+    font-size:30px;
+    margin-left:600px;
+    margin-top:100px;
+    text-align:center;
+}
+a{
+    font-size:50px;
+}
