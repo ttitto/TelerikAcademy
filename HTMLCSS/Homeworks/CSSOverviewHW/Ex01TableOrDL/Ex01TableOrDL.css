@@ -1,0 +1,44 @@
+﻿table {
+    width: 270px;
+    height: 200px;
+    background-color: rgb(89,89,89);
+    font-family: Calibri;
+    font-size:small;
+}
+
+td {
+    vertical-align: top;
+}
+
+thead td {
+    color: rgb(148,153,142);
+    padding-bottom: 2%;
+    margin-top: 3%;
+    font-size: larger;
+}
+
+tbody td:first-child {
+    color: rgb(215,213,212);
+    font-style: italic;
+}
+img{
+    width:13px;
+    height:12px;
+}
+div, span {
+    color: rgb(227,226,163);
+    padding-bottom: 9%;
+}
+
+.supportState {
+    color: red;
+}
+
+.status {
+    color: rgb(220,108,33);
+    padding: 0;
+}
+
+.respTime, .lAction {
+    color: rgb(148,153,142);
+}
