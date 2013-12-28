@@ -1,0 +1,60 @@
+﻿
+body {
+    padding: 10px;
+    margin: 0;
+    background-color: rgb(169,169,169);
+    border-color: rgb(97,68,120);
+    border-collapse: collapse;
+    border-style: solid;
+    border-width: 5pt;
+    border-top-style: none;
+}
+
+nav {
+    text-align: center;
+}
+
+    nav ul li {
+        list-style-type: none;
+    }
+
+        nav ul li a {
+            color: rgb(250,250,210);
+            font-size: 16pt;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        nav ul li:nth-child(2) a {
+            background-color: rgb(211,211,211);
+        }
+
+        nav ul li:nth-child(4) a {
+            text-decoration: underline;
+        }
+
+header h1 {
+    color: rgb(250,250,210);
+    font-size: 25pt;
+    text-align: center;
+}
+
+section header h1 {
+    text-align: left;
+    font-size: 16pt;
+}
+
+footer {
+    color: black;
+    text-align: center;
+}
+
+section footer {
+    text-align: left;
+    font-size:small;
+}
+
+    section footer a {
+        color: black;
+        text-decoration: none;
+    }
