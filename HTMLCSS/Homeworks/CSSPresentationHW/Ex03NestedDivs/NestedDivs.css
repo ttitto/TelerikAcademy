@@ -1,0 +1,11 @@
+﻿body {
+    width: 3600px;
+}
+
+div {
+    background-color: black;
+    border-style: solid;
+    border-color: red;
+    border-radius: 500px;
+    margin-right: 3%;
+}

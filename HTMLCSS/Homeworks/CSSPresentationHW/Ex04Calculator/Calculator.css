@@ -1,0 +1,201 @@
+﻿body {
+    font-family: Calibri;
+    margin: 0;
+    padding: 0;
+}
+
+    body > div {
+        width: 406px;
+        height: 390px;
+        background-image: url(imgs/bg.png);
+        background-repeat: repeat-x;
+        background-size: 100% 100%;
+        border-radius: 10px;
+        padding-left: 5px;
+        padding-right: 5px;
+        padding-bottom: 5px;
+    }
+/*HEADER of the calculator window*/
+header > div {
+    height: 30px;
+}
+
+    header > div > img {
+        height: 17px;
+        padding: 5px;
+        vertical-align: text-bottom;
+    }
+
+span {
+    display: inline-block;
+    vertical-align: text-bottom;
+    text-shadow: -3px 0px 15px #FFF;
+}
+
+#window-btns {
+    float: right;
+    vertical-align: top;
+    padding-top: 0;
+}
+/*Main section of the calculator*/
+#window-inside {
+    border-width: thin;
+    border-style: solid;
+    border-color: #707D8A;
+    background-color: #D9E4F1;
+}
+
+#display-buttons > *, #display-buttons > #radios > * {
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+#calc-main {
+    padding: 5px;
+}
+/*MENU */
+#menu {
+    margin: 0;
+    padding: 0;
+    height: 20px;
+    font-size: 14px;
+    /**/
+    background: #f0f3f9; /* Old browsers */
+    background: -moz-linear-gradient(top, #f0f3f9 30%, #dae0f1 32%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(30%,#f0f3f9), color-stop(32%,#dae0f1)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top, #f0f3f9 30%,#dae0f1 32%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top, #f0f3f9 30%,#dae0f1 32%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top, #f0f3f9 30%,#dae0f1 32%); /* IE10+ */
+    background: linear-gradient(to bottom, #f0f3f9 30%,#dae0f1 32%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f0f3f9', endColorstr='#dae0f1',GradientType=0 ); /* IE6-9 */
+    border-bottom-style: solid;
+    border-bottom-color: #BFC5D6;
+    border-bottom-width: thin;
+}
+
+menu {
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+    float: left;
+    display: inline-block;
+}
+
+    menu li {
+        display: inline-block;
+        margin-right: 10px;
+        padding-left: 5px;
+        padding-top: 2px;
+        vertical-align: bottom;
+    }
+
+        menu li:first-letter {
+            text-decoration: underline;
+        }
+
+#display {
+    height: 33px;
+    border-style: solid;
+    border-color: #A2AFBF;
+    border-width: thin;
+    vertical-align: bottom;
+    text-align: right;
+    font-size: 20px;
+    padding-top: 20px;
+    box-shadow: white 0px -20px 30px inset;
+}
+/*Bits div*/
+#bits {
+    height: 60px;
+    background-color: #D9E4F1;
+    border-style: solid;
+    border-width: thin;
+    border-color: grey;
+    margin: 0;
+    padding: 0;
+}
+
+    #bits > div {
+        border-color: white;
+        border-width: thin;
+        border-style: solid;
+    }
+
+    #bits pre {
+        margin: 0;
+        padding: 0 7px;
+        font-family: Consolas;
+        font-size: 13px;
+    }
+
+        #bits pre:nth-of-type(2n+1) {
+            font-weight: bold;
+        }
+
+/*Radio buttons*/
+#radios {
+    width: 17%;
+}
+
+#radios-numSystem {
+    border-style: solid;
+    border-width: thin;
+    border-color: #94A4B6;
+    border-radius: 5px;
+    width: 100%;
+    height: 90px;
+}
+
+    #radios-numSystem > * {
+        display: block;
+    }
+
+#radios-words {
+    border-style: solid;
+    border-width: thin;
+    border-color: #94A4B6;
+    border-radius: 5px;
+    width: 100%;
+    height: 90px;
+}
+
+    #radios-words > * {
+        display: block;
+    }
+
+#buttons-table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 82%;
+    height: 195px;
+    float: right;
+    margin: 0;
+    padding: 0;
+}
+
+td div {
+    width: 34px;
+    height: 26px;
+    margin: 1px;
+    border-style:solid;
+    border-color: #94A4B6;
+    border-width: thin;
+    border-radius: 5px;
+}
+td[colspan]:not([colspan="1"]) input[type="button"] {
+ width:76px;
+}
+td[rowspan]:not([rowspan="1"]) input[type="button"] {
+ height:61px;
+}
+input[type="button"] {
+    font-size: 12px;
+    width: 36px;
+    height: 28px;
+    margin: 1px;
+    padding: 0;
+}
+
+    input[type="button"]:hover {
+        background-color: #FBD382;
+    }

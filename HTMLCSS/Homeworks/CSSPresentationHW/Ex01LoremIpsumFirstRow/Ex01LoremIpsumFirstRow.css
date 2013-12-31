@@ -1,0 +1,14 @@
+﻿body {
+    font-family: Consolas;
+    color: #0094ff;
+}
+
+p:first-letter {
+    font-family: 'Edwardian Script ITC',Consolas;
+    font-size: 50pt;
+}
+
+p:first-line {
+    font-weight: bold;
+    margin-bottom: 2em;
+}

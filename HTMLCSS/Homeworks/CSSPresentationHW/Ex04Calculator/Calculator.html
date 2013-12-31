@@ -1,0 +1,118 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Calculator</title>
+    <link rel="stylesheet" href="Calculator.css" />
+</head>
+<body>
+    <div>
+        <header>
+            <div>
+                <img src="imgs/calc.png" alt="calculator" />
+                <span>Calculator</span>
+                <img id="window-btns" src="imgs/buttons.png" alt="buttons" />
+            </div>
+        </header>
+        <div id="window-inside">
+            <div id="menu">
+                <menu>
+                    <li>View</li>
+                    <li>Edit</li>
+                    <li>Help</li>
+                </menu>
+            </div>
+            <div id="calc-main">
+                <div id="display-buttons">
+                    <div id="display">
+                        8854455
+                    </div>
+                    <div id="bits">
+                        <div>
+                            <pre>0000   0000   0000   0000   0000   0000   0000   0000</pre>
+<pre>63                          47                     32</pre>
+<pre>0000   0000   0000   0000   0000   0000   0000   0000</pre>
+<pre>31                          15                      0</pre>
+                        </div>
+                    </div>
+                    <table id="buttons-table">
+                        <tr>
+                            <td><div></div></td>
+                            <td><input type="button" value="Mod" /></td>
+                            <td><input type="button" value="A" /></td>
+                            <td><input type="button" value="MC" /></td>
+                            <td><input type="button" value="MR" /></td>
+                            <td><input type="button" value="MS" /></td>
+                            <td><input type="button" value="M+" /></td>
+                            <td><input type="button" value="M-" /></td>
+                        </tr>
+                        <tr>
+                            <td><input type="button" value="(" /></td>
+                            <td><input type="button" value=")" /></td>
+                            <td><input type="button" value="B" /></td>
+                            <td><input type="button" value="←" /></td>
+                            <td><input type="button" value="CE" /></td>
+                            <td><input type="button" value="C" /></td>
+                            <td><input type="button" value="±" /></td>
+                            <td><input type="button" value="√" /></td>
+                        </tr>
+                        <tr>
+                            <td><input type="button" value="RoL" /></td>
+                            <td><input type="button" value="RoR" /></td>
+                            <td><input type="button" value="C" /></td>
+                            <td><input type="button" value="7" /></td>
+                            <td><input type="button" value="8" /></td>
+                            <td><input type="button" value="9" /></td>
+                            <td><input type="button" value="/" /></td>
+                            <td><input type="button" value="%" /></td>
+                        </tr>
+                        <tr>
+                            <td><input type="button" value="Or" /></td>
+                            <td><input type="button" value="Xor" /></td>
+                            <td><input type="button" value="D" /></td>
+                            <td><input type="button" value="4" /></td>
+                            <td><input type="button" value="5" /></td>
+                            <td><input type="button" value="6" /></td>
+                            <td><input type="button" value="*" /></td>
+                            <td><input type="button" value="1/x" /></td>
+                        </tr>
+                        <tr>
+                            <td><input type="button" value="Lsh" /></td>
+                            <td><input type="button" value="Rsh" /></td>
+                            <td><input type="button" value="E" /></td>
+                            <td><input type="button" value="1" /></td>
+                            <td><input type="button" value="2" /></td>
+                            <td><input type="button" value="3" /></td>
+                            <td><input type="button" value="-" /></td>
+                            <td rowspan="2"><input type="button" value="=" /></td>
+                        </tr>
+                        <tr>
+                            <td><input type="button" value="Not" /></td>
+                            <td><input type="button" value="And" /></td>
+                            <td><input type="button" value="F" /></td>
+                            <td colspan="2"><input type="button" value="0" /></td>
+                            <td><input type="button" value="." /></td>
+                            <td><input type="button" value="+" /></td>
+                        </tr>
+                    </table>
+
+                    <div id="radios">
+                        <div id="radios-numSystem">
+                            <label><input type="radio" name="radio-numSystem">Hex</label>
+                            <label><input type="radio" name="radio-numSystem" checked>Dec</label>
+                            <label><input type="radio" name="radio-numSystem">Oct</label>
+                            <label><input type="radio" name="radio-numSystem">Bin</label>
+                        </div>
+                        <div id="radios-words">
+                            <label><input type="radio" name="radios-words" checked>Qword</label>
+                            <label><input type="radio" name="radios-words">Dword</label>
+                            <label><input type="radio" name="radios-words">Word</label>
+                            <label><input type="radio" name="radios-words">Byte</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
