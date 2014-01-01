@@ -1,0 +1,33 @@
+ul{
+	position:absolute;/*comment this line to force the whole List to move down when a list item is hovered*/
+	li{
+		/*display:inline-block;*/					
+		list-style-type:none;
+		border-style:solid;
+		border-width:thin;
+		width:100px;
+		background-color:yellow;
+		a{
+			text-decoration:none;
+		}
+		ul{
+			li{
+			display:none;
+			}
+		}
+		&:hover{
+			text-decoration:underline;
+			background-color:orange;
+			&>ul>li{
+					display:block;
+					a{
+					text-decoration:none;
+					}
+			}
+		}
+		
+	}
+}
+body
+{
+}
