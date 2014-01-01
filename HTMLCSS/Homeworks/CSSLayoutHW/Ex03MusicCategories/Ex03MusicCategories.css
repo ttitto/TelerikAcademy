@@ -1,4 +1,5 @@
 ﻿body {
+    width: 410px;
     background-color: #EEE;
     padding-top: 14px;
     padding-left: 12px;
@@ -17,14 +18,29 @@ section {
     border-style: solid;
     border-color: #989898;
     border-width: 2px;
+    background-color: #FFF;
     padding: 15px;
     margin: 35px 0px;
+    overflow: hidden;
 }
 
     section img {
         float: left;
+        margin-right: 15px;
     }
 
-        section img:after {
-            clear: both;
+    section input[type="button"] {
+        float: right;
+        background-image: url(listen.png);
+        color: white;
+        height: 25px;
+    }
+
+    section p {
+        margin: 0;
+        margin-bottom: 15px;
+    }
+
+        section p span {
+            font-weight: bold;
         }
