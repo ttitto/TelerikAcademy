@@ -5,11 +5,11 @@
     <link href="Ex04CSSTutorial.css" rel="stylesheet" />
 </head>
 <body>
-    <aside>
+    <aside class="left">
         <nav>
             <ul>
                 <li>
-                    <a href="#"> <img src="home.png" /> HOME</a>
+                    <a href="#" id="home"> <img src="home.png" /> HOME</a>
                 </li>
             </ul>
             <ul>
@@ -61,14 +61,72 @@
             </ul>
         </nav>
     </aside>
+    <aside class="right">
+        <div>
+            <h1>SITE SEARCH</h1>
+            <div>
+                <input type="text" />
+                <button>...</button>
+            </div>
+            <a href="#">About W3Schools</a>
+            <a href="#">W3Schools Forum</a>
+        </div>
+        <div>
+            <img src="" alt="25Styles" />
+            <a href="#">Dynamic button image generation</a>
+        </div>
+        <div>
+            <h1>WEBHOSTING</h1>
+            <a href="#">$15 Domain name</a>
+            <a href="#">Registration</a>
+            <a href="#">Save $20 /year!</a>
+        </div>
+        <div>
+            <a href="#">UK Domain Names</a>
+            <a href="#">UK Web Hosting</a>
+            <a href="#">Alojamiento Web</a>
+        </div>
+        <div>
+            <a href="#">Buy UK Domain Names</a>
+            <a href="#">Register Domain Names</a>
+        </div>
+        <div>
+            <a href="#">Cheap Domain Names</a>
+            <a href="#">Cheap Web Hosting</a>
+        </div>
+        <div>
+            <a href="#">Best Web Hosting</a>
+        </div>
+        <div>
+            <a href="#">Domain Name Registration</a>
+        </div>
+        <div>
+            <a href="#">PHP MySQL Hosting</a>
+        </div>
+        <div>
+            <a href="#">Top 10 Web Hosting</a>
+        </div>
+        <div>
+            <a href="#">Web Hosting Providers</a>
+        </div>
+        <div>
+            <a href="#">Web Hosting Company</a>
+        </div>
+        <div>
+            <a href="#">Web Hosting Reviews</a>
+        </div>
+        <div>
+            <a href="#">UK Web Hosting</a>
+        </div>
+    </aside>
     <section>
         <header>
             <h1>CSS Tutorial</h1>
-            <button>
-                <img src="prev.png" alt="previous" />
+            <button id="prev">
+                <img src="previous.png" alt="previous" />
                 Previous
             </button>
-            <button>
+            <button id="next">
                 <img src="next.png" alt="next" />
                 Next
             </button>
@@ -91,7 +149,7 @@
         <article>
             <h1>CSS Reference</h1>
             <p>At W3Schools you will find a complete CSS2 reference, listing properties, units of measurements, colors, and more</p>
-            <a href="#">CSS2 Reference</a>
+             <a href="#">CSS2 Reference</a>
         </article>
         <article>
             <h1>CSS Quiz Test</h1>
@@ -100,16 +158,17 @@
         </article>
         <footer>
             <hr />
-            <button>
-                <img src="prev.png" alt="previous" />
+            <button id="prev">
+                <img src="previous.png" alt="previous" />
                 Previous
             </button>
-            <button>
+            <button id="next">
                 <img src="next.png" alt="next" />
                 Next
             </button>
             <hr />
         </footer>
     </section>
+
 </body>
 </html>

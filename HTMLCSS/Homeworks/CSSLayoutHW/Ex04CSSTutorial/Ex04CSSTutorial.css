@@ -1,2 +1,126 @@
 ﻿body {
+    background: #F1F1F1;
+    font-family: Calibri;
+    border: 3px solid #F00;
+    border-radius: 8px;
+    position: relative;
+    z-index: 10;
+}
+
+    body:before {
+        content: "";
+        display: block;
+        position: absolute;
+        z-index: -1;
+        top: 2px;
+        left: 2px;
+        right: 2px;
+        bottom: 2px;
+        border: 1px solid black;
+    }
+
+aside {
+    width: 200px;
+}
+
+.left {
+    float: left;
+    zoom: 1;
+}
+
+    .left img {
+        width: 23px;
+        height: 23px;
+        margin-right: 5px;
+    }
+
+    .left ul {
+        list-style-type: none;
+        text-align: left;
+        padding-left: 5px;
+    }
+
+        .left ul:first-of-type a {
+            font-weight: bold;
+        }
+
+    .left a {
+        text-decoration: none;
+        color: black;
+        font-size: 1.1em;
+        margin: 0;
+        padding: 0;
+    }
+
+    .left h1 {
+        margin: 0;
+        color: red;
+    }
+
+section {
+    margin: 0 200px;
+    border-width: 4px;
+    border-style: ridge;
+    border-color: #B0B0B0 #CACACA;
+    background: #FFF;
+    padding: 50px 10px;
+}
+
+    section article:first-of-type {
+        font-weight: bold;
+    }
+
+    section article h1 {
+        color: white;
+        background-color: #808080;
+    }
+
+    section article img {
+        float: left;
+        zoom: 1;
+        margin: 0 15px;
+        margin-bottom: 50px;
+        vertical-align: text-top;
+    }
+
+    section article a {
+        color: red;
+    }
+
+    section > header > h1 {
+        margin-top: 0;
+        margin-bottom: 20px;
+        font-size: 2.0em;
+    }
+
+    section button, footer button {
+        height: 28px;
+        width: 140px;
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+        section button img, footer button img {
+            height: 14px;
+            vertical-align: text-bottom;
+        }
+
+    section:before {
+        clear: both;
+    }
+
+button#prev img {
+    float: left;
+    zoom: 1;
+}
+
+button#next img {
+    float: right;
+    zoom: 1;
+}
+
+
+.right {
+    float: right;
+    zoom: 1;
 }
