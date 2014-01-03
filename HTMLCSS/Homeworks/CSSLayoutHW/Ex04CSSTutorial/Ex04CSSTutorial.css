@@ -3,7 +3,7 @@
     font-family: Calibri;
     border: 3px solid #F00;
     border-radius: 8px;
-    position: relative;
+    position: absolute;
     z-index: 10;
 }
 
@@ -25,7 +25,6 @@ aside {
 
 .left {
     float: left;
-    zoom: 1;
 }
 
     .left img {
@@ -47,7 +46,7 @@ aside {
     .left a {
         text-decoration: none;
         color: black;
-        font-size: 1.1em;
+        font-size: 1.0em;
         margin: 0;
         padding: 0;
     }
@@ -59,6 +58,7 @@ aside {
 
 section {
     margin: 0 200px;
+    margin-right:202px;
     border-width: 4px;
     border-style: ridge;
     border-color: #B0B0B0 #CACACA;
@@ -70,14 +70,13 @@ section {
         font-weight: bold;
     }
 
-    section article h1 {
+    section article h1, .right div h1 {
         color: white;
         background-color: #808080;
     }
 
     section article img {
         float: left;
-        zoom: 1;
         margin: 0 15px;
         margin-bottom: 50px;
         vertical-align: text-top;
@@ -105,22 +104,36 @@ section {
             vertical-align: text-bottom;
         }
 
-    section:before {
-        clear: both;
-    }
-
 button#prev img {
     float: left;
-    zoom: 1;
 }
 
 button#next img {
     float: right;
-    zoom: 1;
 }
-
 
 .right {
     float: right;
-    zoom: 1;
+    background-color:#FFF;
+    text-align:center;
+   
 }
+.right>div{
+    border:2px double #8E8E8E;
+    padding-top:5px;
+    padding-bottom:5px;
+    }
+.right>div>*{
+    display:block;
+    margin-right:auto;
+    margin-left:auto;
+}
+.right>div h1{
+    font-size:1.1em;
+}
+.right a{
+    color:red;
+}
+.right>div img{
+   width:140px;
+   }
