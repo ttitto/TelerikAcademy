@@ -1,0 +1,18 @@
+label img {
+    width: 150px;
+    height: 100px;
+    overflow: hidden;
+}
+
+input[type="radio"] {
+    display: none;
+}
+
+    input[type="radio"] + img {
+        display: none;
+    }
+
+    input[type="radio"]:checked + img {
+        display: inline;
+        width: 400px;
+    }
