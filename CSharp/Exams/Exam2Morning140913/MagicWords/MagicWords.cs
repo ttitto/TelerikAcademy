@@ -26,14 +26,38 @@ namespace MagicWords
             int indx = 0;
             for (int i = 0; i < n; i++)
             {
-                indx = arr[i].Length % (arr.IndexOf(arr[i])+2);
+                string item = arr[i];
+                indx = arr[i].Length % (arr.Count + 1);
 
-                arr.Insert(indx, arr[i]);
+                if (indx >= i)
+                {
+                    arr.Insert(indx, item);
+                    //arr.Remove(arr[i]);
+                    arr.RemoveAt(i);
+                }
+                else
+                {
+                    arr.RemoveAt(i);
+                    //arr.Remove(arr[i]);
+                    arr.Insert(indx, item);
+                }
             }
         }
         private static void Print(List<string> arr)
         {
-            throw new NotImplementedException();
+            StringBuilder sb = new StringBuilder();
+            int maxLength = arr.Select(w => w.Length).Max();
+            for (int l = 0; l < maxLength; l++)
+            {
+                for (int w = 0; w < arr.Count; w++)
+                {
+                    if (arr[w].Length > l)
+                    {
+                        sb.Append(arr[w][l]);
+                    }
+                }
+            }
+            Console.WriteLine(sb.ToString());
         }
 
 
