@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Patterns", "Patterns\Patter
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HelpDoge", "HelpDoge\HelpDoge.csproj", "{D71373EF-721A-4684-AC20-84187ECC066A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VariableLengthCoding", "VariableLengthCoding\VariableLengthCoding.csproj", "{1CD130EE-666F-4272-9A2E-2DE4E74B2A3D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{D71373EF-721A-4684-AC20-84187ECC066A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D71373EF-721A-4684-AC20-84187ECC066A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D71373EF-721A-4684-AC20-84187ECC066A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1CD130EE-666F-4272-9A2E-2DE4E74B2A3D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1CD130EE-666F-4272-9A2E-2DE4E74B2A3D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1CD130EE-666F-4272-9A2E-2DE4E74B2A3D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1CD130EE-666F-4272-9A2E-2DE4E74B2A3D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
