@@ -1,0 +1,163 @@
+body {
+  color: white;
+  margin: 0;
+  padding: 0;
+  background: #d291fd;
+  /* Old browsers */
+  /* IE9 SVG, needs conditional override of 'filter' to 'none' */
+  background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIxJSIgc3RvcC1jb2xvcj0iI2QyOTFmZCIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjE0JSIgc3RvcC1jb2xvcj0iIzkxMTdmMSIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjY5JSIgc3RvcC1jb2xvcj0iIzkyMTVmMiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiM5MjE1ZjIiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+  background: -moz-linear-gradient(top, #d291fd 1%, #9117f1 14%, #9215f2 69%, #9215f2 100%);
+  /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(1%, #d291fd), color-stop(14%, #9117f1), color-stop(69%, #9215f2), color-stop(100%, #9215f2));
+  /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top, #d291fd 1%, #9117f1 14%, #9215f2 69%, #9215f2 100%);
+  /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top, #d291fd 1%, #9117f1 14%, #9215f2 69%, #9215f2 100%);
+  /* Opera 11.10+ */
+  background: -ms-linear-gradient(top, #d291fd 1%, #9117f1 14%, #9215f2 69%, #9215f2 100%);
+  /* IE10+ */
+  background: linear-gradient(to bottom, #d291fd 1%, #9117f1 14%, #9215f2 69%, #9215f2 100%);
+  /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#d291fd', endColorstr='#9215f2', GradientType=0);
+  /* IE6-8 */
+  zoom: 1;
+}
+body:after,
+body:before {
+  content: "";
+  display: block;
+  clear: both;
+  height: 0;
+}
+a img {
+  border: 0;
+}
+#header-container {
+  zoom: 1;
+}
+#header-container:after,
+#header-container:before {
+  content: "";
+  display: block;
+  clear: both;
+  height: 0;
+}
+#logo-container {
+  float: left;
+}
+#reg-form-container {
+  float: right;
+}
+form {
+  text-align: right;
+  zoom: 1;
+}
+form:after,
+form:before {
+  content: "";
+  display: block;
+  clear: both;
+  height: 0;
+}
+form input {
+  border: 2px inset #8D4CBE;
+  border-radius: 30px;
+  background-color: #B35EF3;
+}
+form button {
+  color: white;
+  border: 2px outset #6A3096;
+  border-radius: 15px;
+  background-color: #B35EF3;
+  float: left;
+}
+nav {
+  margin-bottom: 20px;
+  float: left;
+  width: 75%;
+  border: 2px solid black;
+  border-radius: 10px;
+}
+nav ul {
+  margin: 0;
+}
+nav ul li {
+  display: inline-block;
+  margin: 5px;
+}
+nav ul li a {
+  text-decoration: none;
+  color: white;
+}
+nav ul li ul {
+  position: absolute;
+}
+nav ul li ul li {
+  display: none;
+}
+nav ul li:hover {
+  text-decoration: underline;
+}
+nav ul li:hover > ul > li {
+  display: block;
+}
+nav ul li:hover > ul > li a {
+  text-decoration: none;
+}
+section {
+  float: left;
+  width: 70%;
+}
+section article {
+  padding: 15px;
+  margin: 10px 0;
+  border: 1px solid black;
+  border-radius: 10px;
+  font-size: small;
+  zoom: 1;
+}
+section article footer {
+  float: right;
+  font-size: smaller;
+}
+section article h1 {
+  padding-left: 10px;
+}
+section article:after,
+section article:before {
+  content: "";
+  display: block;
+  clear: both;
+  height: 0;
+}
+aside {
+  font-size: small;
+  float: right;
+  width: 29%;
+}
+aside ul > li {
+  border: 1px solid black;
+  border-radius: 5px;
+  padding: 5px;
+  margin: 5px 0;
+  list-style-type: none;
+}
+aside li > ul > li {
+  border: none;
+  padding: 0;
+}
+aside li > ul > li:before {
+  content: url("images/li-dot.png");
+}
+footer {
+  text-align: center;
+  zoom: 1;
+}
+footer:after,
+footer:before {
+  content: "";
+  display: block;
+  clear: both;
+  height: 0;
+}
+/*# sourceMappingURL=LoremIpsumViolet.css.map */
