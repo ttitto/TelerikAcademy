@@ -1,0 +1,33 @@
+@media only screen and (max-width: 960px) {
+  #wrapper {
+    width: 99% !important;
+  }
+  #wrapper header {
+    margin-bottom: 0;
+    overflow: hidden;
+  }
+  #wrapper header > nav,
+  #wrapper header > h1 {
+    float: left !important;
+    zoom: 1;
+  }
+  #wrapper header > nav:after,
+  #wrapper header > h1:after {
+    content: " ";
+    clear: both;
+    display: block;
+    height: 0;
+  }
+  #wrapper header > h1 {
+    text-align: left !important;
+  }
+}
+@media only screen and (max-width: 780px) {
+  .social {
+    display: none;
+  }
+  .social li {
+    display: inline-block;
+  }
+}
+/*# sourceMappingURL=Task2Responsive.css.map */
