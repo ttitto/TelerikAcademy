@@ -231,7 +231,7 @@ html, body, #wrapper {
 
         body #wrapper > header {
             margin-bottom: 0;
-            overflow:hidden;
+            overflow: hidden;
         }
 
             body #wrapper > header nav,
@@ -250,6 +250,10 @@ html, body, #wrapper {
 
             body #wrapper > header h1 {
                 text-align: left;
+            }
+
+            body #wrapper > header nav ul li:hover ul li {
+                display: inline-block;
             }
 }
 
@@ -290,8 +294,8 @@ html, body, #wrapper {
         }
 
         .social ul {
-            width:200px;
-            display:inline;
+            width: 200px;
+            display: inline;
         }
 
         .social li {
