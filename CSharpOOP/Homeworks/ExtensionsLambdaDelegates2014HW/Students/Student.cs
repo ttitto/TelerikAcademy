@@ -18,6 +18,11 @@ namespace Students
             this.GroupNumber = groupNumber;
             this.Marks = new List<int>().AsEnumerable();
         }
+        public Student(string fName, string lName, string fN, int groupNumber, string departmentName)
+            : this(fName, lName, fN, groupNumber)
+        {
+            this.Group = new Group(groupNumber, departmentName);
+        }
 
         private string fName;
         private string lName;
@@ -26,6 +31,7 @@ namespace Students
         private string email;
         private List<int> marks;
         private int groupNumber;
+        private Group group;
 
         public string FName
         {
@@ -98,6 +104,16 @@ namespace Students
                 notes += " " + item;
             }
             return String.Format("{0} {1}, FN:{2}, Group:{3}, notes:{{{4}}}", this.FName, this.LName, this.FN, this.GroupNumber,notes); ;
+        }
+
+        public Group Group
+        {
+            get { return this.group; }
+            set
+            {
+                if (value == null) throw new ArgumentNullException("Group can not be null!");
+                this.group = value;
+            }
         }
 
     }
