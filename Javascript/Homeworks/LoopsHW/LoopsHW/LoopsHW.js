@@ -7,13 +7,13 @@ function Print1toN(n) {
     }
 }
 jsConsole.writeLine("Task1: ");
-Print1toN(5)
+Print1toN(5);
 jsConsole.writeLine();
 
 function PrintDivisibleBy3And7(n) {
     var indx;
     for (indx = 1; indx <= n; indx++) {
-        if (indx % 3 != 0 || indx % 7 != 0) {
+        if (indx % 3 !== 0 || indx % 7 !== 0) {
             jsConsole.write(indx + " ");
         }
     }
@@ -40,3 +40,22 @@ function findMinMax(numbers) {
 }
 jsConsole.writeLine("Task3: ");
 findMinMax(nums);
+jsConsole.writeLine();
+
+function findMinMaxProperty(object) {
+    var min, max;
+    for (var prop in object) {
+        if (prop.toLowerCase().localeCompare(min) == -1) {
+            min = prop;
+        }
+        if (prop.toLowerCase().localeCompare(max) == 1) {
+            max = prop;
+        }
+    }
+    jsConsole.writeLine("Lexicographically smallest is " + min);
+    jsConsole.writeLine("Lexicographically largest is " + max);
+}
+jsConsole.writeLine("Task4: ");
+findMinMaxProperty(document);
+findMinMaxProperty(window);
+findMinMaxProperty(navigator);
