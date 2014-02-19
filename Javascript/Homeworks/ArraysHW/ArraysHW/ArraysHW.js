@@ -39,3 +39,33 @@ var arr3 = new Array('a', 'g', 'v', 'f', 'r');
 compareCharArrays(arr1, arr2);
 compareCharArrays(arr1, arr3);
 compareCharArrays(arr3, arr2);
+
+function findMaximalSequence(arr) {
+    var num = arr[0];
+    var cnt = 1;
+    var maxCnt = 1;
+    var indx, i, maxNum;
+    for (indx = 1; indx < arr.length; indx++) {
+        if (num === arr[indx]) {
+            cnt++;
+        } else {
+            num = arr[indx];
+            cnt = 1;
+        }
+        if (cnt > maxCnt) {
+            maxCnt = cnt;
+            maxNum = num;
+        }
+    }
+    jsConsole.write("The longest sequence is: ");
+    for (i = 0; i < maxCnt; i++) {
+        jsConsole.write(maxNum + " ");
+    }
+    jsConsole.writeLine();
+}
+jsConsole.writeLine("Task3: ");
+var arr1 = [2, 1, 1, 2, 3, 3, 2, 2, 2, 1];
+var arr2 = [2, 1, 1, 2, 3, 3, 3, 3, 2, 2, 2, 1];
+findMaximalSequence(arr1);
+findMaximalSequence(arr2);
+
