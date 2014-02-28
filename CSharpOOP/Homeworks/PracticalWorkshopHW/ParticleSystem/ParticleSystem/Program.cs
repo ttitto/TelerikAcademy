@@ -93,6 +93,7 @@ namespace ParticleSystem
                     uint lifespan = (uint)emitterParameter.RandomGenerator.Next(8);
                     generated = new DyingParticle(particlePos, particleSpeed, lifespan);
                     break;
+
                 default:
                     throw new Exception("No such particle for this particleTypeIndex");
                     break;

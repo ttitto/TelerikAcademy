@@ -1,14 +1,14 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
   <Class Name="ParticleSystem.Program">
-    <Position X="16.75" Y="0.5" Width="1.5" />
+    <Position X="16.5" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAgAAABAAAEAAAAAAAIAAAAAAAIAAAAAABAAAAAA=</HashCode>
       <FileName>Program.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="ParticleSystem.Particle" BaseTypeListCollapsed="true">
-    <Position X="3" Y="0.5" Width="1.5" />
+    <Position X="3.75" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAQAAAAAAIAAAAAgAAAAAAARCAAAAAAAAAAAAAEAAAA=</HashCode>
       <FileName>Particle.cs</FileName>
@@ -16,7 +16,7 @@
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="ParticleSystem.ConsoleRenderer" BaseTypeListCollapsed="true">
-    <Position X="7.5" Y="4.5" Width="2.5" />
+    <Position X="14.75" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAQAAAAAAABAAAAIAAAAAABAAACAAAAEAAAA=</HashCode>
       <FileName>ConsoleRenderer.cs</FileName>
@@ -24,7 +24,7 @@
     <Lollipop Position="0.2" Collapsed="true" />
   </Class>
   <Class Name="ParticleSystem.ParticleUpdater" BaseTypeListCollapsed="true">
-    <Position X="0.5" Y="7.5" Width="1.5" />
+    <Position X="11" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAABAAAAAA=</HashCode>
       <FileName>ParticleUpdater.cs</FileName>
@@ -32,7 +32,7 @@
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="ParticleSystem.Engine">
-    <Position X="10" Y="2" Width="1.5" />
+    <Position X="4" Y="8" Width="1.5" />
     <TypeIdentifier>
       <HashCode>ACAAAAAAAAAAAQAAAAgAAAAIAAAAAAAAAAAAAAAAgAI=</HashCode>
       <FileName>Engine.cs</FileName>
@@ -43,70 +43,84 @@
     </ShowAsAssociation>
   </Class>
   <Class Name="ParticleSystem.DyingParticle">
-    <Position X="0.75" Y="4.25" Width="1.5" />
+    <Position X="0.5" Y="4.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>BAQAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAEAAAA=</HashCode>
       <FileName>DyingParticle.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="ParticleSystem.ParticleEmitter">
-    <Position X="5.25" Y="4.25" Width="1.5" />
+    <Position X="7" Y="4.25" Width="2.5" />
     <TypeIdentifier>
       <HashCode>QAQAAAAAABAAAAAAAQABAAAAAAAAAAABAAAgAAAAAAA=</HashCode>
       <FileName>ParticleEmitter.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="ParticleSystem.ParticleAttractor">
-    <Position X="3" Y="4.25" Width="1.5" />
+    <Position X="2.75" Y="4.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAQAAAAAAABAAAAAAAAAAA=</HashCode>
       <FileName>ParticleAttractor.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="ParticleSystem.AdvancedParticleOperator">
-    <Position X="0.5" Y="9.5" Width="3" />
+    <Position X="10.25" Y="2.5" Width="3" />
     <TypeIdentifier>
       <HashCode>gAAAAAAAAAAAAAAABAgAAAAAAAAQABAAAAAABAAAAAA=</HashCode>
       <FileName>AdvancedParticleOperator.cs</FileName>
     </TypeIdentifier>
   </Class>
+  <Class Name="ParticleSystem.ChaoticParticle">
+    <Position X="5" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAEAAAAAIAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ChaoticParticle.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ParticleSystem.ChickenParticle" Collapsed="true">
+    <Position X="10.25" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAIAAAAAAAAA=</HashCode>
+      <FileName>ChickenParticle.cs</FileName>
+    </TypeIdentifier>
+  </Class>
   <Struct Name="ParticleSystem.MatrixCoords">
-    <Position X="15" Y="1.75" Width="1.5" />
+    <Position X="14.75" Y="3.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAwAEAAAAAAAEAAoAAAAAAAAAAAAA=</HashCode>
       <FileName>MatrixCoords.cs</FileName>
     </TypeIdentifier>
   </Struct>
   <Interface Name="ParticleSystem.IRenderable">
-    <Position X="15" Y="3.75" Width="1.5" />
+    <Position X="16.5" Y="5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAEAAAA=</HashCode>
       <FileName>IRenderable.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Interface Name="ParticleSystem.IRenderer">
-    <Position X="6.5" Y="1.75" Width="1.5" />
+    <Position X="6.5" Y="10" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAABAAAAIAAAAAAAAAACAAAAAAAAA=</HashCode>
       <FileName>IRenderer.cs</FileName>
     </TypeIdentifier>
   </Interface>
-  <Interface Name="ParticleSystem.IAcceleratable" Collapsed="true">
-    <Position X="15" Y="3" Width="1.5" />
+  <Interface Name="ParticleSystem.IAcceleratable">
+    <Position X="16.5" Y="6.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAABCAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>IMovingParticle.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Interface Name="ParticleSystem.IParticleOperator">
-    <Position X="12.5" Y="2" Width="1.5" />
+    <Position X="1" Y="10" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAABAAAAAA=</HashCode>
       <FileName>IParticleOperator.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Interface Name="ParticleSystem.IParticle">
-    <Position X="16.75" Y="3" Width="1.5" />
+    <Position X="16.5" Y="3" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAQAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAEAAAA=</HashCode>
       <FileName>IParticle.cs</FileName>

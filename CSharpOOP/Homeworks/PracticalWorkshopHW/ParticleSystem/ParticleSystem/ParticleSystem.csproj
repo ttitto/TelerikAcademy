@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="AdvancedParticleOperator.cs" />
     <Compile Include="ChaoticParticle.cs" />
+    <Compile Include="ChickenParticle.cs" />
     <Compile Include="ConsoleRenderer.cs" />
     <Compile Include="DyingParticle.cs" />
     <Compile Include="Engine.cs" />
