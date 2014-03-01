@@ -6,16 +6,15 @@ using System.Threading.Tasks;
 
 namespace ParticleSystem
 {
-    public class ChickenParticle:ParticleEmitter
+    public class ChickenParticle : ChaoticParticle
     {
         private uint layingInterval;
-        public ChickenParticle(MatrixCoords position, MatrixCoords speed,
-            Random randomGenerator,
-            uint maxEmittedPerTickCount, uint maxAbsSpeedCoord,
-            Func<ParticleEmitter, Particle> randomParticleGeneratorMethod, uint layingInterval)
-            : base(position,speed ,randomGenerator,maxEmittedPerTickCount,maxAbsSpeedCoord,randomParticleGeneratorMethod)
+        private int cycleCounter;
+        public ChickenParticle(MatrixCoords position, MatrixCoords speed, uint layingInterval)
+            : base(position, speed)
         {
-           this.LayingInterval=layingInterval;
+            this.LayingInterval = layingInterval;
+            this.cycleCounter = 0;
         }
         public uint LayingInterval
         {
@@ -24,8 +23,16 @@ namespace ParticleSystem
         }
         public override IEnumerable<Particle> Update()
         {
-
-            return base.Update();
+            var baseProduced = base.Update();
+            List<Particle> chickenParticleProduced = new List<Particle>();
+            if (this.cycleCounter == this.LayingInterval)
+            {
+                chickenParticleProduced.Add(new ChickenParticle(this.Position, this.Speed, this.layingInterval));
+                chickenParticleProduced.AddRange(baseProduced);
+                this.cycleCounter = -1;
+            }
+            cycleCounter++;
+            return chickenParticleProduced;
         }
     }
 }

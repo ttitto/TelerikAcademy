@@ -18,7 +18,7 @@ namespace ParticleSystem
         {
             var renderer = new ConsoleRenderer(Rows, Cols);
 
-            var particleOperator = new AdvancedParticleOperator();
+            var particleOperator = new AttractorRepellerParticleOperator();
 
             var engine =
                 new Engine(renderer, particleOperator, null, 300);
@@ -72,6 +72,15 @@ namespace ParticleSystem
             /*TASK 2: Chaotic particle*/
             var chaotic = new ChaoticParticle(new MatrixCoords(25, 10), new MatrixCoords(0, 0));
             engine.AddParticle(chaotic);
+
+            /*TASK 3: CHICKEN PARTICLE*/
+            var chicken = new ChickenParticle(new MatrixCoords(30, 12), new MatrixCoords(0, 0), 30);
+            engine.AddParticle(chicken);
+
+            /*TASK:4 PARTICLE REPELLER*/
+            var repeller = new ParticleRepeller(new MatrixCoords(3, 13), new MatrixCoords(0, 0), 1, 8);
+            engine.AddParticle(repeller);
+
         }
 
         static Particle GenerateRandomParticle(ParticleEmitter emitterParameter)

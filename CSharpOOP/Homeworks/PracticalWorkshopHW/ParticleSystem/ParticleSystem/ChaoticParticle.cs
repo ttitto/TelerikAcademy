@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ParticleSystem
 {
-    class ChaoticParticle : Particle
+    public class ChaoticParticle : Particle
     {
         public ChaoticParticle(MatrixCoords position, MatrixCoords speed)
             : base(position, speed)
