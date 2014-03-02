@@ -1,0 +1,123 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="WarMachines.Engine.Command" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="9.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAgAAAAAAAAEAAAAAAAAAQAAAAEAAAAAIAAAACAAAA=</HashCode>
+      <FileName>WarMachinesUnified.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="WarMachines.Engine.MachineFactory" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="12.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAQAAAAAAAAAAAAAAEAAACAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>WarMachinesUnified.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="WarMachines.Engine.WarMachineEngine" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="11" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIIgAARABCAgAQAIAAAAQEAAFCBAAGAIVyAABAQAAAo=</HashCode>
+      <FileName>WarMachinesUnified.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="WarMachines.Machines.DeleteMe" Collapsed="true">
+    <Position X="11" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>WarMachinesUnified.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WarMachines.Machines.Pilot" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="9.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAgAAAEAAAAAAQAAAAEAAAAAAAAAAAABAA=</HashCode>
+      <FileName>WarMachinesUnified.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="WarMachines.WarMachinesProgram" Collapsed="true">
+    <Position X="12.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
+      <FileName>WarMachinesUnified.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WarMachines.Machines.Machine">
+    <Position X="1.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAEAAAARAAAAEAEAAgAAQQIAIAEAEAAAABAAQAAAAA=</HashCode>
+      <FileName>WarMachinesUnified.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="WarMachines.Machines.Tank" Collapsed="true">
+    <Position X="0.5" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAgAAAAIgAAAAAAAAAAAAAA=</HashCode>
+      <FileName>WarMachinesUnified.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="WarMachines.Machines.Fighter" Collapsed="true">
+    <Position X="2.75" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAABAAAAAAAAAAAAAAAAAAQAAAAEAAAAAA=</HashCode>
+      <FileName>WarMachinesUnified.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Interface Name="WarMachines.Interfaces.ICommand" Collapsed="true">
+    <Position X="9.25" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAIAAAAAAAAA=</HashCode>
+      <FileName>WarMachinesUnified.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="WarMachines.Interfaces.IFighter">
+    <Position X="4.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAEAAAAAA=</HashCode>
+      <FileName>WarMachinesUnified.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="WarMachines.Interfaces.IMachine" Collapsed="true">
+    <Position X="5.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAEAAAAQAAAAAAEAAAAAAQIAIAAAEAAAAAAAQAAAAA=</HashCode>
+      <FileName>WarMachinesUnified.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="WarMachines.Interfaces.IMachineFactory" Collapsed="true">
+    <Position X="11" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAQAAAAAAAAAAAAAAEAAACAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>WarMachinesUnified.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="WarMachines.Interfaces.IPilot" Collapsed="true">
+    <Position X="12.75" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAABAA=</HashCode>
+      <FileName>WarMachinesUnified.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="WarMachines.Interfaces.ITank" Collapsed="true">
+    <Position X="6.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAgAAAAAgAAAAAAAAAAAAAA=</HashCode>
+      <FileName>WarMachinesUnified.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="WarMachines.Interfaces.IWarMachineEngine" Collapsed="true">
+    <Position X="9.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>WarMachinesUnified.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
