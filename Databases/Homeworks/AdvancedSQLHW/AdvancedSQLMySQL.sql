@@ -98,3 +98,79 @@ where LENgth(LastName)=5;
 "day.month.year hour:minutes:seconds:milliseconds". Search in  Google to find how to format dates in SQL Server.
 */
 select DATE_FORMAT(NOW(),'%d.%c.%Y %T:%f');
+
+/*TASK 15: Write a SQL statement to create a table Users. Users should have username,
+ password, full name and last login time. Choose appropriate data types for the table fields.
+ Define a primary key column with a primary key constraint. Define the primary key column 
+as identity to facilitate inserting records. Define unique constraint to avoid repeating 
+usernames. Define a check constraint to ensure the password is at least 5 characters long.
+*/
+create table Users(
+UserID int auto_increment not null,
+Username nvarchar(50) not null,
+Pass varchar(100) not null,
+FullName nvarchar(100),
+LastLoginTime datetime,
+constraint PK_Users primary key(UserID),
+constraint UK_Users_Username UNIQUE(Username),
+constraint CH_Users_Password CHECK(length(users.Pass)>=5)
+);
+
+DELIMITER $$
+CREATE TRIGGER `TR_BeforeInsert_Users`
+BEFORE INSERT ON `users`
+FOR EACH ROW
+BEGIN
+    IF CHAR_LENGTH(NEW.Pass ) < 5 THEN
+    SIGNAL SQLSTATE '12345'
+        SET MESSAGE_TEXT = 'check constraint on Pass failed';
+    END IF;
+END$$
+delimiter ;
+
+Insert into Users(Username, Pass, FullName,lastlogintime) values('blake','alabala','Pesho', now());
+Insert into Users(Username, Pass, FullName,lastlogintime) values('matrix','ala','Petranka', now());
+select length(Pass) from users;
+
+/*TASK 16: Write a SQL statement to create a view that displays the users from the Users table
+ that have been in the system today. Test if the view works correctly.
+*/
+create view TodaysUsers  as
+select UserName from users
+where now()- LastLoginTime <=86400;
+
+Insert into Users(Username, Pass, FullName,lastlogintime) values('harper','alabalak','Pesho', now());
+Insert into Users(Username, Pass, FullName,lastlogintime) values('Petra','alabash','Petranka', DATE(02/02/2014));
+
+select username from todaysusers;
+
+/*TASK 17: Write a SQL statement to create a table Groups. Groups should have 
+unique name (use unique constraint). Define primary key and identity column.
+*/
+
+CREATE TABLE Groups(
+GroupId int AUTO_INCREMENT,
+`Name` varchar(50) not null,
+constraint PK_GroupId primary key(GroupId),
+constraint UK_Groups_Name UNIQUE(`Name`));
+
+/*TASK 18: Write a SQL statement to add a column GroupID to the table Users.
+ Fill some data in this new column and as well in the Groups table. 
+Write a SQL statement to add a foreign key constraint between tables Users and Groups tables.
+*/
+
+ALTER TABLE users
+ADD GroupId int;
+
+ALTER TABLE users
+ADD constraint FK_Users_Groups foreign key(GroupId)
+references Groups(GroupId);
+
+insert into Groups(Name) values ('QA');
+insert into Groups(Name) values ('C#');
+insert into Groups(Name) values ('Web Developers');
+insert into Groups(Name) values ('Sales');
+
+update users
+set GroupId=2
+where userID=4;
