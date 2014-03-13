@@ -172,5 +172,113 @@ insert into Groups(Name) values ('Web Developers');
 insert into Groups(Name) values ('Sales');
 
 update users
-set GroupId=2
+set GroupId=1
 where userID=4;
+
+update users
+set GroupId=4
+where userID=2;
+
+update users
+set GroupId=5
+where userID=3;
+
+update users
+set GroupId=6
+where userID=1;
+
+/*TASK 19: Write SQL statements to insert several records in the Users 
+and Groups tables.
+*/
+insert into Users(Username,pass, fullname, lastlogintime, groupID)
+values('mirko','12345','Miroslav',null,6);
+
+insert into Users(Username,pass, fullname, lastlogintime, groupID)
+values('tanya','54361','Tatyana',null,4);
+
+/*TASK 20: Write SQL statements to update some of the records in the 
+Users and Groups tables.
+*/
+update groups set Name='Quality Assurance'
+where name='QA';
+
+update groups set Name='Programmer'
+where name='C#';
+
+update users set pass='987654321'
+where UserName='tanya';
+
+update users set GroupId=4
+where UserName='mirko';
+
+/*TASK 21: Write SQL statements to delete some of the records from the Users and Groups tables.
+*/
+
+delete from users
+where GroupId=1;
+
+delete from groups
+where Name='Quality Assurance';
+
+/*TASK 22: Write SQL statements to insert in the Users table the names of all
+ employees from the Employees table. Combine the first and last names as a full name.
+ For username use the first letter of the first name + the last name (in lowercase). 
+Use the same for the password, and NULL for last login time.
+*/
+
+insert ignore into users (username, pass, fullname, lastlogintime, GroupId)
+select  concat(substring(firstName,1,1),lastName),
+	concat(substring(firstName,1,1), lastName),
+	concat(firstname,' ',lastname),
+	null,
+	null
+from employees
+where char_length(concat(substring(firstName,1,1), lastName))>=5 ;
+
+/*TASK 23: Write a SQL statement that changes the password to NULL for all users
+ that have not been in the system since 10.03.2010.
+*/
+ALTER TABLE `telerikacademy`.`users` 
+CHANGE COLUMN `Pass` `Pass` VARCHAR(100) NULL ;
+
+SET SQL_SAFE_UPDATES=0;
+update users set Pass=null
+where date_format(lastlogintime,'%d.%m.%Y')<'10.03.2010';
+SET SQL_SAFE_UPDATES=1;
+
+/*TASK 24: Write a SQL statement that deletes all users without passwords (NULL password).
+*/
+set sql_safe_updates=0;
+delete from users
+where pass is null;
+set sql_safe_updates=1;
+
+/*TASK 25: Write a SQL query to display the average employee salary by department 
+and job title.*/
+
+select d.name, e.JobTitle,avg(salary)
+from employees e  join departments d
+	on e.DepartmentID=d.DepartmentID
+group by d.name, e.JobTitle
+order by avg(salary) desc;
+
+/*TASK 26: Write a SQL query to display the minimal employee salary by department 
+and job title along with the name of some of the employees that take it.
+*/
+select d.Name as `Department Name`,e.JobTitle,e.LastName,min(salary)
+from employees e Join departments d
+	on e.DepartmentID=d.DepartmentID
+group by d.Name,e.JobTitle
+order by d.Name;
+
+/*TASK 27: Write a SQL query to display the town where maximal number of employees work.*/
+select TownName
+from
+(select t.Name as TownName,Count(e.EmployeeID) as EmployeeCount
+from employees e join addresses a
+	on e.AddressID=a.AddressID
+join towns t
+	on a.TownID=t.TownID
+group by t.Name ) as NewTable
+where EmployeeCount=44
+
