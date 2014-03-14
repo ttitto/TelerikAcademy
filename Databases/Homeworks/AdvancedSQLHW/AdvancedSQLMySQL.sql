@@ -272,13 +272,37 @@ group by d.Name,e.JobTitle
 order by d.Name;
 
 /*TASK 27: Write a SQL query to display the town where maximal number of employees work.*/
-select TownName
-from
-(select t.Name as TownName,Count(e.EmployeeID) as EmployeeCount
-from employees e join addresses a
-	on e.AddressID=a.AddressID
-join towns t
-	on a.TownID=t.TownID
-group by t.Name ) as NewTable
-where EmployeeCount=44
+select TownName from (
+	select t.Name as TownName,Count(e.EmployeeID) as EmployeeCount
+	from employees e join addresses a
+		on e.AddressID=a.AddressID
+	join towns t
+		on a.TownID=t.TownID
+	group by t.Name 
+having EmployeeCount=(
+	select Max(EmpCount.cnt) 
+	from(
+	select count(EmployeeID) as cnt 
+	from employees e join addresses a
+		on e.AddressID=a.AddressID
+	group by TownID) EmpCount)
+) as NewTable;
+
+/*TASK 28: Write a SQL query to display the number of managers from each town.
+*/
+select ManagerTown.Name, count(ManagerTown.ManagerID)as `Managers Count`
+from(
+select t.Name,e.ManagerID
+from employees e join employees m
+	on m.EmployeeID=e.ManagerID
+join addresses a
+	on a.AddressID=e.AddressID
+join towns t 
+	on t.townid=a.townid
+group by e.ManagerID) ManagerTown
+group by ManagerTown.Name
+
+
+
+
 
