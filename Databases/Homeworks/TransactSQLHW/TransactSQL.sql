@@ -60,7 +60,7 @@ GO
 EXEC usp_SelectPersonsAboveLimit 3560
 GO
 
-/*TASK 3: Create a function that accepts as parameters – sum, yearly interest rate and number of months. 
+/*TASK 03: Create a function that accepts as parameters – sum, yearly interest rate and number of months. 
 It should calculate and return the new sum. Write a SELECT to test whether the function works as expected.
 */
 CREATE FUNCTION dbo.ufn_CalculateSumWithInterest(@sum money, @interest money, @monthsCount int)
@@ -75,3 +75,56 @@ GO
 
 SELECT  dbo.ufn_CalculateSumWithInterest(3500,8.9,12)
 GO
+
+/*TASK 04: Create a stored procedure that uses the function from the previous example to give
+ an interest to a person's account for one month. It should take the AccountId and the interest
+  rate as parameters.
+*/
+USE BankAccounts
+GO
+CREATE PROC usp_MonthlyInterest(@AccountId int, @InterestRate money)
+AS
+
+DECLARE @Balance money
+DECLARE @Interest money
+SET @Balance=(SELECT Balance FROM Accounts WHERE Id=@AccountId)
+SET @Interest=dbo.ufn_CalculateSumWithInterest(@Balance,@InterestRate,1)
+-- PRINT @Interest
+RETURN @Interest
+GO
+
+EXEC dbo.usp_MonthlyInterest 3,10.5
+GO
+
+/*TASK 05: Add two more stored procedures WithdrawMoney( AccountId, money) and 
+DepositMoney (AccountId, money) that operate in transactions.
+*/
+
+/*TASK 06: Create another table – Logs(LogID, AccountID, OldSum, NewSum). Add a trigger
+ to the Accounts table that enters a new entry into the Logs table every time the sum on
+  an account changes.
+*/
+
+/*TASK 07: Define a function in the database TelerikAcademy that returns all Employee's 
+names (first or middle or last name) and all town's names that are comprised of given set
+ of letters. Example 'oistmiahf' will return 'Sofia', 'Smith', … but not 'Rob' and 'Guy'.
+*/
+
+/*TASK 08: Using database cursor write a T-SQL script that scans all employees and their 
+addresses and prints all pairs of employees that live in the same town.
+*/
+
+/*TASK 09: * Write a T-SQL script that shows for each town a list of all employees that live in it.
+ Sample output:
+	Sofia -> Svetlin Nakov, Martin Kulov, George Denchev
+	Ottawa -> Jose Saraiva
+*/
+
+/*TASK 10: Define a .NET aggregate function StrConcat that takes as input a sequence of 
+strings and return a single string that consists of the input strings separated by ','. 
+For example the following SQL statement should return a single string:
+
+SELECT StrConcat(FirstName + ' ' + LastName)
+FROM Employees
+
+*/
