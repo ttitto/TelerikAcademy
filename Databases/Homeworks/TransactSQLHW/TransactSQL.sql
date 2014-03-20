@@ -99,6 +99,48 @@ GO
 /*TASK 05: Add two more stored procedures WithdrawMoney( AccountId, money) and 
 DepositMoney (AccountId, money) that operate in transactions.
 */
+USE BankAccounts
+GO
+CREATE PROC usp_WithdrawMoney(@AccountId int, @Money money)
+AS
+BEGIN TRAN CandidateWithdrawal
+	WITH MARK N'Subtracts some amount of money from an account balance allowing the account to be negative'
+DECLARE @Balance money
+DECLARE @Limit money=0
+SET @Balance =(SELECT Balance FROM Accounts WHERE Id=@AccountId) - @Money
+
+IF @Balance<@Limit 
+	BEGIN
+	PRINT N'Insufficient amount'
+	ROLLBACK TRAN
+	END
+ELSE
+	BEGIN
+	UPDATE BankAccounts.dbo.Accounts
+	SET Balance=@Balance
+	WHERE Id=@AccountId
+	COMMIT TRAN
+	END
+GO
+
+CREATE PROC usp_DepositMoney(@AccountId int, @Money money)
+AS
+BEGIN TRAN CandidateDeposit
+	WITH MARK N'Add some ammount of money to the account balance'
+DECLARE @Balance money
+SET @Balance =(SELECT Balance FROM Accounts WHERE Id=@AccountId)  + @Money
+UPDATE BankAccounts.dbo.Accounts
+SET Balance=@Balance
+WHERE Id=@AccountId
+COMMIT TRAN
+GO
+
+EXEC dbo.usp_DepositMoney 2, 200
+GO
+EXEC dbo.usp_WithdrawMoney 2,100
+GO
+EXEC dbo.usp_WithdrawMoney 2,9000
+GO
 
 /*TASK 06: Create another table – Logs(LogID, AccountID, OldSum, NewSum). Add a trigger
  to the Accounts table that enters a new entry into the Logs table every time the sum on
