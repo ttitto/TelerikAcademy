@@ -290,7 +290,7 @@ having EmployeeCount=(
 
 /*TASK 28: Write a SQL query to display the number of managers from each town.
 */
-select ManagerTown.Name, count(ManagerTown.ManagerID)as `Managers Count`
+select ManagerTown.Name, count(ManagerTown.ManagerID) as `Managers Count`
 from(
 select t.Name,e.ManagerID
 from employees e join employees m
@@ -302,6 +302,136 @@ join towns t
 group by e.ManagerID) ManagerTown
 group by ManagerTown.Name
 
+/*TASK 29: Write a SQL to create table WorkHours to store work reports for each employee
+ (employee id, date, task, hours, comments). Don't forget to define  identity, primary key
+ and appropriate foreign key. 
+	Issue few SQL statements to insert, update and delete of some data in the table.
+	Define a table WorkHoursLogs to track all changes in the WorkHours table with triggers.
+ For each change keep the old record data, the new record data and the command 
+(insert / update / delete).
+*/
+
+CREATE TABLE WorkHours(
+WHId int auto_increment not null,
+EmployeeId int ,
+WHDate date,
+Task varchar(200),
+Hours float,
+Comments text,
+constraint PK_WorkHours primary key (WHId),
+constraint FK_WorkHours_Employees foreign key (EmployeeId)
+	references employees(EmployeeID)
+);
+
+INSERT INTO WorkHours(EmployeeId, WHDate,Task,Hours,Comments)
+	VALUES(1,'2013-12-20','BGCoder Project: accept zip file',6.5,'Initial class structure created');
+INSERT INTO WorkHours(EmployeeId, WHDate,Task,Hours,Comments)
+	VALUES(33,'2013-12-20','BGCoder Project: accept zip file',6.5,'Initial class structure created');
+INSERT INTO WorkHours(EmployeeId, WHDate,Task,Hours,Comments)
+	VALUES(220,'2013-12-20','BGCoder Project: accept zip file',3.33,'Initial class structure created');
+INSERT INTO WorkHours(EmployeeId, WHDate,Task,Hours,Comments)
+	VALUES(133,'2013-12-21','BGCoder Project: accept zip file',2.67,'Bug fixed');
+INSERT INTO WorkHours(EmployeeId, WHDate,Task,Hours,Comments)
+	VALUES(55,'2013-12-21','BGCoder Project: accept zip file',1.08,'some class implementation');
+INSERT INTO WorkHours(EmployeeId, WHDate,Task,Hours,Comments)
+	VALUES(46,'2013-12-22','BGCoder Project: accept zip file',2.33,'Initial class structure created');
+
+UPDATE WorkHours SET WHDate='2013-12-20' WHERE WorkHours.EmployeeId=1;
+
+DELETE FROM WorkHours WHERE EmployeeId=1;
+
+create table WorksHoursLog(
+LogId int auto_increment,
+Command varchar(15),
+
+WHId_Old int,
+EmployeeId_Old int,
+WHDate_Old date,
+Task_Old varchar(200),
+Hours_Old float,
+Comments_Old text,
+
+WHId_New int,
+EmployeeId_New int,
+WHDate_New date,
+Task_New varchar(200),
+Hours_New float,
+Comments_New text,
+constraint PK_WorkHoursLog primary key (LogId)
+);
+/*VALUES('insert',OLD.`WHId`,OLD.EmployeeId,OLD.WHDate, OLD.Task,OLD.Hours,OLD.Comments,
+NEW.WHId,NEW.EmployeeId,NEW.WHDate, NEW.Task,NEW.Hours,NEW.Comments);*/
+
+DROP TRIGGER if exists `TR_BeforeInsert_WorkHours`;
+DELIMITER $$
+CREATE TRIGGER `TR_BeforeInsert_WorkHours`
+BEFORE INSERT ON `WorkHours` 
+FOR EACH ROW
+
+	INSERT into WorksHoursLog(Command, WHId_Old,EmployeeId_Old, WHDate_Old, Task_Old,Hours_Old,Comments_Old,
+		WHId_New,EmployeeId_New, WHDate_New, Task_New,Hours_New,Comments_New )
+	VALUES('insert',
+	null,
+	null,
+	null,
+	null,
+	null,
+	null,
+	NEW.WHId,	NEW.EmployeeId,	NEW.WHDate,	NEW.Task,	NEW.Hours,	NEW.Comments);
+$$
+
+)END$
+DELIMITER ;
+
+DELIMITER $$
+CREATE TRIGGER `TR_BeforeDelete_WorkHours`
+BEFORE DELETE ON `WorkHours` 
+FOR EACH ROW
+
+	INSERT into WorksHoursLog(Command, WHId_Old,EmployeeId_Old, WHDate_Old, Task_Old,Hours_Old,Comments_Old,
+		WHId_New,EmployeeId_New, WHDate_New, Task_New,Hours_New,Comments_New )
+	VALUES('delete',
+	OLD.WHId,OLD.EmployeeId,OLD.WHDate, OLD.Task,OLD.Hours,OLD.Comments,
+	null,
+	null,
+	null,
+	null,
+	null,
+	null
+);
+$$
+DELIMITER ;
+
+DELIMITER $$
+CREATE TRIGGER `TR_BeforeUpdate_WorkHours`
+BEFORE UPDATE ON `WorkHours` 
+FOR EACH ROW
+
+	INSERT into WorksHoursLog(Command, WHId_Old,EmployeeId_Old, WHDate_Old, Task_Old,Hours_Old,Comments_Old,
+		WHId_New,EmployeeId_New, WHDate_New, Task_New,Hours_New,Comments_New )
+	VALUES('update',
+	OLD.WHId,OLD.EmployeeId,OLD.WHDate, OLD.Task,OLD.Hours,OLD.Comments,
+	NEW.WHId,NEW.EmployeeId,NEW.WHDate,NEW.Task,NEW.Hours,NEW.Comments);
+$$
+DELIMITER ;
+
+/*TASK 30: Start a database transaction, delete all employees from the 'Sales' department 
+along with all dependent records from the other tables. At the end rollback the transaction.
+*/
+start transaction;
+
+alter table employees
+drop foreign key `FK_Employees_Employees`;
+
+delete from employees 
+where departmentID=(
+select departmentId from departments
+Where Name='Sales');
+
+alter table employees
+add constraint `FK_Employees_Employees` foreign key (`ManagerID`)
+	references employees(`EmployeeId`);
+rollback;
 
 
 
