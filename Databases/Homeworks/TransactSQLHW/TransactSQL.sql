@@ -146,6 +146,27 @@ GO
  to the Accounts table that enters a new entry into the Logs table every time the sum on
   an account changes.
 */
+USE BankAccounts
+GO
+
+CREATE TABLE Logs(
+LogID int PRIMARY KEY IDENTITY,
+AccountID int FOREIGN KEY REFERENCES Accounts(Id),
+OldSum money,
+NewSum money
+)
+GO
+
+IF OBJECT_ID('TR_OnBalanceUpdate', 'TR') IS NOT NULL
+	DROP TRIGGER TR_OnBalanceUpdate
+	GO
+CREATE TRIGGER TR_OnBalanceUpdate
+ON Accounts
+AFTER UPDATE, INSERT
+AS
+INSERT INTO Logs(AccountID,OldSum, NewSum) VALUES ((SELECT Id FROM inserted),
+(SELECT Balance FROM deleted), (SELECT Balance FROM inserted))
+GO
 
 /*TASK 07: Define a function in the database TelerikAcademy that returns all Employee's 
 names (first or middle or last name) and all town's names that are comprised of given set
