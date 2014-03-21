@@ -418,20 +418,54 @@ DELIMITER ;
 /*TASK 30: Start a database transaction, delete all employees from the 'Sales' department 
 along with all dependent records from the other tables. At the end rollback the transaction.
 */
-start transaction;
 
 alter table employees
 drop foreign key `FK_Employees_Employees`;
 
+start transaction;
+
 delete from employees 
 where departmentID=(
 select departmentId from departments
-Where Name='Sales');
+Where Name='Purchasing');
+rollback ;
 
 alter table employees
 add constraint `FK_Employees_Employees` foreign key (`ManagerID`)
 	references employees(`EmployeeId`);
+
+/*TASK 31: Start a database transaction and drop the table EmployeesProjects. 
+Now how you could restore back the lost table data?
+*/
+
+start transaction;
+DROP TABLE employeesprojects;
 rollback;
+
+
+/*TASK 32: Find how to use temporary tables in SQL Server. Using temporary tables 
+backup all records from EmployeesProjects and restore them back after dropping and 
+re-creating the table.
+*/
+CREATE TEMPORARY TABLE EmployeesProjectSummary(
+EmployeeID int,
+ProjectID int
+);
+
+INSERT INTO EmployeesProjectSummary (
+	SELECT EmployeeID, ProjectID FROM employeesprojects);
+
+DROP TABLE employeesprojects;
+
+CREATE TABLE EmployeesProjects(
+EmployeeID int ,
+ProjectID int,
+CONSTRAINT PK_EmployeesProjects PRIMARY KEY(EmployeeID, ProjectID),
+CONSTRAINT FK_Employees_EmployeesProjects FOREIGN KEY (EmployeeID) REFERENCES employees(EmployeeID)
+);
+
+INSERT INTO EmployeesProjects (
+	SELECT * FROM EmployeesProjectSummary);
 
 
 
