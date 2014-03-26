@@ -177,11 +177,41 @@ names (first or middle or last name) and all town's names that are comprised of 
 addresses and prints all pairs of employees that live in the same town.
 */
 
+
 /*TASK 09: * Write a T-SQL script that shows for each town a list of all employees that live in it.
  Sample output:
 	Sofia -> Svetlin Nakov, Martin Kulov, George Denchev
 	Ottawa -> Jose Saraiva
 */
+/*Learn how to make an string variable with unlimited length*/
+USE TelerikAcademy
+GO
+
+DECLARE CURSOR_EmployeesInSameTown CURSOR READ_ONLY FOR
+SELECT e.FirstName, e.LastName , t.Name AS TownName
+FROM Employees e JOIN Addresses a
+	ON a.AddressID=e.AddressID
+JOIN Towns t
+	ON t.TownID=a.TownID
+GROUP BY t.TownID, e.FirstName, e.LastName, t.Name
+
+OPEN CURSOR_EmployeesInSameTown 
+DECLARE @FirstName nvarchar(50), @LastName nvarchar(50), @TownName nvarchar(50),@LastTownName nvarchar(50), @EmpInSameTown nvarchar(100)
+FETCH NEXT FROM CURSOR_EmployeesInSameTown INTO @FirstName, @LastName, @TownName 
+WHILE @@FETCH_STATUS=0
+BEGIN
+IF @TownName=@LastTownName
+	SET @EmpInSameTown+=@FirstName+' '+ @LastName+', '
+ELSE
+	BEGIN 
+	PRINT @EmpInSameTown
+	SET @LastTownName=  @TownName
+	SET @EmpInSameTown=@TownName+' -> '
+	END
+FETCH NEXT FROM CURSOR_EmployeesInSameTown INTO @FirstName, @LastName, @TownName 
+END
+CLOSE CURSOR_EmployeesInSameTown 
+DEALLOCATE CURSOR_EmployeesInSameTown 
 
 /*TASK 10: Define a .NET aggregate function StrConcat that takes as input a sequence of 
 strings and return a single string that consists of the input strings separated by ','. 
