@@ -173,6 +173,40 @@ names (first or middle or last name) and all town's names that are comprised of 
  of letters. Example 'oistmiahf' will return 'Sofia', 'Smith', … but not 'Rob' and 'Guy'.
 */
 
+USE TelerikAcademy
+GO
+
+CREATE FUNCTION ufn_ConsistsOfCharSet(@CheckString nvarchar(max), @Pattern nvarchar(50))
+	RETURNS bit
+AS
+	BEGIN
+	DECLARE @StrIndex int=1
+	DECLARE @StrLength int = LEN(@CheckString)
+		WHILE @StrIndex<=@StrLength
+			BEGIN
+				IF( CHARINDEX(SUBSTRING(@CheckString,@StrIndex,1),@Pattern)<=0)
+					BEGIN
+					RETURN 0
+					END
+				SET @StrIndex+=1
+			END
+		RETURN 1
+	END
+GO
+
+SELECT dbo.ufn_ConsistsOfCharSet('Sofia','safkio')
+SELECT dbo.ufn_ConsistsOfCharSet('Rob','oistmiahf' )
+SELECT dbo.ufn_ConsistsOfCharSet('Smith','oistmiahf' )
+
+SELECT FirstName
+	FROM Employees
+UNION SELECT LastName	
+	FROM Employees
+UNION SELECT MiddleName	
+	FROM Employees
+UNION SELECT Name
+	FROM Towns
+
 /*TASK 08: Using database cursor write a T-SQL script that scans all employees and their 
 addresses and prints all pairs of employees that live in the same town.
 */
@@ -183,7 +217,6 @@ addresses and prints all pairs of employees that live in the same town.
 	Sofia -> Svetlin Nakov, Martin Kulov, George Denchev
 	Ottawa -> Jose Saraiva
 */
-/*Learn how to make an string variable with unlimited length*/
 USE TelerikAcademy
 GO
 
@@ -196,7 +229,8 @@ JOIN Towns t
 GROUP BY t.TownID, e.FirstName, e.LastName, t.Name
 
 OPEN CURSOR_EmployeesInSameTown 
-DECLARE @FirstName nvarchar(50), @LastName nvarchar(50), @TownName nvarchar(50),@LastTownName nvarchar(50), @EmpInSameTown nvarchar(100)
+DECLARE @FirstName nvarchar(50), @LastName nvarchar(50), @TownName nvarchar(50),@LastTownName nvarchar(50),
+ @EmpInSameTown nvarchar(max)
 FETCH NEXT FROM CURSOR_EmployeesInSameTown INTO @FirstName, @LastName, @TownName 
 WHILE @@FETCH_STATUS=0
 BEGIN
