@@ -280,11 +280,27 @@ CREATE SCHEMA Aggregates
 GO
 CREATE ASSEMBLY SQLAggregateFunctions
 	AUTHORIZATION dbo
-	FROM	'E:\ttittoIT\TelerikAcademy\trunk\Databases\Homeworks\TransactSQLHW\SQLAggregateFunctions\SQLAggregateFunctions\bin\Debug\SQLAggregateFunctions.dll'
+	--FROM	'E:\ttittoIT\TelerikAcademy\trunk\Databases\Homeworks\TransactSQLHW\SQLAggregateFunctions\SQLAggregateFunctions\bin\Debug\SQLAggregateFunctions.dll'
+	FROM	'E:\ttittoIT\GitHub\TelerikAcademy\trunk\Databases\Homeworks\TransactSQLHW\SQLAggregateFunctions\SQLAggregateFunctions\bin\Debug\SQLAggregateFunctions.dll'
 	WITH PERMISSION_SET=SAFE
 GO
 
-CREATE AGGREGATE Aggregates.StrConcat(@String nvarchar(max), @Delimiter nvarchar(30)) 
+CREATE AGGREGATE dbo.StrConcat(@String nvarchar(max), @Delimiter nvarchar(30)) 
 RETURNS nvarchar(max)
-EXTERNAL NAME SQLAggregateFunctions.StrConcat
+EXTERNAL NAME SQLAggregateFunctions.[SQLAggregateFunctions.StrConcat]
 GO
+
+EXEC SP_CONFIGURE 'show advanced options' , '1';
+GO
+RECONFIGURE;
+GO
+EXEC SP_CONFIGURE 'clr enabled' , '1'
+GO
+RECONFIGURE;
+GO
+
+USE TelerikAcademy
+GO
+
+SELECT [dbo].[StrConcat](FirstName+' '+LastName,', ')
+FROM TelerikAcademy.dbo.Employees
