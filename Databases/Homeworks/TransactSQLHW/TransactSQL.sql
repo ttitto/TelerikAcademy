@@ -197,16 +197,36 @@ GO
 SELECT dbo.ufn_ConsistsOfCharSet('Sofia','safkio')
 SELECT dbo.ufn_ConsistsOfCharSet('Rob','oistmiahf' )
 SELECT dbo.ufn_ConsistsOfCharSet('Smith','oistmiahf' )
+GO
 
-SELECT FirstName
+CREATE FUNCTION ufn_AllFromGivenLetters()
+RETURNS @rtnTable TABLE
+	(
+	CheckedString nvarchar(100)
+	)
+AS 
+BEGIN
+DECLARE @TempTable TABLE(CheckedString nvarchar(100),IsInsideRange bit)
+INSERT INTO @TempTable
+SELECT FirstName, dbo.ufn_ConsistsOfCharSet(FirstName,'oistmiahf') AS IsInsideRange
 	FROM Employees
-UNION SELECT LastName	
+UNION SELECT LastName	, dbo.ufn_ConsistsOfCharSet(LastName,'oistmiahf') AS IsInsideRange
 	FROM Employees
-UNION SELECT MiddleName	
+UNION SELECT MiddleName	, dbo.ufn_ConsistsOfCharSet(MiddleName,'oistmiahf')AS IsInsideRange
 	FROM Employees
-UNION SELECT Name
+UNION SELECT Name, dbo.ufn_ConsistsOfCharSet(Name,'oistmiahf')AS IsInsideRange
 	FROM Towns
 
+INSERT INTO @rtnTable
+	SELECT CheckedString
+	FROM @TempTable
+	WHERE IsInsideRange=1
+
+RETURN
+END
+GO
+
+SELECT * FROM ufn_AllFromGivenLetters()
 /*TASK 08: Using database cursor write a T-SQL script that scans all employees and their 
 addresses and prints all pairs of employees that live in the same town.
 */
@@ -246,7 +266,7 @@ FETCH NEXT FROM CURSOR_EmployeesInSameTown INTO @FirstName, @LastName, @TownName
 END
 CLOSE CURSOR_EmployeesInSameTown 
 DEALLOCATE CURSOR_EmployeesInSameTown 
-
+GO
 /*TASK 10: Define a .NET aggregate function StrConcat that takes as input a sequence of 
 strings and return a single string that consists of the input strings separated by ','. 
 For example the following SQL statement should return a single string:
@@ -255,3 +275,16 @@ SELECT StrConcat(FirstName + ' ' + LastName)
 FROM Employees
 
 */
+
+CREATE SCHEMA Aggregates
+GO
+CREATE ASSEMBLY SQLAggregateFunctions
+	AUTHORIZATION dbo
+	FROM	'E:\ttittoIT\TelerikAcademy\trunk\Databases\Homeworks\TransactSQLHW\SQLAggregateFunctions\SQLAggregateFunctions\bin\Debug\SQLAggregateFunctions.dll'
+	WITH PERMISSION_SET=SAFE
+GO
+
+CREATE AGGREGATE Aggregates.StrConcat(@String nvarchar(max), @Delimiter nvarchar(30)) 
+RETURNS nvarchar(max)
+EXTERNAL NAME SQLAggregateFunctions.StrConcat
+GO
