@@ -9,7 +9,7 @@
         static void Main()
         {
             SqlConnection dbCon = new SqlConnection(
-                "Server=.\\TECHNOLOG_MSSQL;Database=Northwind;Integrated Security=true");
+                "Server=.\\;Database=Northwind;Integrated Security=true");
             dbCon.Open();
             using (dbCon)
             {

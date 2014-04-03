@@ -11,21 +11,42 @@ namespace Ex08ProductSearch
     /*Write a program that reads a string from the console and finds all products that contain this string. Ensure you handle correctly characters like ', %, ", \ and _.*/
     class Ex08ProductSearchClass
     {
+        private const string CONN_STRING = @"Server=(local)\;Database=Northwind;Integrated Security=true";
+        private static SqlConnection dbConn = new SqlConnection(CONN_STRING);
         static void Main()
         {
             Console.Write("Insert searched substring: ");
-            string searchString = Console.ReadLine().Replace(@"\",@"[\]").Replace(@"%",@"[%]").Replace(@"_",@"[_]");
-            SqlConnection dbConn = new SqlConnection("Server=(local)\\Technolog_MSSQL;Database=Northwind;Integrated Security=true");
-            dbConn.Open();
-            using (dbConn)
+            List<string> productNames = FindProducts(Console.ReadLine());
+            productNames.ForEach(pr => Console.WriteLine(pr));
+
+        }
+        private static List<string> FindProducts(string searchString)
+        {
+            char escape = '!';
+            searchString = searchString.Replace("%", escape + "%")
+                                        .Replace("[", escape + "[")
+                                        .Replace("]", escape + "]")
+                                        .Replace("_", escape + "_").ToLower();
+            if (string.IsNullOrEmpty(searchString) || string.IsNullOrWhiteSpace(searchString))
             {
-                SqlCommand dbCommand=new SqlCommand("SELECT  ProductID,ProductName,SupplierID,CategoryID,QuantityPerUnit,UnitPrice,UnitsInStock,UnitsOnOrder,ReorderLevel,Discontinued  FROM Products  WHERE ProductName LIKE @searchString", dbConn);
-                SqlParameter searchParam=new SqlParameter("@searchString",searchString);
-                dbCommand.Parameters.Add(searchParam);
-                SqlDataReader reader = dbCommand.ExecuteReader();
-                while (reader.Read())
+                throw new ArgumentOutOfRangeException("Invalid symbols for the searched substring");
+            }
+            else
+            {
+                dbConn.Open();
+                using (dbConn)
                 {
-                    Console.WriteLine("{0}", reader["ProductName"]);
+                    SqlCommand dbCommand = new SqlCommand("SELECT  ProductID,ProductName,SupplierID,CategoryID,QuantityPerUnit,UnitPrice,UnitsInStock,UnitsOnOrder,ReorderLevel,Discontinued  FROM Products  WHERE ProductName LIKE @searchString escape @escape", dbConn);
+                    dbCommand.Parameters.AddWithValue("@searchString", '%' + searchString + '%');
+                    dbCommand.Parameters.AddWithValue("@escape", escape);
+
+                    SqlDataReader reader = dbCommand.ExecuteReader();
+                    List<string> productNames = new List<string>();
+                    while (reader.Read())
+                    {
+                        productNames.Add(string.Format("{0}", reader["ProductName"]));
+                    }
+                    return productNames;
                 }
             }
         }

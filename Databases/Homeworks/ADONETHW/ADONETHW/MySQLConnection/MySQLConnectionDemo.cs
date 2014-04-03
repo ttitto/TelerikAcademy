@@ -7,7 +7,7 @@ namespace MySQLConnection
     {
         static void Main(string[] args)
         {
-            MySqlConnection con = new MySqlConnection("Server=localhost;Database=telerikacademy;Uid=root;Pwd=ttitto79;Encrypt=true;");
+            MySqlConnection con = new MySqlConnection("Server=localhost;Database=telerikacademy;Uid=root;Pwd=pass;Encrypt=true;");
             con.Open();
             using (con)
             {

@@ -9,7 +9,7 @@
         static void Main()
         {
             SqlConnection dbCon = new SqlConnection(
-                "Server=(local)\\Technolog_MSSQL;Database=Northwind;Integrated Security=true");
+                "Server=(local)\\;Database=Northwind;Integrated Security=true");
             dbCon.Open();
 
             string command = "SELECT cat.CategoryName, p.ProductName FROM Categories cat JOIN Products p	ON cat.CategoryID=p.CategoryID GROUP BY cat.CategoryName,p.ProductName";

@@ -9,7 +9,7 @@
     using System.IO;
     class Ex05ExtractImagesClass
     {
-        private const string CONNECTION_STRING = "Server=(local)\\Technolog_MSSQL; Database=Northwind; Integrated Security=true";
+        private const string CONNECTION_STRING = "Server=(local)\\; Database=Northwind; Integrated Security=true";
         static void Main()
         {
             List<int> myIds = GetImageId();

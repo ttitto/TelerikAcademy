@@ -14,20 +14,19 @@ namespace Ex09MySQLBooks
 
     class Ex09MySQLBooksClass
     {
-        private  const string CONN_STRING = "Server=localhost;Database=MyDB;Uid=root;Pwd=ttitto79;";
+        private const string CONN_STRING = "Server=localhost;Database=telerikacademy;Uid=root;Pwd=;";
         private static MySqlConnection dbConn = new MySqlConnection(CONN_STRING);
 
         static void Main()
         {
             CreateDatabase();
-            InsertBooks("The Thorn Birds", "Colleen McCullough", new DateTime(1977), "9844831182");
-            InsertBooks("Gone with the wind", "Margaret Mitchel", new DateTime(1936), "9780816155316");
+            InsertBooks("The Thorn Birds", "Colleen McCullough", new DateTime(1977, 1, 1), "9844831182");
+            InsertBooks("Gone with the wind", "Margaret Mitchel", new DateTime(1936, 04, 13), "9780816155316");
+            FindBookByName(Console.ReadLine());
+
         }
 
-        private static void InsertBooks(string p1, string p2, DateTime p3, string p4)
-        {
-            throw new NotImplementedException();
-        }
+
         private static void CreateDatabase()
         {
             dbConn.Open();
@@ -47,6 +46,54 @@ namespace Ex09MySQLBooks
                             );
                              ", dbConn);
                 CreateDBCommand.ExecuteNonQuery();
+            }
+        }
+        private static void InsertBooks(string bookName, string bookAuthor, DateTime publishDate, string isbn)
+        {
+            dbConn.Open();
+            using (dbConn)
+            {
+                MySqlCommand insertCommand = new MySqlCommand(@"
+                        USE Library;
+                        INSERT INTO Books (Title, Author, PublishDate, ISBN) VALUES (@Title, @Author, @PublishDate, @ISBN);
+                        ", dbConn);
+                insertCommand.Parameters.AddWithValue("@Title", bookName);
+                insertCommand.Parameters.AddWithValue("@Author", bookAuthor);
+                insertCommand.Parameters.AddWithValue("@PublishDate", publishDate);
+                insertCommand.Parameters.AddWithValue("@ISBN", isbn);
+                Console.WriteLine("Affected rows {0}.", insertCommand.ExecuteNonQuery());
+            }
+        }
+        private static void FindBookByName(string searched)
+        {
+            char escapeChar = '!';
+            if (string.IsNullOrWhiteSpace(searched) || string.IsNullOrEmpty(searched))
+            {
+                throw new ArgumentOutOfRangeException("Search string can not be null, empty or whitespace!");
+            }
+            else
+            {
+                searched = searched.Replace("%", escapeChar+"%")
+                                .Replace("_", escapeChar + "_")
+                                .Replace("[", escapeChar + "[")
+                                .Replace("]", escapeChar + "]");
+
+                dbConn.Open();
+                using (dbConn)
+                {
+                    MySqlCommand findCommand = new MySqlCommand(@"
+                        USE Library;
+                        SELECT Title, Author, PublishDate, ISBN FROM Books
+                        WHERE Title like @searched escape @escape;
+                        ", dbConn);
+                    findCommand.Parameters.AddWithValue("@searched", '%' + searched + '%');
+                    findCommand.Parameters.AddWithValue("@escape", escapeChar);
+                    MySqlDataReader reader = findCommand.ExecuteReader();
+                    while (reader.Read())
+                    {
+                        Console.WriteLine("{0}, {1}, {2}, {3}", reader["Title"], reader["Author"], reader["PublishDate"], reader["ISBN"]);
+                    }
+                }
             }
         }
     }

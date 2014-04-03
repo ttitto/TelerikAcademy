@@ -14,7 +14,7 @@
         private static void AddProduct(string ProductName, int SupplierID, int CategoryID, string QuantityPerUnit, decimal UnitPrice, int UnitsInStock, int UnitsOnOrder, int ReorderLevel, int Discontinued)
         {
             SqlConnection dbConn = new SqlConnection(
-                "Server=(local)\\Technolog_MSSQL;Database=Northwind; Integrated Security=true");
+                "Server=(local)\\;Database=Northwind; Integrated Security=true");
             dbConn.Open();
 
             using (dbConn)

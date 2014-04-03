@@ -13,7 +13,7 @@ namespace SQLConnectionDemo
         static void Main(string[] args)
         {
             SqlConnection con = new SqlConnection(
-                "Server=.\\TECHNOLOG_MSSQL; " +
+                "Server=.\\; " +
               "Database=TelerikAcademy; " +
               "Integrated Security=true");
 
