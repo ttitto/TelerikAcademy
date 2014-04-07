@@ -18,6 +18,10 @@
             {
                 Console.WriteLine(customer.CustomerID);
             }
+            foreach (var order in SalesByPeriodAndDestination("Canada", new DateTime(1997, 01, 01), new DateTime(1997, 12, 31))) 
+            {
+                Console.WriteLine(order.OrderID);
+            }
 
         }
         /*Ex03: Write a method that finds all customers who have orders made in 1997 and shipped to Canada.*/
@@ -59,8 +63,13 @@ WHERE YEAR(o.ShippedDate)={0} AND o.ShipCountry={1}";
         }
 
         /*Ex05: Write a method that finds all the sales by specified region and period (start / end dates).*/
-        //public static IEnumerable<> SalesByPeriodAndDestination(){
-
-        //}       
+        public static IEnumerable<Order> SalesByPeriodAndDestination(string region, DateTime startDate, DateTime endDate)
+        {
+            using (var dbContext = new NorthwindEntities())
+            {
+                var myOrders = dbContext.Orders.Where(o => o.ShipCountry == region && o.ShippedDate <= endDate && o.ShippedDate >= startDate).Select(o => o);
+                return myOrders.ToList();
+            }
+        }
     }
 }
