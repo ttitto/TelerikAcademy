@@ -1,0 +1,50 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: Arial, 'DejaVu Sans', 'Liberation Sans', Freesans, sans-serif;
+}
+#wrapper {
+  width: 960px;
+  height: 200px;
+  background: -webkit-linear-gradient(top, #002d44 0%, #77d1ff 100%);
+}
+a {
+  color: black;
+  text-decoration: none;
+}
+nav {
+  position: relative;
+  padding: 50px;
+  font-size: 2em;
+}
+.selected {
+  background-color: red;
+}
+.selected > ul {
+  position: absolute;
+  left: 0;
+}
+.selected > ul:first-of-type > li {
+  display: inline-block;
+}
+/*Nav items*/
+ul {
+  position: absolute;
+  width: 100%;
+}
+ul > li {
+  display: inline-block;
+  padding-right: 10px;
+  padding-left: 10px;
+  /*Sub Nav items*/
+}
+ul > li > ul > li {
+  display: none;
+  /*Dropdown items*/
+}
+ul > li > ul > li > ul > li {
+  display: none;
+}
+/*# sourceMappingURL=task1.css.map */

@@ -1,0 +1,70 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: Arial, 'DejaVu Sans', 'Liberation Sans', Freesans, sans-serif;
+}
+#wrapper {
+  width: 960px;
+  height: 200px;
+  background: -webkit-linear-gradient(top, #002d44 0%, #77d1ff 100%);
+}
+a {
+  color: black;
+  text-decoration: none;
+}
+nav {
+  position: relative;
+  padding: 50px;
+  font-size: 2em;
+}
+ul > li {
+  display: inline-block;
+}
+ul > li:hover {
+  background: rgba(18, 93, 131, 0.5);
+  border-radius: 15px;
+  padding: 5px 10px;
+  margin-right: 10px;
+}
+ul > li ul li:not(.selected) {
+  display: none;
+}
+ul > li.selected {
+  background-color: #184155;
+  border-radius: 15px;
+  padding: 5px 10px;
+}
+ul > li.selected ul {
+  position: absolute;
+  left: 50px;
+  /*same as nav padding*/
+}
+ul > li.selected ul > li {
+  display: inline-block;
+}
+ul > li.selected ul > li ul > li {
+  display: none;
+}
+ul > li ul li {
+  padding: 0 20px;
+  position: relative;
+}
+ul > li ul li:hover {
+  background: rgba(18, 93, 131, 0.5);
+  border-radius: 15px;
+}
+ul > li ul li:hover ul {
+  position: absolute;
+  left: 0;
+  background: -webkit-linear-gradient(top, #fdfeff 0, #77d1ff 100%);
+  border-radius: 15px;
+  width: 350px;
+}
+ul > li ul li:hover ul > li {
+  display: block;
+  border-bottom: solid;
+  margin-top: 10px;
+}
+/*# sourceMappingURL=task1.css.map */
