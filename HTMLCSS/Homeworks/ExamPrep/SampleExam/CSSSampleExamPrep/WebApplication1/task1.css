@@ -40,6 +40,7 @@ nav {
 ul {
   position: absolute;
   width: 100%;
+  /*Hover*/
 }
 ul > li {
   display: inline-block;
@@ -50,7 +51,29 @@ ul > li > ul > li {
   display: none;
   /*Dropdown items*/
 }
+ul > li > ul > li > ul {
+  padding: 15px 15px;
+}
 ul > li > ul > li > ul > li {
   display: none;
+  padding: 5px 5px;
+}
+ul > li > ul > li > ul > li > a {
+  padding-bottom: 5px;
+  border-bottom: solid thin;
+  border-color: black;
+}
+ul ul li:hover {
+  position: relative;
+  background-color: rgba(17, 92, 130, 0.8);
+  border-radius: 15px;
+}
+ul ul li:hover > ul {
+  width: 340px;
+  border-radius: 15px;
+  background: -webkit-linear-gradient(top, #feffff 0, #77d1ff 100%);
+}
+ul ul li:hover > ul > li {
+  display: block;
 }
 /*# sourceMappingURL=task1.css.map */

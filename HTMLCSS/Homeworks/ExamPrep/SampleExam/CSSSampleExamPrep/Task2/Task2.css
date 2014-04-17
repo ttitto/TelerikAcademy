@@ -1,0 +1,71 @@
+form,
+a,
+fieldset,
+label,
+input,
+form,
+legend,
+button,
+body {
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: Arial, 'DejaVu Sans', 'Liberation Sans', Freesans, sans-serif;
+}
+#wrapper {
+  width: 450px;
+  margin-left: 50px;
+}
+.invisible {
+  display: none;
+}
+a {
+  text-decoration: none;
+  font-size: 1.3em;
+  color: black;
+}
+a.current {
+  font-weight: bold;
+}
+form {
+  background: -webkit-linear-gradient(top, #fcfcfc 0, #595959 100%);
+}
+fieldset {
+  position: relative;
+  border: black solid thick;
+  padding-left: 90px;
+  padding-right: 75px;
+  padding-bottom: 10px;
+  padding-top: 10px;
+  border-radius: 5px;
+  text-align: right;
+}
+fieldset legend {
+  font-size: 1.5em;
+  font-style: italic;
+  font-weight: bold;
+  text-align: center;
+  padding-left: 20px;
+}
+fieldset label {
+  font-size: 1.2em;
+  font-weight: bold;
+  width: 30px;
+}
+fieldset input {
+  width: 135px;
+  padding: 10px 15px;
+  background: -webkit-linear-gradient(top, #020202 0, #cacaca 100%);
+  border-radius: 15px;
+  border: none;
+  margin: 5px 0;
+}
+fieldset button {
+  background: -webkit-linear-gradient(top, #020202 0, #fcfcfc 100%);
+  border-radius: 15px;
+  border: black solid 2px;
+  padding: 5px 10px;
+  font-size: 1em;
+}
+/*# sourceMappingURL=task2.css.map */

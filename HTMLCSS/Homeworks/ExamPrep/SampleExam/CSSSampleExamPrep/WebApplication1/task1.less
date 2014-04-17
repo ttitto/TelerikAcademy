@@ -47,16 +47,42 @@ ul {
         padding: 5px 10px;
         /*Sub Nav items*/
         & > ul {
+
             & > li {
                 display: none;
                 /*Dropdown items*/
                 & > ul {
+                    padding: 15px 15px;
 
                     & > li {
                         display: none;
+                        padding: 5px 5px;
+
+                        & > a {
+                            padding-bottom: 5px;
+                            border-bottom: solid thin;
+                            border-color: black;
+                        }
                     }
                 }
             }
         }
+    }
+    /*Hover*/
+    ul li:hover {
+        position: relative;
+        background-color: rgba(17,92,130,0.8);
+        border-radius: 15px;
+
+
+        & > ul {
+            width: 340px;
+            border-radius: 15px;
+            background: -webkit-linear-gradient(top, #FEFFFF 0, #77D1FF 100%);
+        }
+
+            & > ul > li {
+                display: block;
+            }
     }
 }
