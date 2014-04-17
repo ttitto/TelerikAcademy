@@ -1,4 +1,4 @@
-﻿* {
+﻿body, ul, li, nav, div, span, a {
     margin: 0;
     padding: 0;
 }
@@ -10,7 +10,7 @@ body {
 #wrapper {
     width: 960px;
     height: 200px;
-    background: -webkit-linear-gradient(top, #002D44 0%, #77D1FF 100%);
+    background: -webkit-linear-gradient(top, #002D44 0, #77D1FF 100%);
 }
 
 a {
@@ -25,11 +25,12 @@ nav {
 }
 
 .selected {
-    background-color:red;
+    background-color: rgba(12,31,43,0.5);
+    border-radius: 15px;
+
     & > ul {
         position: absolute;
         left: 0;
-        
     }
 
         & > ul:first-of-type > li {
@@ -43,8 +44,7 @@ ul {
 
     & > li {
         display: inline-block;
-        padding-right: 10px;
-        padding-left: 10px;
+        padding: 5px 10px;
         /*Sub Nav items*/
         & > ul {
             & > li {
