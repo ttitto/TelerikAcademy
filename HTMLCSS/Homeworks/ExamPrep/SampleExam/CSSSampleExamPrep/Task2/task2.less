@@ -10,6 +10,10 @@ body {
 #wrapper {
     width: 450px;
     margin-left: 50px;
+
+    & > a:hover {
+        color: #666666;
+    }
 }
 
 .invisible {
@@ -33,15 +37,13 @@ form {
 fieldset {
     position: relative;
     border: black solid thick;
-    padding-left: 90px;
-    padding-right: 75px;
-    padding-bottom: 10px;
-    padding-top: 10px;
+    padding: 10px 75px 10px 0;
     border-radius: 5px;
     text-align: right;
+    align-content: center;
 
     & legend {
-        font-size: 1.5em;
+        font-size: 1.7em;
         font-style: italic;
         font-weight: bold;
         text-align: center;
@@ -51,7 +53,7 @@ fieldset {
     & label {
         font-size: 1.2em;
         font-weight: bold;
-        width: 30px;
+        width: 80px;
     }
 
     & input {
@@ -61,6 +63,7 @@ fieldset {
         border-radius: 15px;
         border: none;
         margin: 5px 0;
+        color: white;
     }
 
     & button {
@@ -69,5 +72,9 @@ fieldset {
         border: black solid 2px;
         padding: 5px 10px;
         font-size: 1em;
+
+        &:hover {
+            background: -webkit-linear-gradient(top, #000000 0, #CACACA 100%);
+        }
     }
 }
