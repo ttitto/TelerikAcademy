@@ -1,0 +1,118 @@
+body,
+div,
+span,
+ul,
+li,
+p,
+a,
+h1,
+button {
+  margin: 0;
+  padding: 0;
+}
+body {
+  width: 960px;
+  font-family: Cambria, 'Times New Roman', 'Nimbus Roman No9 L', 'Freeserif', Times, serif;
+  font-size: 16px;
+}
+#wrapper {
+  margin: 30px;
+  padding: 15px 15px 5px 15px;
+  width: 350px;
+  border: solid black thin;
+  border-radius: 15px;
+  background: -webkit-linear-gradient(top, #eeeeee 0, #aaaaaa 100%);
+}
+#wrapper h1 {
+  text-align: center;
+  font-size: 1.8em;
+  margin-bottom: 10px;
+}
+#wrapper .messages-list li {
+  display: block;
+  border: black solid thin;
+  border-radius: 15px;
+  padding: 5px 15px;
+  margin-bottom: 5px;
+  width: 200px;
+  text-align: left;
+}
+#wrapper .messages-list li span {
+  font-size: 1.1em;
+  font-weight: bold;
+}
+#wrapper .messages-list li span.date {
+  font-size: 0.8em;
+  font-weight: normal;
+  font-family: Consolas;
+  float: right;
+  zoom: 1;
+}
+#wrapper .messages-list li span.date:after {
+  content: "";
+  display: block;
+  clear: both;
+  height: 0;
+}
+#wrapper .messages-list .me-item {
+  background: -webkit-linear-gradient(top, #29edff 0, #c0faff 100%);
+  float: right;
+  zoom: 1;
+}
+#wrapper .messages-list .me-item:after {
+  content: "";
+  display: block;
+  clear: both;
+  height: 0;
+}
+#wrapper .messages-list .toshko-item {
+  background: -webkit-linear-gradient(top, #dfffd2 0, #6fff3b 100%);
+  float: left;
+  zoom: 1;
+  text-align: right;
+}
+#wrapper .messages-list .toshko-item:after {
+  content: "";
+  display: block;
+  clear: both;
+  height: 0;
+}
+#wrapper .messages-list .toshko-item span {
+  font-size: 1.1em;
+  font-weight: bold;
+}
+#wrapper .messages-list .toshko-item span.date {
+  font-size: 0.8em;
+  font-weight: normal;
+  font-family: Consolas;
+  float: left;
+  zoom: 1;
+}
+#wrapper .messages-list .toshko-item span.date:after {
+  content: "";
+  display: block;
+  clear: both;
+  height: 0;
+}
+#wrapper .messages-list .toshko-item p {
+  text-align: left;
+}
+#wrapper input {
+  height: 33px;
+  width: 275px;
+  border: none;
+  border-radius: 5px;
+  margin-top: 2px;
+  margin-bottom: 2px;
+}
+#wrapper button {
+  width: 70px;
+  height: 31px;
+  background: -webkit-linear-gradient(top, #ededed 0, #aaaaaa 100%);
+  border: none;
+  border-radius: 5px;
+  font-weight: 500;
+  font-size: 1.1em;
+  margin-top: 2px;
+}
+/*# sourceMappingURL=task3.css.map */

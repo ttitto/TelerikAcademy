@@ -1,0 +1,102 @@
+﻿body, ul, li, a, table, thead, td, tr, th, tbody {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    margin: 15px;
+    font-family: Cambria, 'Times New Roman', 'Nimbus Roman No9 L', 'Freeserif', Times, serif;
+    font-size: 16px;
+    width: 960px;
+
+    & #wrapper {
+        width: 340px;
+        height: 230px;
+        border: black solid thin;
+        border-radius: 5px;
+        position: relative;
+    }
+}
+
+
+.tab-strip {
+
+    & > li {
+        display: inline-block;
+        padding: 5px 15px;
+        border-bottom: solid black thin;
+        border-right: solid black thin;
+        border-radius: 5px;
+
+        &:last-of-type {
+            border-right: none;
+        }
+
+        & > .tab-btn {
+            font-size: 1.4em;
+            text-decoration: none;
+            color: black;
+        }
+    }
+
+
+
+        & > li:not(.current) {
+            background: -webkit-linear-gradient(top, #EDEDED 0, #ABABAB 100%);
+        }
+
+        & > li:hover {
+            background: #EEEEEE;
+        }
+
+        & > li.current {
+            font-weight: bold;
+            border-bottom: none;
+            border-radius: 0;
+            background-color: #FFF;
+
+
+            & .tab-content {
+                display: block;
+                position: absolute;
+                top: 50px;
+                left: 20px;
+                font-weight: normal;
+
+                & table {
+                    display: table;
+                    border-collapse: collapse;
+
+                    & th {
+                        background: -webkit-linear-gradient(top, #ABABAB 0, #EEEEEE 75%);
+                        font-weight: bold;
+                        font-size: 1em;
+                        padding: 5px 15px;
+                        border: black solid thin;
+                    }
+
+                    & td {
+                        font-weight: normal;
+                        background: #EEEEEE;
+                        padding: 5px 5px;
+                        border: black solid thin;
+                    }
+                }
+
+                & > ul {
+                    display: block;
+                    list-style-type: disc;
+                    font-weight: normal;
+
+                    & ul {
+                        list-style: lower-latin;
+                        padding-left: 25px;
+                    }
+                }
+            }
+        }
+}
+
+.tab-content {
+    display: none;
+}

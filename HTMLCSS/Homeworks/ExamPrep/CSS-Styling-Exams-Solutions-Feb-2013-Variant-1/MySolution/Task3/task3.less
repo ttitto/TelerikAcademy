@@ -1,0 +1,112 @@
+﻿.clearfix() {
+    zoom: 1;
+
+    &:after {
+        content: "";
+        display: block;
+        clear: both;
+        height: 0;
+    }
+}
+
+body, div, span, ul, li, p, a, h1, button {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    width: 960px;
+    font-family: Cambria, 'Times New Roman', 'Nimbus Roman No9 L', 'Freeserif', Times, serif;
+    font-size: 16px;
+}
+
+#wrapper {
+    margin: 30px;
+    padding: 15px 15px 5px 15px;
+    width: 350px;
+    border: solid black thin;
+    border-radius: 15px;
+    background: -webkit-linear-gradient(top, #EEEEEE 0, #AAAAAA 100%);
+
+    & h1 {
+        text-align: center;
+        font-size: 1.8em;
+        margin-bottom: 10px;
+    }
+
+    & .messages-list {
+        & li {
+            display: block;
+            border: black solid thin;
+            border-radius: 15px;
+            padding: 5px 15px;
+            margin-bottom: 5px;
+            width: 200px;
+            text-align: left;
+
+            & span {
+                font-size: 1.1em;
+                font-weight: bold;
+
+                &.date {
+                    font-size: 0.8em;
+                    font-weight: normal;
+                    font-family: Consolas;
+                    float: right;
+                    .clearfix();
+                }
+            }
+        }
+
+        & .me-item {
+            background: -webkit-linear-gradient(top, #29EDFF 0, #C0FAFF 100%);
+            float: right;
+            .clearfix();
+        }
+
+
+        & .toshko-item {
+            background: -webkit-linear-gradient(top, #DFFFD2 0, #6FFF3B 100%);
+            float: left;
+            .clearfix();
+            text-align: right;
+
+            & span {
+                font-size: 1.1em;
+                font-weight: bold;
+
+                &.date {
+                    font-size: 0.8em;
+                    font-weight: normal;
+                    font-family: Consolas;
+                    float: left;
+                    .clearfix();
+                }
+            }
+
+            & p {
+                text-align: left;
+            }
+        }
+    }
+
+    & input {
+        height: 33px;
+        width: 275px;
+        border: none;
+        border-radius: 5px;
+        margin-top: 2px;
+        margin-bottom: 2px;
+    }
+
+    & button {
+        width: 70px;
+        height: 31px;
+        background: -webkit-linear-gradient(top, #EDEDED 0, #AAAAAA 100%);
+        border: none;
+        border-radius: 5px;
+        font-weight: 500;
+        font-size: 1.1em;
+        margin-top: 2px;
+    }
+}
