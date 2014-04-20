@@ -1,0 +1,85 @@
+body,
+li,
+ul,
+a,
+h1,
+p,
+div,
+table,
+tr,
+th,
+td {
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: Helvetica, Arial, 'DejaVu Sans', 'Liberation Sans', Freesans, sans-serif;
+  font-size: 18px;
+  width: 960px;
+}
+#wrapper {
+  padding: 50px;
+  width: 400px;
+}
+.accordion {
+  list-style: none;
+  text-align: center;
+}
+.accordion li .accordion-btn {
+  display: block;
+  border: black solid thin;
+  background: -webkit-linear-gradient(top, #eeeeee 25%, #aaaaaa 75%);
+  text-decoration: none;
+  font-size: 1.3em;
+  font-weight: bold;
+  color: #444444;
+}
+.accordion li.current .accordion-btn {
+  border-bottom: none;
+}
+.accordion li.current .accordion-content {
+  display: block;
+  background: #aaaaaa;
+  border-bottom: black solid thin;
+  border-left: black solid thin;
+  border-right: black solid thin;
+  text-align: left;
+  padding: 5px 15px;
+  color: #444444;
+}
+.accordion li.current .accordion-content h1 {
+  text-align: center;
+  color: #5E5E5E;
+  margin: 5px 0;
+  font-size: 1.6em;
+}
+.accordion li.current .accordion-content p {
+  text-align: justify;
+}
+.accordion li.current .accordion-content table {
+  border-collapse: collapse;
+  margin: 15px 6px;
+}
+.accordion li.current .accordion-content table th {
+  border: black thin solid;
+  padding: 5px;
+  background: -webkit-linear-gradient(top, #ececec 0, #898989 100%);
+}
+.accordion li.current .accordion-content table th:first-of-type {
+  border-top-left-radius: 15px;
+}
+.accordion li.current .accordion-content table td {
+  color: white;
+  border: black thin solid;
+  padding: 5px;
+}
+.accordion li.current .accordion-content table tbody tr:nth-of-type(2n) {
+  background: -webkit-linear-gradient(top, #898989 0, #cbcbcb 100%);
+}
+.accordion li.current .accordion-content table tbody tr:nth-of-type(2n+1) {
+  background: -webkit-linear-gradient(top, #cbcbcb 0, #898989 100%);
+}
+.accordion-content {
+  display: none;
+}
+/*# sourceMappingURL=task1.css.map */

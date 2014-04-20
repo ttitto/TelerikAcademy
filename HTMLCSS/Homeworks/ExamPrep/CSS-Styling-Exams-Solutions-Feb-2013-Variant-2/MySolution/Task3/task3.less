@@ -1,0 +1,72 @@
+﻿body, form, fieldset, legend, label, div, input, button {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    width: 960px;
+    font-family: Verdana, Geneva, 'DejaVu Sans', sans-serif;
+    font-size: 16px;
+}
+
+#wrapper {
+    margin-left: 25px;
+    margin-top: 25px;
+    width: 380px;
+    border-radius: 15px;
+    border: solid black thin;
+    background: -webkit-linear-gradient(top, #68D1FF 0, #8CFFFB 100%);
+    padding: 15px;
+
+    & form {
+        text-align: right;
+
+        & fieldset {
+            border: black solid 3px;
+            border-radius: 5px;
+            text-align: right;
+            padding-right: 15px;
+            padding-top: 6px;
+            padding-bottom: 4px;
+
+            & legend {
+                font-size: 1.3em;
+                font-style: italic;
+                padding: 0 15px;
+            }
+
+            & input {
+                width: 164px;
+                height: 26px;
+                background: -webkit-linear-gradient(top, #69D2FF 0, #8BFEFB 100%);
+                border-radius: 5px;
+                border: solid thin #008FCE;
+                margin-bottom: 1px;
+                padding-left: 15px;
+
+                &#tb-age {
+                    width: 40px;
+                    padding-left: 5px;
+                }
+            }
+
+            &:last-of-type {
+                margin-bottom: 5px;
+            }
+        }
+
+        & button, & input[type="reset"] {
+            padding: 5px 15px;
+            margin-top: 15px;
+            font-size: 1.2em;
+            background: -webkit-linear-gradient(top, #36C2FF 0, #8BFEFB 100%);
+            border-radius: 5px;
+            border: none;
+            border-bottom: black solid thin;
+
+            &:hover {
+                background: #9BE1FF;
+            }
+        }
+    }
+}

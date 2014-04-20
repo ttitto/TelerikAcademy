@@ -1,0 +1,78 @@
+body,
+ul,
+li,
+a,
+span,
+div,
+p,
+img {
+  margin: 0;
+  padding: 0;
+}
+body {
+  width: 960px;
+  font-family: 'Courier New', Courier, 'Nimbus Mono L', monospace;
+  font-size: 16px;
+}
+img {
+  width: 15px;
+}
+#wrapper {
+  margin: 25px;
+  width: 470px;
+}
+#wrapper .notification-list {
+  text-decoration: none;
+  position: relative;
+}
+#wrapper .notification-list > li {
+  display: inline-block;
+  color: #847792;
+  background: -webkit-linear-gradient(top, #adadad 0, #dddddd 100%);
+  padding: 5px 15px;
+  border: black solid thin;
+  border-right: none;
+}
+#wrapper .notification-list > li:first-of-type {
+  border-top-left-radius: 15px;
+}
+#wrapper .notification-list > li:last-of-type {
+  border-top-right-radius: 15px;
+  border-right: black solid thin;
+}
+#wrapper .notification-list > li a {
+  font-size: 1.2em;
+  text-decoration: none;
+  color: #777777;
+}
+#wrapper .notification-list > li ul {
+  list-style: none;
+}
+#wrapper .notification-list > li:hover {
+  border-bottom: none;
+}
+#wrapper .notification-list > li:hover .content {
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 32px;
+  border: black solid thin;
+  border-top: none;
+  width: 437px;
+  padding: 5px 15px;
+  font-size: 0.85em;
+  background: #DDDDDD;
+}
+#wrapper .notification-list > li:hover .content li {
+  margin-bottom: 5px;
+}
+#wrapper .notification-list > li:hover .content li:hover {
+  text-decoration: underline;
+}
+#wrapper .notification-list > li:hover .content span {
+  margin-left: 5px;
+}
+#wrapper .notification-list .content {
+  display: none;
+}
+/*# sourceMappingURL=task2.css.map */
