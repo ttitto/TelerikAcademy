@@ -1,0 +1,94 @@
+﻿/*clearfix*/
+.clearfix() {
+    zoom: 1;
+
+    &:after {
+        content: "";
+        display: block;
+        clear: both;
+        height: 0;
+    }
+}
+
+/*initial reset*/
+html, body, div, h1, h2, h3, h4, h5, h6, ul, li, a, img, span, form, legend, input, button, textarea, fieldset {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Helvetica, Arial, 'DejaVu Sans', 'Liberation Sans', Freesans, sans-serif;
+    font-size: 16px;
+    width: 960px;
+}
+
+#wrapper {
+    padding-left: 15px;
+    padding-top: 15px;
+    width: 700px;
+
+    & > div {
+        background: #CCCCCC;
+        border-radius: 5px;
+        padding: 10px 10px 10px 10px;
+        display: block;
+        overflow: hidden;
+
+        & .holder {
+            float: left;
+            .clearfix();
+
+            & img {
+                width: 550px;
+                height: 414px;
+                border-radius: 5px;
+            }
+        }
+
+        & .playlist {
+            float: right;
+            .clearfix();
+
+            & ul {
+                list-style: none;
+
+                & li {
+                    text-align: center;
+                    margin-left: 10px;
+
+
+                    & a, & span {
+                        display: block;
+                    }
+
+                    & a {
+                        text-decoration: none;
+                        color: black;
+                        font-weight: bold;
+                        font-size: 1em;
+
+                        &:hover {
+                            & span {
+                                text-decoration: underline;
+                            }
+                        }
+
+                        & span {
+                            padding-left: 10px;
+                            padding-bottom: 5px;
+                            border-bottom: black solid thin;
+                            margin-top: -5px;
+                            margin-left: 0;
+                        }
+                    }
+
+                    & img {
+                        margin-top: 5px;
+                        margin-left: 5px;
+                        border-radius: 10px;
+                    }
+                }
+            }
+        }
+    }
+}

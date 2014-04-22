@@ -1,12 +1,4 @@
-﻿.clearfix() {
-    zoom: 1;
-
-    &:after {
-        display: block;
-        content: '';
-        clear: both;
-    }
-}
+﻿
 
 body, h1, img, p, div {
     margin: 0;
@@ -16,23 +8,25 @@ body, h1, img, p, div {
 body {
     font-family: Constantina, Georgia, 'Nimbus Roman No9 L', serif;
     font-size: 16px;
-    width: 960px;
+    width: 985px;
+}
+
+.left-arrow, .right-arrow {
+    margin-top: 34px;
 }
 
 .left-arrow {
     float: left;
-    .clearfix();
 }
 
 .right-arrow {
     float: right;
-    .clearfix();
 }
 
 #wrapper {
     border: black solid thin;
     border-radius: 15px;
-    background: -webkit-linear-gradient(top, #DE28FF 0, #F9DBFF 100%);
+    background: -webkit-linear-gradient(top, #DE28FF 15%, #F9DBFF 75%);
     margin: 25px;
     overflow: hidden;
 
@@ -55,6 +49,8 @@ body {
 
     & .info {
         float: left;
-        padding: 20px 35px;
+        margin-top: -8px;
+        padding: 0 35px 31px 35px;
+        text-align: justify;
     }
 }

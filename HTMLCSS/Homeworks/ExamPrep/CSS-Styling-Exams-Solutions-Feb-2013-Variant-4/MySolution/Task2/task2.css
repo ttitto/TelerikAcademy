@@ -1,0 +1,100 @@
+/*clearfix*/
+/*initial reset*/
+html,
+body,
+div,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+ul,
+li,
+a,
+img,
+span,
+form,
+legend,
+input,
+button,
+textarea,
+fieldset {
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: Helvetica, Arial, 'DejaVu Sans', 'Liberation Sans', Freesans, sans-serif;
+  font-size: 16px;
+  width: 960px;
+}
+#wrapper {
+  padding-left: 15px;
+  padding-top: 15px;
+  width: 700px;
+}
+#wrapper > div {
+  background: #CCCCCC;
+  border-radius: 5px;
+  padding: 10px 10px 10px 10px;
+  display: block;
+  overflow: hidden;
+}
+#wrapper > div .holder {
+  float: left;
+  zoom: 1;
+}
+#wrapper > div .holder:after {
+  content: "";
+  display: block;
+  clear: both;
+  height: 0;
+}
+#wrapper > div .holder img {
+  width: 550px;
+  height: 414px;
+  border-radius: 5px;
+}
+#wrapper > div .playlist {
+  float: right;
+  zoom: 1;
+}
+#wrapper > div .playlist:after {
+  content: "";
+  display: block;
+  clear: both;
+  height: 0;
+}
+#wrapper > div .playlist ul {
+  list-style: none;
+}
+#wrapper > div .playlist ul li {
+  text-align: center;
+  margin-left: 10px;
+}
+#wrapper > div .playlist ul li a,
+#wrapper > div .playlist ul li span {
+  display: block;
+}
+#wrapper > div .playlist ul li a {
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+  font-size: 1em;
+}
+#wrapper > div .playlist ul li a:hover span {
+  text-decoration: underline;
+}
+#wrapper > div .playlist ul li a span {
+  padding-left: 10px;
+  padding-bottom: 5px;
+  border-bottom: black solid thin;
+  margin-top: -5px;
+  margin-left: 0;
+}
+#wrapper > div .playlist ul li img {
+  margin-top: 5px;
+  margin-left: 5px;
+  border-radius: 10px;
+}
+/*# sourceMappingURL=task2.css.map */
