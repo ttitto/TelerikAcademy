@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
-VisualStudioVersion = 12.0.21005.1
+VisualStudioVersion = 12.0.30110.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EntityFrameworkDemo.Data", "EntityFrameworkDemo.Data\EntityFrameworkDemo.Data.csproj", "{A96C2787-0CE3-45B3-9F13-081DDA8A4C6C}"
 EndProject
@@ -12,6 +12,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ex03CustomersWithOrdersToCanada", "Ex03CustomersWithOrdersToCanada\Ex03CustomersWithOrdersToCanada.csproj", "{9975BA40-E3E7-4314-8310-69007F030013}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ex07Conflicts", "Ex07Conflicts\Ex07Conflicts.csproj", "{61B7F94D-CAA4-43B3-86F0-52E5407676E9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ex10SuppliersIncome", "Ex10SuppliersIncome\Ex10SuppliersIncome.csproj", "{340CFB89-9C0E-44C6-B8EC-AC77E6156B61}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{61B7F94D-CAA4-43B3-86F0-52E5407676E9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{61B7F94D-CAA4-43B3-86F0-52E5407676E9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{61B7F94D-CAA4-43B3-86F0-52E5407676E9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{340CFB89-9C0E-44C6-B8EC-AC77E6156B61}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{340CFB89-9C0E-44C6-B8EC-AC77E6156B61}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{340CFB89-9C0E-44C6-B8EC-AC77E6156B61}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{340CFB89-9C0E-44C6-B8EC-AC77E6156B61}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

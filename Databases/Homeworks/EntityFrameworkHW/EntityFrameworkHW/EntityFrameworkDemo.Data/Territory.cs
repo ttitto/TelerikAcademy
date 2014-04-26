@@ -17,6 +17,7 @@ namespace EntityFrameworkDemo.Data
         public Territory()
         {
             this.Employees = new HashSet<Employee>();
+            this.Employees1 = new HashSet<Employee>();
         }
     
         public string TerritoryID { get; set; }
@@ -25,5 +26,7 @@ namespace EntityFrameworkDemo.Data
     
         public virtual Region Region { get; set; }
         public virtual ICollection<Employee> Employees { get; set; }
+        public virtual ICollection<Employee> Employees1 { get; set; }
+        public virtual Region1 Region1 { get; set; }
     }
 }

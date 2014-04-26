@@ -17,6 +17,7 @@ namespace EntityFrameworkDemo.Data
         public Product()
         {
             this.Order_Details = new HashSet<Order_Detail>();
+            this.Order_Details1 = new HashSet<Order_Detail1>();
         }
     
         public int ProductID { get; set; }
@@ -33,5 +34,6 @@ namespace EntityFrameworkDemo.Data
         public virtual Category Category { get; set; }
         public virtual ICollection<Order_Detail> Order_Details { get; set; }
         public virtual Supplier Supplier { get; set; }
+        public virtual ICollection<Order_Detail1> Order_Details1 { get; set; }
     }
 }

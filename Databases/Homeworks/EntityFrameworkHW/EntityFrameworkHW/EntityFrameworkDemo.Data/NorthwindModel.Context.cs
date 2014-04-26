@@ -53,6 +53,23 @@ namespace EntityFrameworkDemo.Data
         public virtual DbSet<Sales_Totals_by_Amount> Sales_Totals_by_Amounts { get; set; }
         public virtual DbSet<Summary_of_Sales_by_Quarter> Summary_of_Sales_by_Quarters { get; set; }
         public virtual DbSet<Summary_of_Sales_by_Year> Summary_of_Sales_by_Years { get; set; }
+        public virtual DbSet<Order_Detail1> Order_Detail1 { get; set; }
+        public virtual DbSet<Region1> Region1 { get; set; }
+        public virtual DbSet<Alphabetical_list_of_product1> Alphabetical_list_of_product1 { get; set; }
+        public virtual DbSet<Category_Sales_for_19971> Category_Sales_for_19971 { get; set; }
+        public virtual DbSet<Current_Product_List1> Current_Product_List1 { get; set; }
+        public virtual DbSet<Customer_and_Suppliers_by_City1> Customer_and_Suppliers_by_City1 { get; set; }
+        public virtual DbSet<Invoice1> Invoice1 { get; set; }
+        public virtual DbSet<Order_Details_Extended1> Order_Details_Extended1 { get; set; }
+        public virtual DbSet<Order_Subtotal1> Order_Subtotal1 { get; set; }
+        public virtual DbSet<Orders_Qry1> Orders_Qry1 { get; set; }
+        public virtual DbSet<Product_Sales_for_19971> Product_Sales_for_19971 { get; set; }
+        public virtual DbSet<Products_Above_Average_Price1> Products_Above_Average_Price1 { get; set; }
+        public virtual DbSet<Products_by_Category1> Products_by_Category1 { get; set; }
+        public virtual DbSet<Sales_by_Category1> Sales_by_Category1 { get; set; }
+        public virtual DbSet<Sales_Totals_by_Amount1> Sales_Totals_by_Amount1 { get; set; }
+        public virtual DbSet<Summary_of_Sales_by_Quarter1> Summary_of_Sales_by_Quarter1 { get; set; }
+        public virtual DbSet<Summary_of_Sales_by_Year1> Summary_of_Sales_by_Year1 { get; set; }
     
         public virtual ObjectResult<CustOrderHist_Result> CustOrderHist(string customerID)
         {
@@ -123,6 +140,94 @@ namespace EntityFrameworkDemo.Data
         public virtual ObjectResult<Ten_Most_Expensive_Products_Result> Ten_Most_Expensive_Products()
         {
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Ten_Most_Expensive_Products_Result>("Ten_Most_Expensive_Products");
+        }
+    
+        public virtual ObjectResult<CustOrderHist1_Result> CustOrderHist1(string customerID)
+        {
+            var customerIDParameter = customerID != null ?
+                new ObjectParameter("CustomerID", customerID) :
+                new ObjectParameter("CustomerID", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<CustOrderHist1_Result>("CustOrderHist1", customerIDParameter);
+        }
+    
+        public virtual ObjectResult<CustOrdersDetail1_Result> CustOrdersDetail1(Nullable<int> orderID)
+        {
+            var orderIDParameter = orderID.HasValue ?
+                new ObjectParameter("OrderID", orderID) :
+                new ObjectParameter("OrderID", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<CustOrdersDetail1_Result>("CustOrdersDetail1", orderIDParameter);
+        }
+    
+        public virtual ObjectResult<CustOrdersOrders1_Result> CustOrdersOrders1(string customerID)
+        {
+            var customerIDParameter = customerID != null ?
+                new ObjectParameter("CustomerID", customerID) :
+                new ObjectParameter("CustomerID", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<CustOrdersOrders1_Result>("CustOrdersOrders1", customerIDParameter);
+        }
+    
+        public virtual ObjectResult<Employee_Sales_by_Country1_Result> Employee_Sales_by_Country1(Nullable<System.DateTime> beginning_Date, Nullable<System.DateTime> ending_Date)
+        {
+            var beginning_DateParameter = beginning_Date.HasValue ?
+                new ObjectParameter("Beginning_Date", beginning_Date) :
+                new ObjectParameter("Beginning_Date", typeof(System.DateTime));
+    
+            var ending_DateParameter = ending_Date.HasValue ?
+                new ObjectParameter("Ending_Date", ending_Date) :
+                new ObjectParameter("Ending_Date", typeof(System.DateTime));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Employee_Sales_by_Country1_Result>("Employee_Sales_by_Country1", beginning_DateParameter, ending_DateParameter);
+        }
+    
+        public virtual ObjectResult<Sales_by_Year1_Result> Sales_by_Year1(Nullable<System.DateTime> beginning_Date, Nullable<System.DateTime> ending_Date)
+        {
+            var beginning_DateParameter = beginning_Date.HasValue ?
+                new ObjectParameter("Beginning_Date", beginning_Date) :
+                new ObjectParameter("Beginning_Date", typeof(System.DateTime));
+    
+            var ending_DateParameter = ending_Date.HasValue ?
+                new ObjectParameter("Ending_Date", ending_Date) :
+                new ObjectParameter("Ending_Date", typeof(System.DateTime));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Sales_by_Year1_Result>("Sales_by_Year1", beginning_DateParameter, ending_DateParameter);
+        }
+    
+        public virtual ObjectResult<SalesByCategory1_Result> SalesByCategory1(string categoryName, string ordYear)
+        {
+            var categoryNameParameter = categoryName != null ?
+                new ObjectParameter("CategoryName", categoryName) :
+                new ObjectParameter("CategoryName", typeof(string));
+    
+            var ordYearParameter = ordYear != null ?
+                new ObjectParameter("OrdYear", ordYear) :
+                new ObjectParameter("OrdYear", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SalesByCategory1_Result>("SalesByCategory1", categoryNameParameter, ordYearParameter);
+        }
+    
+        public virtual ObjectResult<Ten_Most_Expensive_Products1_Result> Ten_Most_Expensive_Products1()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Ten_Most_Expensive_Products1_Result>("Ten_Most_Expensive_Products1");
+        }
+    
+        public virtual ObjectResult<usp_SuppliersIncomeInTimeRange_Result> usp_SuppliersIncomeInTimeRange(string supplierName, Nullable<System.DateTime> startDate, Nullable<System.DateTime> endDate)
+        {
+            var supplierNameParameter = supplierName != null ?
+                new ObjectParameter("supplierName", supplierName) :
+                new ObjectParameter("supplierName", typeof(string));
+    
+            var startDateParameter = startDate.HasValue ?
+                new ObjectParameter("startDate", startDate) :
+                new ObjectParameter("startDate", typeof(System.DateTime));
+    
+            var endDateParameter = endDate.HasValue ?
+                new ObjectParameter("endDate", endDate) :
+                new ObjectParameter("endDate", typeof(System.DateTime));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<usp_SuppliersIncomeInTimeRange_Result>("usp_SuppliersIncomeInTimeRange", supplierNameParameter, startDateParameter, endDateParameter);
         }
     }
 }

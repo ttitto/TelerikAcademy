@@ -17,6 +17,7 @@ namespace EntityFrameworkDemo.Data
         public Order()
         {
             this.Order_Details = new HashSet<Order_Detail>();
+            this.Order_Details1 = new HashSet<Order_Detail1>();
         }
     
         public int OrderID { get; set; }
@@ -38,5 +39,6 @@ namespace EntityFrameworkDemo.Data
         public virtual Employee Employee { get; set; }
         public virtual ICollection<Order_Detail> Order_Details { get; set; }
         public virtual Shipper Shipper { get; set; }
+        public virtual ICollection<Order_Detail1> Order_Details1 { get; set; }
     }
 }

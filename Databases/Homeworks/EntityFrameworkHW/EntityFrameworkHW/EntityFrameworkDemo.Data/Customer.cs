@@ -18,6 +18,7 @@ namespace EntityFrameworkDemo.Data
         {
             this.Orders = new HashSet<Order>();
             this.CustomerDemographics = new HashSet<CustomerDemographic>();
+            this.CustomerDemographics1 = new HashSet<CustomerDemographic>();
         }
     
         public string CustomerID { get; set; }
@@ -34,5 +35,6 @@ namespace EntityFrameworkDemo.Data
     
         public virtual ICollection<Order> Orders { get; set; }
         public virtual ICollection<CustomerDemographic> CustomerDemographics { get; set; }
+        public virtual ICollection<CustomerDemographic> CustomerDemographics1 { get; set; }
     }
 }

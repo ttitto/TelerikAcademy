@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.30110.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IncludeExercise", "IncludeExercise\IncludeExercise.csproj", "{DF716F6B-CA99-42C0-9D7D-0BBDDC5538EA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EFTelerikAcademy.Data", "EFTelerikAcademy.Data\EFTelerikAcademy.Data.csproj", "{36853E56-1739-4963-BA06-AEC95FD1EC85}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ToListExercise", "ToListExercise\ToListExercise.csproj", "{A46345CE-E0FA-471C-BCCA-03466BEBEAF7}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DF716F6B-CA99-42C0-9D7D-0BBDDC5538EA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DF716F6B-CA99-42C0-9D7D-0BBDDC5538EA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DF716F6B-CA99-42C0-9D7D-0BBDDC5538EA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DF716F6B-CA99-42C0-9D7D-0BBDDC5538EA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{36853E56-1739-4963-BA06-AEC95FD1EC85}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{36853E56-1739-4963-BA06-AEC95FD1EC85}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{36853E56-1739-4963-BA06-AEC95FD1EC85}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{36853E56-1739-4963-BA06-AEC95FD1EC85}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A46345CE-E0FA-471C-BCCA-03466BEBEAF7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A46345CE-E0FA-471C-BCCA-03466BEBEAF7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A46345CE-E0FA-471C-BCCA-03466BEBEAF7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A46345CE-E0FA-471C-BCCA-03466BEBEAF7}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

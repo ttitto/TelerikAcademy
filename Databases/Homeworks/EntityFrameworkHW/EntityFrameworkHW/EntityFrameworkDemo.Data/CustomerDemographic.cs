@@ -17,11 +17,13 @@ namespace EntityFrameworkDemo.Data
         public CustomerDemographic()
         {
             this.Customers = new HashSet<Customer>();
+            this.Customers1 = new HashSet<Customer>();
         }
     
         public string CustomerTypeID { get; set; }
         public string CustomerDesc { get; set; }
     
         public virtual ICollection<Customer> Customers { get; set; }
+        public virtual ICollection<Customer> Customers1 { get; set; }
     }
 }

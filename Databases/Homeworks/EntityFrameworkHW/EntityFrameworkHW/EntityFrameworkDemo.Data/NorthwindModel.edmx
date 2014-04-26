@@ -5,73 +5,29 @@
     <!-- SSDL content -->
     <edmx:StorageModels>
     <Schema Namespace="NorthwindModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
-        <EntityType Name="Alphabetical_list_of_products">
-          <Key>
-            <PropertyRef Name="ProductID" />
-            <PropertyRef Name="ProductName" />
-            <PropertyRef Name="Discontinued" />
-            <PropertyRef Name="CategoryName" />
-          </Key>
-          <Property Name="ProductID" Type="int" Nullable="false" />
-          <Property Name="ProductName" Type="nvarchar" MaxLength="40" Nullable="false" />
-          <Property Name="SupplierID" Type="int" />
-          <Property Name="CategoryID" Type="int" />
-          <Property Name="QuantityPerUnit" Type="nvarchar" MaxLength="20" />
-          <Property Name="UnitPrice" Type="decimal" Precision="19" Scale="4" />
-          <Property Name="UnitsInStock" Type="smallint" />
-          <Property Name="UnitsOnOrder" Type="smallint" />
-          <Property Name="ReorderLevel" Type="smallint" />
-          <Property Name="Discontinued" Type="bit" Nullable="false" />
-          <Property Name="CategoryName" Type="nvarchar" MaxLength="15" Nullable="false" />
-        </EntityType>
         <EntityType Name="Categories">
           <Key>
             <PropertyRef Name="CategoryID" />
           </Key>
           <Property Name="CategoryID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="CategoryName" Type="nvarchar" MaxLength="15" Nullable="false" />
-          <Property Name="Description" Type="nvarchar(max)" />
-          <Property Name="Picture" Type="varbinary(max)" />
-        </EntityType>
-        <EntityType Name="Category_Sales_for_1997">
-          <Key>
-            <PropertyRef Name="CategoryName" />
-          </Key>
-          <Property Name="CategoryName" Type="nvarchar" MaxLength="15" Nullable="false" />
-          <Property Name="CategorySales" Type="decimal" Precision="19" Scale="4" />
-        </EntityType>
-        <EntityType Name="Current_Product_Lists">
-          <Key>
-            <PropertyRef Name="ProductID" />
-            <PropertyRef Name="ProductName" />
-          </Key>
-          <Property Name="ProductID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="ProductName" Type="nvarchar" MaxLength="40" Nullable="false" />
-        </EntityType>
-        <EntityType Name="Customer_and_Suppliers_by_Cities">
-          <Key>
-            <PropertyRef Name="CompanyName" />
-            <PropertyRef Name="Relationship" />
-          </Key>
-          <Property Name="City" Type="nvarchar" MaxLength="15" />
-          <Property Name="CompanyName" Type="nvarchar" MaxLength="40" Nullable="false" />
-          <Property Name="ContactName" Type="nvarchar" MaxLength="30" />
-          <Property Name="Relationship" Type="varchar" MaxLength="9" Nullable="false" />
+          <Property Name="Description" Type="ntext" />
+          <Property Name="Picture" Type="image" />
         </EntityType>
         <EntityType Name="CustomerCustomerDemo">
           <Key>
-            <PropertyRef Name="CustomerDemographics_CustomerTypeID" />
-            <PropertyRef Name="Customers_CustomerID" />
+            <PropertyRef Name="CustomerID" />
+            <PropertyRef Name="CustomerTypeID" />
           </Key>
-          <Property Name="CustomerDemographics_CustomerTypeID" Type="nchar" MaxLength="10" Nullable="false" />
-          <Property Name="Customers_CustomerID" Type="nchar" MaxLength="5" Nullable="false" />
+          <Property Name="CustomerID" Type="nchar" MaxLength="5" Nullable="false" />
+          <Property Name="CustomerTypeID" Type="nchar" MaxLength="10" Nullable="false" />
         </EntityType>
         <EntityType Name="CustomerDemographics">
           <Key>
             <PropertyRef Name="CustomerTypeID" />
           </Key>
           <Property Name="CustomerTypeID" Type="nchar" MaxLength="10" Nullable="false" />
-          <Property Name="CustomerDesc" Type="nvarchar(max)" />
+          <Property Name="CustomerDesc" Type="ntext" />
         </EntityType>
         <EntityType Name="Customers">
           <Key>
@@ -107,19 +63,158 @@
           <Property Name="Country" Type="nvarchar" MaxLength="15" />
           <Property Name="HomePhone" Type="nvarchar" MaxLength="24" />
           <Property Name="Extension" Type="nvarchar" MaxLength="4" />
-          <Property Name="Photo" Type="varbinary(max)" />
-          <Property Name="Notes" Type="nvarchar(max)" />
+          <Property Name="Photo" Type="image" />
+          <Property Name="Notes" Type="ntext" />
           <Property Name="ReportsTo" Type="int" />
           <Property Name="PhotoPath" Type="nvarchar" MaxLength="255" />
         </EntityType>
         <EntityType Name="EmployeeTerritories">
           <Key>
-            <PropertyRef Name="Employees_EmployeeID" />
-            <PropertyRef Name="Territories_TerritoryID" />
+            <PropertyRef Name="EmployeeID" />
+            <PropertyRef Name="TerritoryID" />
           </Key>
-          <Property Name="Employees_EmployeeID" Type="int" Nullable="false" />
-          <Property Name="Territories_TerritoryID" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="EmployeeID" Type="int" Nullable="false" />
+          <Property Name="TerritoryID" Type="nvarchar" MaxLength="20" Nullable="false" />
         </EntityType>
+        <EntityType Name="Order Details">
+          <Key>
+            <PropertyRef Name="OrderID" />
+            <PropertyRef Name="ProductID" />
+          </Key>
+          <Property Name="OrderID" Type="int" Nullable="false" />
+          <Property Name="ProductID" Type="int" Nullable="false" />
+          <Property Name="UnitPrice" Type="money" Nullable="false" />
+          <Property Name="Quantity" Type="smallint" Nullable="false" />
+          <Property Name="Discount" Type="real" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Orders">
+          <Key>
+            <PropertyRef Name="OrderID" />
+          </Key>
+          <Property Name="OrderID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CustomerID" Type="nchar" MaxLength="5" />
+          <Property Name="EmployeeID" Type="int" />
+          <Property Name="OrderDate" Type="datetime" />
+          <Property Name="RequiredDate" Type="datetime" />
+          <Property Name="ShippedDate" Type="datetime" />
+          <Property Name="ShipVia" Type="int" />
+          <Property Name="Freight" Type="money" />
+          <Property Name="ShipName" Type="nvarchar" MaxLength="40" />
+          <Property Name="ShipAddress" Type="nvarchar" MaxLength="60" />
+          <Property Name="ShipCity" Type="nvarchar" MaxLength="15" />
+          <Property Name="ShipRegion" Type="nvarchar" MaxLength="15" />
+          <Property Name="ShipPostalCode" Type="nvarchar" MaxLength="10" />
+          <Property Name="ShipCountry" Type="nvarchar" MaxLength="15" />
+        </EntityType>
+        <EntityType Name="Products">
+          <Key>
+            <PropertyRef Name="ProductID" />
+          </Key>
+          <Property Name="ProductID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ProductName" Type="nvarchar" MaxLength="40" Nullable="false" />
+          <Property Name="SupplierID" Type="int" />
+          <Property Name="CategoryID" Type="int" />
+          <Property Name="QuantityPerUnit" Type="nvarchar" MaxLength="20" />
+          <Property Name="UnitPrice" Type="money" />
+          <Property Name="UnitsInStock" Type="smallint" />
+          <Property Name="UnitsOnOrder" Type="smallint" />
+          <Property Name="ReorderLevel" Type="smallint" />
+          <Property Name="Discontinued" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Region">
+          <Key>
+            <PropertyRef Name="RegionID" />
+          </Key>
+          <Property Name="RegionID" Type="int" Nullable="false" />
+          <Property Name="RegionDescription" Type="nchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Shippers">
+          <Key>
+            <PropertyRef Name="ShipperID" />
+          </Key>
+          <Property Name="ShipperID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CompanyName" Type="nvarchar" MaxLength="40" Nullable="false" />
+          <Property Name="Phone" Type="nvarchar" MaxLength="24" />
+        </EntityType>
+        <EntityType Name="Suppliers">
+          <Key>
+            <PropertyRef Name="SupplierID" />
+          </Key>
+          <Property Name="SupplierID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CompanyName" Type="nvarchar" MaxLength="40" Nullable="false" />
+          <Property Name="ContactName" Type="nvarchar" MaxLength="30" />
+          <Property Name="ContactTitle" Type="nvarchar" MaxLength="30" />
+          <Property Name="Address" Type="nvarchar" MaxLength="60" />
+          <Property Name="City" Type="nvarchar" MaxLength="15" />
+          <Property Name="Region" Type="nvarchar" MaxLength="15" />
+          <Property Name="PostalCode" Type="nvarchar" MaxLength="10" />
+          <Property Name="Country" Type="nvarchar" MaxLength="15" />
+          <Property Name="Phone" Type="nvarchar" MaxLength="24" />
+          <Property Name="Fax" Type="nvarchar" MaxLength="24" />
+          <Property Name="HomePage" Type="ntext" />
+        </EntityType>
+        <EntityType Name="Territories">
+          <Key>
+            <PropertyRef Name="TerritoryID" />
+          </Key>
+          <Property Name="TerritoryID" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="TerritoryDescription" Type="nchar" MaxLength="50" Nullable="false" />
+          <Property Name="RegionID" Type="int" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'North.dbo.Alphabetical list of products' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="Alphabetical list of products">
+          <Key>
+            <PropertyRef Name="ProductID" />
+            <PropertyRef Name="ProductName" />
+            <PropertyRef Name="Discontinued" />
+            <PropertyRef Name="CategoryName" />
+          </Key>
+          <Property Name="ProductID" Type="int" Nullable="false" />
+          <Property Name="ProductName" Type="nvarchar" MaxLength="40" Nullable="false" />
+          <Property Name="SupplierID" Type="int" />
+          <Property Name="CategoryID" Type="int" />
+          <Property Name="QuantityPerUnit" Type="nvarchar" MaxLength="20" />
+          <Property Name="UnitPrice" Type="money" />
+          <Property Name="UnitsInStock" Type="smallint" />
+          <Property Name="UnitsOnOrder" Type="smallint" />
+          <Property Name="ReorderLevel" Type="smallint" />
+          <Property Name="Discontinued" Type="bit" Nullable="false" />
+          <Property Name="CategoryName" Type="nvarchar" MaxLength="15" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'North.dbo.Category Sales for 1997' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="Category Sales for 1997">
+          <Key>
+            <PropertyRef Name="CategoryName" />
+          </Key>
+          <Property Name="CategoryName" Type="nvarchar" MaxLength="15" Nullable="false" />
+          <Property Name="CategorySales" Type="money" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'North.dbo.Current Product List' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="Current Product List">
+          <Key>
+            <PropertyRef Name="ProductID" />
+            <PropertyRef Name="ProductName" />
+          </Key>
+          <Property Name="ProductID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ProductName" Type="nvarchar" MaxLength="40" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'North.dbo.Customer and Suppliers by City' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="Customer and Suppliers by City">
+          <Key>
+            <PropertyRef Name="CompanyName" />
+            <PropertyRef Name="Relationship" />
+          </Key>
+          <Property Name="City" Type="nvarchar" MaxLength="15" />
+          <Property Name="CompanyName" Type="nvarchar" MaxLength="40" Nullable="false" />
+          <Property Name="ContactName" Type="nvarchar" MaxLength="30" />
+          <Property Name="Relationship" Type="varchar" MaxLength="9" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'North.dbo.Invoices' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="Invoices">
           <Key>
             <PropertyRef Name="CustomerName" />
@@ -153,24 +248,15 @@
           <Property Name="ShipperName" Type="nvarchar" MaxLength="40" Nullable="false" />
           <Property Name="ProductID" Type="int" Nullable="false" />
           <Property Name="ProductName" Type="nvarchar" MaxLength="40" Nullable="false" />
-          <Property Name="UnitPrice" Type="decimal" Precision="19" Scale="4" Nullable="false" />
+          <Property Name="UnitPrice" Type="money" Nullable="false" />
           <Property Name="Quantity" Type="smallint" Nullable="false" />
           <Property Name="Discount" Type="real" Nullable="false" />
-          <Property Name="ExtendedPrice" Type="decimal" Precision="19" Scale="4" />
-          <Property Name="Freight" Type="decimal" Precision="19" Scale="4" />
+          <Property Name="ExtendedPrice" Type="money" />
+          <Property Name="Freight" Type="money" />
         </EntityType>
-        <EntityType Name="Order_Details">
-          <Key>
-            <PropertyRef Name="OrderID" />
-            <PropertyRef Name="ProductID" />
-          </Key>
-          <Property Name="OrderID" Type="int" Nullable="false" />
-          <Property Name="ProductID" Type="int" Nullable="false" />
-          <Property Name="UnitPrice" Type="decimal" Precision="19" Scale="4" Nullable="false" />
-          <Property Name="Quantity" Type="smallint" Nullable="false" />
-          <Property Name="Discount" Type="real" Nullable="false" />
-        </EntityType>
-        <EntityType Name="Order_Details_Extendeds">
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'North.dbo.Order Details Extended' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="Order Details Extended">
           <Key>
             <PropertyRef Name="OrderID" />
             <PropertyRef Name="ProductID" />
@@ -182,38 +268,23 @@
           <Property Name="OrderID" Type="int" Nullable="false" />
           <Property Name="ProductID" Type="int" Nullable="false" />
           <Property Name="ProductName" Type="nvarchar" MaxLength="40" Nullable="false" />
-          <Property Name="UnitPrice" Type="decimal" Precision="19" Scale="4" Nullable="false" />
+          <Property Name="UnitPrice" Type="money" Nullable="false" />
           <Property Name="Quantity" Type="smallint" Nullable="false" />
           <Property Name="Discount" Type="real" Nullable="false" />
-          <Property Name="ExtendedPrice" Type="decimal" Precision="19" Scale="4" />
+          <Property Name="ExtendedPrice" Type="money" />
         </EntityType>
-        <EntityType Name="Order_Subtotals">
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'North.dbo.Order Subtotals' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="Order Subtotals">
           <Key>
             <PropertyRef Name="OrderID" />
           </Key>
           <Property Name="OrderID" Type="int" Nullable="false" />
-          <Property Name="Subtotal" Type="decimal" Precision="19" Scale="4" />
+          <Property Name="Subtotal" Type="money" />
         </EntityType>
-        <EntityType Name="Orders">
-          <Key>
-            <PropertyRef Name="OrderID" />
-          </Key>
-          <Property Name="OrderID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="CustomerID" Type="nchar" MaxLength="5" />
-          <Property Name="EmployeeID" Type="int" />
-          <Property Name="OrderDate" Type="datetime" />
-          <Property Name="RequiredDate" Type="datetime" />
-          <Property Name="ShippedDate" Type="datetime" />
-          <Property Name="ShipVia" Type="int" />
-          <Property Name="Freight" Type="decimal" Precision="19" Scale="4" />
-          <Property Name="ShipName" Type="nvarchar" MaxLength="40" />
-          <Property Name="ShipAddress" Type="nvarchar" MaxLength="60" />
-          <Property Name="ShipCity" Type="nvarchar" MaxLength="15" />
-          <Property Name="ShipRegion" Type="nvarchar" MaxLength="15" />
-          <Property Name="ShipPostalCode" Type="nvarchar" MaxLength="10" />
-          <Property Name="ShipCountry" Type="nvarchar" MaxLength="15" />
-        </EntityType>
-        <EntityType Name="Orders_Qries">
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'North.dbo.Orders Qry' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="Orders Qry">
           <Key>
             <PropertyRef Name="OrderID" />
             <PropertyRef Name="CompanyName" />
@@ -225,7 +296,7 @@
           <Property Name="RequiredDate" Type="datetime" />
           <Property Name="ShippedDate" Type="datetime" />
           <Property Name="ShipVia" Type="int" />
-          <Property Name="Freight" Type="decimal" Precision="19" Scale="4" />
+          <Property Name="Freight" Type="money" />
           <Property Name="ShipName" Type="nvarchar" MaxLength="40" />
           <Property Name="ShipAddress" Type="nvarchar" MaxLength="60" />
           <Property Name="ShipCity" Type="nvarchar" MaxLength="15" />
@@ -239,38 +310,29 @@
           <Property Name="PostalCode" Type="nvarchar" MaxLength="10" />
           <Property Name="Country" Type="nvarchar" MaxLength="15" />
         </EntityType>
-        <EntityType Name="Product_Sales_for_1997">
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'North.dbo.Product Sales for 1997' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="Product Sales for 1997">
           <Key>
             <PropertyRef Name="CategoryName" />
             <PropertyRef Name="ProductName" />
           </Key>
           <Property Name="CategoryName" Type="nvarchar" MaxLength="15" Nullable="false" />
           <Property Name="ProductName" Type="nvarchar" MaxLength="40" Nullable="false" />
-          <Property Name="ProductSales" Type="decimal" Precision="19" Scale="4" />
+          <Property Name="ProductSales" Type="money" />
         </EntityType>
-        <EntityType Name="Products">
-          <Key>
-            <PropertyRef Name="ProductID" />
-          </Key>
-          <Property Name="ProductID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="ProductName" Type="nvarchar" MaxLength="40" Nullable="false" />
-          <Property Name="SupplierID" Type="int" />
-          <Property Name="CategoryID" Type="int" />
-          <Property Name="QuantityPerUnit" Type="nvarchar" MaxLength="20" />
-          <Property Name="UnitPrice" Type="decimal" Precision="19" Scale="4" />
-          <Property Name="UnitsInStock" Type="smallint" />
-          <Property Name="UnitsOnOrder" Type="smallint" />
-          <Property Name="ReorderLevel" Type="smallint" />
-          <Property Name="Discontinued" Type="bit" Nullable="false" />
-        </EntityType>
-        <EntityType Name="Products_Above_Average_Prices">
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'North.dbo.Products Above Average Price' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="Products Above Average Price">
           <Key>
             <PropertyRef Name="ProductName" />
           </Key>
           <Property Name="ProductName" Type="nvarchar" MaxLength="40" Nullable="false" />
-          <Property Name="UnitPrice" Type="decimal" Precision="19" Scale="4" />
+          <Property Name="UnitPrice" Type="money" />
         </EntityType>
-        <EntityType Name="Products_by_Categories">
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'North.dbo.Products by Category' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="Products by Category">
           <Key>
             <PropertyRef Name="CategoryName" />
             <PropertyRef Name="ProductName" />
@@ -282,14 +344,17 @@
           <Property Name="UnitsInStock" Type="smallint" />
           <Property Name="Discontinued" Type="bit" Nullable="false" />
         </EntityType>
-        <EntityType Name="Regions">
-          <Key>
-            <PropertyRef Name="RegionID" />
-          </Key>
-          <Property Name="RegionID" Type="int" Nullable="false" />
-          <Property Name="RegionDescription" Type="nchar" MaxLength="50" Nullable="false" />
-        </EntityType>
-        <EntityType Name="Sales_by_Categories">
+        <!--Errors Found During Generation:
+warning 6013: The table/view 'North.dbo.Quarterly Orders' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="Quarterly Orders">
+          <Property Name="CustomerID" Type="nchar" MaxLength="5" />
+          <Property Name="CompanyName" Type="nvarchar" MaxLength="40" />
+          <Property Name="City" Type="nvarchar" MaxLength="15" />
+          <Property Name="Country" Type="nvarchar" MaxLength="15" />
+        </EntityType>-->
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'North.dbo.Sales by Category' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="Sales by Category">
           <Key>
             <PropertyRef Name="CategoryID" />
             <PropertyRef Name="CategoryName" />
@@ -298,68 +363,41 @@
           <Property Name="CategoryID" Type="int" Nullable="false" />
           <Property Name="CategoryName" Type="nvarchar" MaxLength="15" Nullable="false" />
           <Property Name="ProductName" Type="nvarchar" MaxLength="40" Nullable="false" />
-          <Property Name="ProductSales" Type="decimal" Precision="19" Scale="4" />
+          <Property Name="ProductSales" Type="money" />
         </EntityType>
-        <EntityType Name="Sales_Totals_by_Amounts">
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'North.dbo.Sales Totals by Amount' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="Sales Totals by Amount">
           <Key>
             <PropertyRef Name="OrderID" />
             <PropertyRef Name="CompanyName" />
           </Key>
-          <Property Name="SaleAmount" Type="decimal" Precision="19" Scale="4" />
+          <Property Name="SaleAmount" Type="money" />
           <Property Name="OrderID" Type="int" Nullable="false" />
           <Property Name="CompanyName" Type="nvarchar" MaxLength="40" Nullable="false" />
           <Property Name="ShippedDate" Type="datetime" />
         </EntityType>
-        <EntityType Name="Shippers">
-          <Key>
-            <PropertyRef Name="ShipperID" />
-          </Key>
-          <Property Name="ShipperID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="CompanyName" Type="nvarchar" MaxLength="40" Nullable="false" />
-          <Property Name="Phone" Type="nvarchar" MaxLength="24" />
-        </EntityType>
-        <EntityType Name="Summary_of_Sales_by_Quarters">
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'North.dbo.Summary of Sales by Quarter' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="Summary of Sales by Quarter">
           <Key>
             <PropertyRef Name="OrderID" />
           </Key>
           <Property Name="ShippedDate" Type="datetime" />
           <Property Name="OrderID" Type="int" Nullable="false" />
-          <Property Name="Subtotal" Type="decimal" Precision="19" Scale="4" />
+          <Property Name="Subtotal" Type="money" />
         </EntityType>
-        <EntityType Name="Summary_of_Sales_by_Years">
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'North.dbo.Summary of Sales by Year' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="Summary of Sales by Year">
           <Key>
             <PropertyRef Name="OrderID" />
           </Key>
           <Property Name="ShippedDate" Type="datetime" />
           <Property Name="OrderID" Type="int" Nullable="false" />
-          <Property Name="Subtotal" Type="decimal" Precision="19" Scale="4" />
+          <Property Name="Subtotal" Type="money" />
         </EntityType>
-        <EntityType Name="Suppliers">
-          <Key>
-            <PropertyRef Name="SupplierID" />
-          </Key>
-          <Property Name="SupplierID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="CompanyName" Type="nvarchar" MaxLength="40" Nullable="false" />
-          <Property Name="ContactName" Type="nvarchar" MaxLength="30" />
-          <Property Name="ContactTitle" Type="nvarchar" MaxLength="30" />
-          <Property Name="Address" Type="nvarchar" MaxLength="60" />
-          <Property Name="City" Type="nvarchar" MaxLength="15" />
-          <Property Name="Region" Type="nvarchar" MaxLength="15" />
-          <Property Name="PostalCode" Type="nvarchar" MaxLength="10" />
-          <Property Name="Country" Type="nvarchar" MaxLength="15" />
-          <Property Name="Phone" Type="nvarchar" MaxLength="24" />
-          <Property Name="Fax" Type="nvarchar" MaxLength="24" />
-          <Property Name="HomePage" Type="nvarchar(max)" />
-        </EntityType>
-        <EntityType Name="Territories">
-          <Key>
-            <PropertyRef Name="TerritoryID" />
-          </Key>
-          <Property Name="TerritoryID" Type="nvarchar" MaxLength="20" Nullable="false" />
-          <Property Name="TerritoryDescription" Type="nchar" MaxLength="50" Nullable="false" />
-          <Property Name="RegionID" Type="int" Nullable="false" />
-        </EntityType>
-        <Association Name="FK_CustomerCustomerDemo_CustomerDemographics">
+        <Association Name="FK_CustomerCustomerDemo">
           <End Role="CustomerDemographics" Type="Self.CustomerDemographics" Multiplicity="1" />
           <End Role="CustomerCustomerDemo" Type="Self.CustomerCustomerDemo" Multiplicity="*" />
           <ReferentialConstraint>
@@ -367,7 +405,7 @@
               <PropertyRef Name="CustomerTypeID" />
             </Principal>
             <Dependent Role="CustomerCustomerDemo">
-              <PropertyRef Name="CustomerDemographics_CustomerTypeID" />
+              <PropertyRef Name="CustomerTypeID" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -379,7 +417,7 @@
               <PropertyRef Name="CustomerID" />
             </Principal>
             <Dependent Role="CustomerCustomerDemo">
-              <PropertyRef Name="Customers_CustomerID" />
+              <PropertyRef Name="CustomerID" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -403,7 +441,7 @@
               <PropertyRef Name="EmployeeID" />
             </Principal>
             <Dependent Role="EmployeeTerritories">
-              <PropertyRef Name="Employees_EmployeeID" />
+              <PropertyRef Name="EmployeeID" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -415,30 +453,30 @@
               <PropertyRef Name="TerritoryID" />
             </Principal>
             <Dependent Role="EmployeeTerritories">
-              <PropertyRef Name="Territories_TerritoryID" />
+              <PropertyRef Name="TerritoryID" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Order_Details_Orders">
           <End Role="Orders" Type="Self.Orders" Multiplicity="1" />
-          <End Role="Order_Details" Type="Self.Order_Details" Multiplicity="*" />
+          <End Role="Order Details" Type="Self.Order Details" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Orders">
               <PropertyRef Name="OrderID" />
             </Principal>
-            <Dependent Role="Order_Details">
+            <Dependent Role="Order Details">
               <PropertyRef Name="OrderID" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Order_Details_Products">
           <End Role="Products" Type="Self.Products" Multiplicity="1" />
-          <End Role="Order_Details" Type="Self.Order_Details" Multiplicity="*" />
+          <End Role="Order Details" Type="Self.Order Details" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Products">
               <PropertyRef Name="ProductID" />
             </Principal>
-            <Dependent Role="Order_Details">
+            <Dependent Role="Order Details">
               <PropertyRef Name="ProductID" />
             </Dependent>
           </ReferentialConstraint>
@@ -504,10 +542,10 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Territories_Region">
-          <End Role="Regions" Type="Self.Regions" Multiplicity="1" />
+          <End Role="Region" Type="Self.Region" Multiplicity="1" />
           <End Role="Territories" Type="Self.Territories" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="Regions">
+            <Principal Role="Region">
               <PropertyRef Name="RegionID" />
             </Principal>
             <Dependent Role="Territories">
@@ -515,36 +553,206 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Function Name="CustOrderHist" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="CustomerID" Type="nchar" Mode="In" />
+        </Function>
+        <Function Name="CustOrdersDetail" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="OrderID" Type="int" Mode="In" />
+        </Function>
+        <Function Name="CustOrdersOrders" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="CustomerID" Type="nchar" Mode="In" />
+        </Function>
+        <Function Name="Employee_Sales_by_Country" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="Employee Sales by Country">
+          <Parameter Name="Beginning_Date" Type="datetime" Mode="In" />
+          <Parameter Name="Ending_Date" Type="datetime" Mode="In" />
+        </Function>
+        <Function Name="Sales_by_Year" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="Sales by Year">
+          <Parameter Name="Beginning_Date" Type="datetime" Mode="In" />
+          <Parameter Name="Ending_Date" Type="datetime" Mode="In" />
+        </Function>
+        <Function Name="SalesByCategory" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="CategoryName" Type="nvarchar" Mode="In" />
+          <Parameter Name="OrdYear" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="Ten_Most_Expensive_Products" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="Ten Most Expensive Products" />
+        <Function Name="usp_SuppliersIncomeInTimeRange" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="supplierName" Type="nvarchar" Mode="In" />
+          <Parameter Name="startDate" Type="datetime" Mode="In" />
+          <Parameter Name="endDate" Type="datetime" Mode="In" />
+        </Function>
         <EntityContainer Name="NorthwindModelStoreContainer">
-          <EntitySet Name="Alphabetical_list_of_products" EntityType="Self.Alphabetical_list_of_products" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Categories" EntityType="Self.Categories" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="Category_Sales_for_1997" EntityType="Self.Category_Sales_for_1997" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="Current_Product_Lists" EntityType="Self.Current_Product_Lists" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="Customer_and_Suppliers_by_Cities" EntityType="Self.Customer_and_Suppliers_by_Cities" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="CustomerCustomerDemo" EntityType="Self.CustomerCustomerDemo" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="CustomerDemographics" EntityType="Self.CustomerDemographics" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Customers" EntityType="Self.Customers" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Employees" EntityType="Self.Employees" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="EmployeeTerritories" EntityType="Self.EmployeeTerritories" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="Invoices" EntityType="Self.Invoices" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="Order_Details" EntityType="Self.Order_Details" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="Order_Details_Extendeds" EntityType="Self.Order_Details_Extendeds" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="Order_Subtotals" EntityType="Self.Order_Subtotals" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Order Details" EntityType="Self.Order Details" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Orders" EntityType="Self.Orders" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="Orders_Qries" EntityType="Self.Orders_Qries" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="Product_Sales_for_1997" EntityType="Self.Product_Sales_for_1997" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Products" EntityType="Self.Products" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="Products_Above_Average_Prices" EntityType="Self.Products_Above_Average_Prices" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="Products_by_Categories" EntityType="Self.Products_by_Categories" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="Regions" EntityType="Self.Regions" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="Sales_by_Categories" EntityType="Self.Sales_by_Categories" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="Sales_Totals_by_Amounts" EntityType="Self.Sales_Totals_by_Amounts" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Region" EntityType="Self.Region" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Shippers" EntityType="Self.Shippers" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="Summary_of_Sales_by_Quarters" EntityType="Self.Summary_of_Sales_by_Quarters" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="Summary_of_Sales_by_Years" EntityType="Self.Summary_of_Sales_by_Years" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Suppliers" EntityType="Self.Suppliers" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Territories" EntityType="Self.Territories" Schema="dbo" store:Type="Tables" />
-          <AssociationSet Name="FK_CustomerCustomerDemo_CustomerDemographics" Association="Self.FK_CustomerCustomerDemo_CustomerDemographics">
+          <EntitySet Name="Alphabetical list of products" EntityType="Self.Alphabetical list of products" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [Alphabetical list of products].[ProductID] AS [ProductID], 
+    [Alphabetical list of products].[ProductName] AS [ProductName], 
+    [Alphabetical list of products].[SupplierID] AS [SupplierID], 
+    [Alphabetical list of products].[CategoryID] AS [CategoryID], 
+    [Alphabetical list of products].[QuantityPerUnit] AS [QuantityPerUnit], 
+    [Alphabetical list of products].[UnitPrice] AS [UnitPrice], 
+    [Alphabetical list of products].[UnitsInStock] AS [UnitsInStock], 
+    [Alphabetical list of products].[UnitsOnOrder] AS [UnitsOnOrder], 
+    [Alphabetical list of products].[ReorderLevel] AS [ReorderLevel], 
+    [Alphabetical list of products].[Discontinued] AS [Discontinued], 
+    [Alphabetical list of products].[CategoryName] AS [CategoryName]
+    FROM [dbo].[Alphabetical list of products] AS [Alphabetical list of products]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="Category Sales for 1997" EntityType="Self.Category Sales for 1997" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [Category Sales for 1997].[CategoryName] AS [CategoryName], 
+    [Category Sales for 1997].[CategorySales] AS [CategorySales]
+    FROM [dbo].[Category Sales for 1997] AS [Category Sales for 1997]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="Current Product List" EntityType="Self.Current Product List" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [Current Product List].[ProductID] AS [ProductID], 
+    [Current Product List].[ProductName] AS [ProductName]
+    FROM [dbo].[Current Product List] AS [Current Product List]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="Customer and Suppliers by City" EntityType="Self.Customer and Suppliers by City" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [Customer and Suppliers by City].[City] AS [City], 
+    [Customer and Suppliers by City].[CompanyName] AS [CompanyName], 
+    [Customer and Suppliers by City].[ContactName] AS [ContactName], 
+    [Customer and Suppliers by City].[Relationship] AS [Relationship]
+    FROM [dbo].[Customer and Suppliers by City] AS [Customer and Suppliers by City]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="Invoices" EntityType="Self.Invoices" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [Invoices].[ShipName] AS [ShipName], 
+    [Invoices].[ShipAddress] AS [ShipAddress], 
+    [Invoices].[ShipCity] AS [ShipCity], 
+    [Invoices].[ShipRegion] AS [ShipRegion], 
+    [Invoices].[ShipPostalCode] AS [ShipPostalCode], 
+    [Invoices].[ShipCountry] AS [ShipCountry], 
+    [Invoices].[CustomerID] AS [CustomerID], 
+    [Invoices].[CustomerName] AS [CustomerName], 
+    [Invoices].[Address] AS [Address], 
+    [Invoices].[City] AS [City], 
+    [Invoices].[Region] AS [Region], 
+    [Invoices].[PostalCode] AS [PostalCode], 
+    [Invoices].[Country] AS [Country], 
+    [Invoices].[Salesperson] AS [Salesperson], 
+    [Invoices].[OrderID] AS [OrderID], 
+    [Invoices].[OrderDate] AS [OrderDate], 
+    [Invoices].[RequiredDate] AS [RequiredDate], 
+    [Invoices].[ShippedDate] AS [ShippedDate], 
+    [Invoices].[ShipperName] AS [ShipperName], 
+    [Invoices].[ProductID] AS [ProductID], 
+    [Invoices].[ProductName] AS [ProductName], 
+    [Invoices].[UnitPrice] AS [UnitPrice], 
+    [Invoices].[Quantity] AS [Quantity], 
+    [Invoices].[Discount] AS [Discount], 
+    [Invoices].[ExtendedPrice] AS [ExtendedPrice], 
+    [Invoices].[Freight] AS [Freight]
+    FROM [dbo].[Invoices] AS [Invoices]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="Order Details Extended" EntityType="Self.Order Details Extended" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [Order Details Extended].[OrderID] AS [OrderID], 
+    [Order Details Extended].[ProductID] AS [ProductID], 
+    [Order Details Extended].[ProductName] AS [ProductName], 
+    [Order Details Extended].[UnitPrice] AS [UnitPrice], 
+    [Order Details Extended].[Quantity] AS [Quantity], 
+    [Order Details Extended].[Discount] AS [Discount], 
+    [Order Details Extended].[ExtendedPrice] AS [ExtendedPrice]
+    FROM [dbo].[Order Details Extended] AS [Order Details Extended]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="Order Subtotals" EntityType="Self.Order Subtotals" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [Order Subtotals].[OrderID] AS [OrderID], 
+    [Order Subtotals].[Subtotal] AS [Subtotal]
+    FROM [dbo].[Order Subtotals] AS [Order Subtotals]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="Orders Qry" EntityType="Self.Orders Qry" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [Orders Qry].[OrderID] AS [OrderID], 
+    [Orders Qry].[CustomerID] AS [CustomerID], 
+    [Orders Qry].[EmployeeID] AS [EmployeeID], 
+    [Orders Qry].[OrderDate] AS [OrderDate], 
+    [Orders Qry].[RequiredDate] AS [RequiredDate], 
+    [Orders Qry].[ShippedDate] AS [ShippedDate], 
+    [Orders Qry].[ShipVia] AS [ShipVia], 
+    [Orders Qry].[Freight] AS [Freight], 
+    [Orders Qry].[ShipName] AS [ShipName], 
+    [Orders Qry].[ShipAddress] AS [ShipAddress], 
+    [Orders Qry].[ShipCity] AS [ShipCity], 
+    [Orders Qry].[ShipRegion] AS [ShipRegion], 
+    [Orders Qry].[ShipPostalCode] AS [ShipPostalCode], 
+    [Orders Qry].[ShipCountry] AS [ShipCountry], 
+    [Orders Qry].[CompanyName] AS [CompanyName], 
+    [Orders Qry].[Address] AS [Address], 
+    [Orders Qry].[City] AS [City], 
+    [Orders Qry].[Region] AS [Region], 
+    [Orders Qry].[PostalCode] AS [PostalCode], 
+    [Orders Qry].[Country] AS [Country]
+    FROM [dbo].[Orders Qry] AS [Orders Qry]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="Product Sales for 1997" EntityType="Self.Product Sales for 1997" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [Product Sales for 1997].[CategoryName] AS [CategoryName], 
+    [Product Sales for 1997].[ProductName] AS [ProductName], 
+    [Product Sales for 1997].[ProductSales] AS [ProductSales]
+    FROM [dbo].[Product Sales for 1997] AS [Product Sales for 1997]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="Products Above Average Price" EntityType="Self.Products Above Average Price" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [Products Above Average Price].[ProductName] AS [ProductName], 
+    [Products Above Average Price].[UnitPrice] AS [UnitPrice]
+    FROM [dbo].[Products Above Average Price] AS [Products Above Average Price]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="Products by Category" EntityType="Self.Products by Category" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [Products by Category].[CategoryName] AS [CategoryName], 
+    [Products by Category].[ProductName] AS [ProductName], 
+    [Products by Category].[QuantityPerUnit] AS [QuantityPerUnit], 
+    [Products by Category].[UnitsInStock] AS [UnitsInStock], 
+    [Products by Category].[Discontinued] AS [Discontinued]
+    FROM [dbo].[Products by Category] AS [Products by Category]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="Sales by Category" EntityType="Self.Sales by Category" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [Sales by Category].[CategoryID] AS [CategoryID], 
+    [Sales by Category].[CategoryName] AS [CategoryName], 
+    [Sales by Category].[ProductName] AS [ProductName], 
+    [Sales by Category].[ProductSales] AS [ProductSales]
+    FROM [dbo].[Sales by Category] AS [Sales by Category]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="Sales Totals by Amount" EntityType="Self.Sales Totals by Amount" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [Sales Totals by Amount].[SaleAmount] AS [SaleAmount], 
+    [Sales Totals by Amount].[OrderID] AS [OrderID], 
+    [Sales Totals by Amount].[CompanyName] AS [CompanyName], 
+    [Sales Totals by Amount].[ShippedDate] AS [ShippedDate]
+    FROM [dbo].[Sales Totals by Amount] AS [Sales Totals by Amount]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="Summary of Sales by Quarter" EntityType="Self.Summary of Sales by Quarter" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [Summary of Sales by Quarter].[ShippedDate] AS [ShippedDate], 
+    [Summary of Sales by Quarter].[OrderID] AS [OrderID], 
+    [Summary of Sales by Quarter].[Subtotal] AS [Subtotal]
+    FROM [dbo].[Summary of Sales by Quarter] AS [Summary of Sales by Quarter]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="Summary of Sales by Year" EntityType="Self.Summary of Sales by Year" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [Summary of Sales by Year].[ShippedDate] AS [ShippedDate], 
+    [Summary of Sales by Year].[OrderID] AS [OrderID], 
+    [Summary of Sales by Year].[Subtotal] AS [Subtotal]
+    FROM [dbo].[Summary of Sales by Year] AS [Summary of Sales by Year]</DefiningQuery>
+          </EntitySet>
+          <AssociationSet Name="FK_CustomerCustomerDemo" Association="Self.FK_CustomerCustomerDemo">
             <End Role="CustomerDemographics" EntitySet="CustomerDemographics" />
             <End Role="CustomerCustomerDemo" EntitySet="CustomerCustomerDemo" />
           </AssociationSet>
@@ -566,11 +774,11 @@
           </AssociationSet>
           <AssociationSet Name="FK_Order_Details_Orders" Association="Self.FK_Order_Details_Orders">
             <End Role="Orders" EntitySet="Orders" />
-            <End Role="Order_Details" EntitySet="Order_Details" />
+            <End Role="Order Details" EntitySet="Order Details" />
           </AssociationSet>
           <AssociationSet Name="FK_Order_Details_Products" Association="Self.FK_Order_Details_Products">
             <End Role="Products" EntitySet="Products" />
-            <End Role="Order_Details" EntitySet="Order_Details" />
+            <End Role="Order Details" EntitySet="Order Details" />
           </AssociationSet>
           <AssociationSet Name="FK_Orders_Customers" Association="Self.FK_Orders_Customers">
             <End Role="Customers" EntitySet="Customers" />
@@ -593,7 +801,7 @@
             <End Role="Products" EntitySet="Products" />
           </AssociationSet>
           <AssociationSet Name="FK_Territories_Region" Association="Self.FK_Territories_Region">
-            <End Role="Regions" EntitySet="Regions" />
+            <End Role="Region" EntitySet="Region" />
             <End Role="Territories" EntitySet="Territories" />
           </AssociationSet>
         </EntityContainer>
@@ -618,6 +826,7 @@
           <Property Name="CustomerTypeID" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
           <Property Name="CustomerDesc" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="Customers" Relationship="Self.CustomerCustomerDemo" FromRole="CustomerDemographics" ToRole="Customers" />
+          <NavigationProperty Name="Customers1" Relationship="NorthwindModel.CustomerCustomerDemo1" FromRole="CustomerDemographic" ToRole="Customer" />
         </EntityType>
         <EntityType Name="Customer">
           <Key>
@@ -636,6 +845,7 @@
           <Property Name="Fax" Type="String" MaxLength="24" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="Orders" Relationship="Self.FK_Orders_Customers" FromRole="Customers" ToRole="Orders" />
           <NavigationProperty Name="CustomerDemographics" Relationship="Self.CustomerCustomerDemo" FromRole="Customers" ToRole="CustomerDemographics" />
+          <NavigationProperty Name="CustomerDemographics1" Relationship="NorthwindModel.CustomerCustomerDemo1" FromRole="Customer" ToRole="CustomerDemographic" />
         </EntityType>
         <EntityType Name="Employee">
           <Key>
@@ -663,6 +873,7 @@
           <NavigationProperty Name="Employee1" Relationship="Self.FK_Employees_Employees" FromRole="Employees1" ToRole="Employees" />
           <NavigationProperty Name="Orders" Relationship="Self.FK_Orders_Employees" FromRole="Employees" ToRole="Orders" />
           <NavigationProperty Name="Territories" Relationship="Self.EmployeeTerritories" FromRole="Employees" ToRole="Territories" />
+          <NavigationProperty Name="Territories1" Relationship="NorthwindModel.EmployeeTerritories1" FromRole="Employee" ToRole="Territory" />
         </EntityType>
         <EntityType Name="Order_Detail">
           <Key>
@@ -699,6 +910,7 @@
           <NavigationProperty Name="Employee" Relationship="Self.FK_Orders_Employees" FromRole="Orders" ToRole="Employees" />
           <NavigationProperty Name="Order_Details" Relationship="Self.FK_Order_Details_Orders" FromRole="Orders" ToRole="Order_Details" />
           <NavigationProperty Name="Shipper" Relationship="Self.FK_Orders_Shippers" FromRole="Orders" ToRole="Shippers" />
+          <NavigationProperty Name="Order_Details1" Relationship="NorthwindModel.FK_Order_Details_Orders1" FromRole="Order" ToRole="Order_Detail1" />
         </EntityType>
         <EntityType Name="Product">
           <Key>
@@ -717,6 +929,7 @@
           <NavigationProperty Name="Category" Relationship="Self.FK_Products_Categories" FromRole="Products" ToRole="Categories" />
           <NavigationProperty Name="Order_Details" Relationship="Self.FK_Order_Details_Products" FromRole="Products" ToRole="Order_Details" />
           <NavigationProperty Name="Supplier" Relationship="Self.FK_Products_Suppliers" FromRole="Products" ToRole="Suppliers" />
+          <NavigationProperty Name="Order_Details1" Relationship="NorthwindModel.FK_Order_Details_Products1" FromRole="Product" ToRole="Order_Detail1" />
         </EntityType>
         <EntityType Name="Region">
           <Key>
@@ -762,6 +975,8 @@
           <Property Name="RegionID" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Region" Relationship="Self.FK_Territories_Region" FromRole="Territories" ToRole="Region" />
           <NavigationProperty Name="Employees" Relationship="Self.EmployeeTerritories" FromRole="Territories" ToRole="Employees" />
+          <NavigationProperty Name="Employees1" Relationship="NorthwindModel.EmployeeTerritories1" FromRole="Territory" ToRole="Employee" />
+          <NavigationProperty Name="Region1" Relationship="NorthwindModel.FK_Territories_Region1" FromRole="Territory" ToRole="Region1" />
         </EntityType>
         <EntityType Name="Alphabetical_list_of_product">
           <Key>
@@ -1170,6 +1385,70 @@
             <Parameter Name="OrdYear" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="Ten_Most_Expensive_Products" ReturnType="Collection(NorthwindModel.Ten_Most_Expensive_Products_Result)" />
+          <AssociationSet Name="CustomerCustomerDemo1" Association="NorthwindModel.CustomerCustomerDemo1">
+            <End Role="CustomerDemographic" EntitySet="CustomerDemographics" />
+            <End Role="Customer" EntitySet="Customers" />
+          </AssociationSet>
+          <AssociationSet Name="EmployeeTerritories1" Association="NorthwindModel.EmployeeTerritories1">
+            <End Role="Employee" EntitySet="Employees" />
+            <End Role="Territory" EntitySet="Territories" />
+          </AssociationSet>
+          <FunctionImport Name="CustOrderHist1" ReturnType="Collection(NorthwindModel.CustOrderHist1_Result)">
+          <Parameter Name="CustomerID" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="CustOrdersDetail1" ReturnType="Collection(NorthwindModel.CustOrdersDetail1_Result)">
+          <Parameter Name="OrderID" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="CustOrdersOrders1" ReturnType="Collection(NorthwindModel.CustOrdersOrders1_Result)">
+          <Parameter Name="CustomerID" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="Employee_Sales_by_Country1" ReturnType="Collection(NorthwindModel.Employee_Sales_by_Country1_Result)">
+            <Parameter Name="Beginning_Date" Mode="In" Type="DateTime" />
+            <Parameter Name="Ending_Date" Mode="In" Type="DateTime" />
+          </FunctionImport>
+          <FunctionImport Name="Sales_by_Year1" ReturnType="Collection(NorthwindModel.Sales_by_Year1_Result)">
+            <Parameter Name="Beginning_Date" Mode="In" Type="DateTime" />
+            <Parameter Name="Ending_Date" Mode="In" Type="DateTime" />
+          </FunctionImport>
+          <FunctionImport Name="SalesByCategory1" ReturnType="Collection(NorthwindModel.SalesByCategory1_Result)">
+            <Parameter Name="CategoryName" Mode="In" Type="String" />
+            <Parameter Name="OrdYear" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="Ten_Most_Expensive_Products1" ReturnType="Collection(NorthwindModel.Ten_Most_Expensive_Products1_Result)" />
+          <FunctionImport Name="usp_SuppliersIncomeInTimeRange" ReturnType="Collection(NorthwindModel.usp_SuppliersIncomeInTimeRange_Result)">
+            <Parameter Name="supplierName" Mode="In" Type="String" />
+            <Parameter Name="startDate" Mode="In" Type="DateTime" />
+            <Parameter Name="endDate" Mode="In" Type="DateTime" />
+          </FunctionImport>
+          <EntitySet Name="Order_Detail1" EntityType="NorthwindModel.Order_Detail1" />
+          <EntitySet Name="Region1" EntityType="NorthwindModel.Region1" />
+          <EntitySet Name="Alphabetical_list_of_product1" EntityType="NorthwindModel.Alphabetical_list_of_product1" />
+          <EntitySet Name="Category_Sales_for_19971" EntityType="NorthwindModel.Category_Sales_for_19971" />
+          <EntitySet Name="Current_Product_List1" EntityType="NorthwindModel.Current_Product_List1" />
+          <EntitySet Name="Customer_and_Suppliers_by_City1" EntityType="NorthwindModel.Customer_and_Suppliers_by_City1" />
+          <EntitySet Name="Invoice1" EntityType="NorthwindModel.Invoice1" />
+          <EntitySet Name="Order_Details_Extended1" EntityType="NorthwindModel.Order_Details_Extended1" />
+          <EntitySet Name="Order_Subtotal1" EntityType="NorthwindModel.Order_Subtotal1" />
+          <EntitySet Name="Orders_Qry1" EntityType="NorthwindModel.Orders_Qry1" />
+          <EntitySet Name="Product_Sales_for_19971" EntityType="NorthwindModel.Product_Sales_for_19971" />
+          <EntitySet Name="Products_Above_Average_Price1" EntityType="NorthwindModel.Products_Above_Average_Price1" />
+          <EntitySet Name="Products_by_Category1" EntityType="NorthwindModel.Products_by_Category1" />
+          <EntitySet Name="Sales_by_Category1" EntityType="NorthwindModel.Sales_by_Category1" />
+          <EntitySet Name="Sales_Totals_by_Amount1" EntityType="NorthwindModel.Sales_Totals_by_Amount1" />
+          <EntitySet Name="Summary_of_Sales_by_Quarter1" EntityType="NorthwindModel.Summary_of_Sales_by_Quarter1" />
+          <EntitySet Name="Summary_of_Sales_by_Year1" EntityType="NorthwindModel.Summary_of_Sales_by_Year1" />
+          <AssociationSet Name="FK_Order_Details_Orders1" Association="NorthwindModel.FK_Order_Details_Orders1">
+            <End Role="Order" EntitySet="Orders" />
+            <End Role="Order_Detail1" EntitySet="Order_Detail1" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Order_Details_Products1" Association="NorthwindModel.FK_Order_Details_Products1">
+            <End Role="Product" EntitySet="Products" />
+            <End Role="Order_Detail1" EntitySet="Order_Detail1" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Territories_Region1" Association="NorthwindModel.FK_Territories_Region1">
+            <End Role="Region1" EntitySet="Region1" />
+            <End Role="Territory" EntitySet="Territories" />
+          </AssociationSet>
         </EntityContainer>
         <ComplexType Name="CustOrderHist_Result">
           <Property Type="String" Name="ProductName" Nullable="false" MaxLength="40" />
@@ -1210,6 +1489,313 @@
           <Property Type="String" Name="TenMostExpensiveProducts" Nullable="false" MaxLength="40" />
           <Property Type="Decimal" Name="UnitPrice" Nullable="true" Precision="19" />
         </ComplexType>
+        <Association Name="CustomerCustomerDemo1">
+          <End Type="NorthwindModel.CustomerDemographic" Role="CustomerDemographic" Multiplicity="*" />
+          <End Type="NorthwindModel.Customer" Role="Customer" Multiplicity="*" />
+        </Association>
+        <Association Name="EmployeeTerritories1">
+          <End Type="NorthwindModel.Employee" Role="Employee" Multiplicity="*" />
+          <End Type="NorthwindModel.Territory" Role="Territory" Multiplicity="*" />
+        </Association>
+        <ComplexType Name="CustOrderHist1_Result">
+          <Property Type="String" Name="ProductName" Nullable="false" MaxLength="40" />
+          <Property Type="Int32" Name="Total" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="CustOrdersDetail1_Result">
+          <Property Type="String" Name="ProductName" Nullable="false" MaxLength="40" />
+          <Property Type="Decimal" Name="UnitPrice" Nullable="false" Precision="19" />
+          <Property Type="Int16" Name="Quantity" Nullable="false" />
+          <Property Type="Int32" Name="Discount" Nullable="true" />
+          <Property Type="Decimal" Name="ExtendedPrice" Nullable="true" Precision="19" />
+        </ComplexType>
+        <ComplexType Name="CustOrdersOrders1_Result">
+          <Property Type="Int32" Name="OrderID" Nullable="false" />
+          <Property Type="DateTime" Name="OrderDate" Nullable="true" Precision="23" />
+          <Property Type="DateTime" Name="RequiredDate" Nullable="true" Precision="23" />
+          <Property Type="DateTime" Name="ShippedDate" Nullable="true" Precision="23" />
+        </ComplexType>
+        <ComplexType Name="Employee_Sales_by_Country1_Result">
+          <Property Type="String" Name="Country" Nullable="true" MaxLength="15" />
+          <Property Type="String" Name="LastName" Nullable="false" MaxLength="20" />
+          <Property Type="String" Name="FirstName" Nullable="false" MaxLength="10" />
+          <Property Type="DateTime" Name="ShippedDate" Nullable="true" Precision="23" />
+          <Property Type="Int32" Name="OrderID" Nullable="false" />
+          <Property Type="Decimal" Name="SaleAmount" Nullable="true" Precision="19" />
+        </ComplexType>
+        <ComplexType Name="Sales_by_Year1_Result">
+          <Property Type="DateTime" Name="ShippedDate" Nullable="true" Precision="23" />
+          <Property Type="Int32" Name="OrderID" Nullable="false" />
+          <Property Type="Decimal" Name="Subtotal" Nullable="true" Precision="19" />
+          <Property Type="String" Name="Year" Nullable="true" MaxLength="30" />
+        </ComplexType>
+        <ComplexType Name="SalesByCategory1_Result">
+          <Property Type="String" Name="ProductName" Nullable="false" MaxLength="40" />
+          <Property Type="Decimal" Name="TotalPurchase" Nullable="true" Precision="38" Scale="2" />
+        </ComplexType>
+        <ComplexType Name="Ten_Most_Expensive_Products1_Result">
+          <Property Type="String" Name="TenMostExpensiveProducts" Nullable="false" MaxLength="40" />
+          <Property Type="Decimal" Name="UnitPrice" Nullable="true" Precision="19" />
+        </ComplexType>
+        <ComplexType Name="usp_SuppliersIncomeInTimeRange_Result">
+          <Property Type="String" Name="CompanyName" Nullable="false" MaxLength="40" />
+          <Property Type="DateTime" Name="OrderDate" Nullable="true" Precision="23" />
+          <Property Type="Double" Name="Total_Price" Nullable="true" />
+        </ComplexType>
+        <EntityType Name="Order_Detail1">
+          <Key>
+            <PropertyRef Name="OrderID" />
+            <PropertyRef Name="ProductID" />
+          </Key>
+          <Property Name="OrderID" Type="Int32" Nullable="false" />
+          <Property Name="ProductID" Type="Int32" Nullable="false" />
+          <Property Name="UnitPrice" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+          <Property Name="Quantity" Type="Int16" Nullable="false" />
+          <Property Name="Discount" Type="Single" Nullable="false" />
+          <NavigationProperty Name="Order" Relationship="NorthwindModel.FK_Order_Details_Orders1" FromRole="Order_Detail1" ToRole="Order" />
+          <NavigationProperty Name="Product" Relationship="NorthwindModel.FK_Order_Details_Products1" FromRole="Order_Detail1" ToRole="Product" />
+        </EntityType>
+        <EntityType Name="Region1">
+          <Key>
+            <PropertyRef Name="RegionID" />
+          </Key>
+          <Property Name="RegionID" Type="Int32" Nullable="false" />
+          <Property Name="RegionDescription" Type="String" Nullable="false" MaxLength="50" FixedLength="true" Unicode="true" />
+          <NavigationProperty Name="Territories" Relationship="NorthwindModel.FK_Territories_Region1" FromRole="Region1" ToRole="Territory" />
+        </EntityType>
+        <EntityType Name="Alphabetical_list_of_product1">
+          <Key>
+            <PropertyRef Name="ProductID" />
+            <PropertyRef Name="ProductName" />
+            <PropertyRef Name="Discontinued" />
+            <PropertyRef Name="CategoryName" />
+          </Key>
+          <Property Name="ProductID" Type="Int32" Nullable="false" />
+          <Property Name="ProductName" Type="String" Nullable="false" MaxLength="40" FixedLength="false" Unicode="true" />
+          <Property Name="SupplierID" Type="Int32" />
+          <Property Name="CategoryID" Type="Int32" />
+          <Property Name="QuantityPerUnit" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="UnitPrice" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="UnitsInStock" Type="Int16" />
+          <Property Name="UnitsOnOrder" Type="Int16" />
+          <Property Name="ReorderLevel" Type="Int16" />
+          <Property Name="Discontinued" Type="Boolean" Nullable="false" />
+          <Property Name="CategoryName" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Category_Sales_for_19971">
+          <Key>
+            <PropertyRef Name="CategoryName" />
+          </Key>
+          <Property Name="CategoryName" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="CategorySales" Type="Decimal" Precision="19" Scale="4" />
+        </EntityType>
+        <EntityType Name="Current_Product_List1">
+          <Key>
+            <PropertyRef Name="ProductID" />
+            <PropertyRef Name="ProductName" />
+          </Key>
+          <Property Name="ProductID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ProductName" Type="String" Nullable="false" MaxLength="40" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Customer_and_Suppliers_by_City1">
+          <Key>
+            <PropertyRef Name="CompanyName" />
+            <PropertyRef Name="Relationship" />
+          </Key>
+          <Property Name="City" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="CompanyName" Type="String" Nullable="false" MaxLength="40" FixedLength="false" Unicode="true" />
+          <Property Name="ContactName" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="Relationship" Type="String" Nullable="false" MaxLength="9" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Invoice1">
+          <Key>
+            <PropertyRef Name="CustomerName" />
+            <PropertyRef Name="Salesperson" />
+            <PropertyRef Name="OrderID" />
+            <PropertyRef Name="ShipperName" />
+            <PropertyRef Name="ProductID" />
+            <PropertyRef Name="ProductName" />
+            <PropertyRef Name="UnitPrice" />
+            <PropertyRef Name="Quantity" />
+            <PropertyRef Name="Discount" />
+          </Key>
+          <Property Name="ShipName" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+          <Property Name="ShipAddress" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
+          <Property Name="ShipCity" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="ShipRegion" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="ShipPostalCode" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="ShipCountry" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="CustomerID" Type="String" MaxLength="5" FixedLength="true" Unicode="true" />
+          <Property Name="CustomerName" Type="String" Nullable="false" MaxLength="40" FixedLength="false" Unicode="true" />
+          <Property Name="Address" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
+          <Property Name="City" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="Region" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="PostalCode" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="Country" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="Salesperson" Type="String" Nullable="false" MaxLength="31" FixedLength="false" Unicode="true" />
+          <Property Name="OrderID" Type="Int32" Nullable="false" />
+          <Property Name="OrderDate" Type="DateTime" Precision="3" />
+          <Property Name="RequiredDate" Type="DateTime" Precision="3" />
+          <Property Name="ShippedDate" Type="DateTime" Precision="3" />
+          <Property Name="ShipperName" Type="String" Nullable="false" MaxLength="40" FixedLength="false" Unicode="true" />
+          <Property Name="ProductID" Type="Int32" Nullable="false" />
+          <Property Name="ProductName" Type="String" Nullable="false" MaxLength="40" FixedLength="false" Unicode="true" />
+          <Property Name="UnitPrice" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+          <Property Name="Quantity" Type="Int16" Nullable="false" />
+          <Property Name="Discount" Type="Single" Nullable="false" />
+          <Property Name="ExtendedPrice" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="Freight" Type="Decimal" Precision="19" Scale="4" />
+        </EntityType>
+        <EntityType Name="Order_Details_Extended1">
+          <Key>
+            <PropertyRef Name="OrderID" />
+            <PropertyRef Name="ProductID" />
+            <PropertyRef Name="ProductName" />
+            <PropertyRef Name="UnitPrice" />
+            <PropertyRef Name="Quantity" />
+            <PropertyRef Name="Discount" />
+          </Key>
+          <Property Name="OrderID" Type="Int32" Nullable="false" />
+          <Property Name="ProductID" Type="Int32" Nullable="false" />
+          <Property Name="ProductName" Type="String" Nullable="false" MaxLength="40" FixedLength="false" Unicode="true" />
+          <Property Name="UnitPrice" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+          <Property Name="Quantity" Type="Int16" Nullable="false" />
+          <Property Name="Discount" Type="Single" Nullable="false" />
+          <Property Name="ExtendedPrice" Type="Decimal" Precision="19" Scale="4" />
+        </EntityType>
+        <EntityType Name="Order_Subtotal1">
+          <Key>
+            <PropertyRef Name="OrderID" />
+          </Key>
+          <Property Name="OrderID" Type="Int32" Nullable="false" />
+          <Property Name="Subtotal" Type="Decimal" Precision="19" Scale="4" />
+        </EntityType>
+        <EntityType Name="Orders_Qry1">
+          <Key>
+            <PropertyRef Name="OrderID" />
+            <PropertyRef Name="CompanyName" />
+          </Key>
+          <Property Name="OrderID" Type="Int32" Nullable="false" />
+          <Property Name="CustomerID" Type="String" MaxLength="5" FixedLength="true" Unicode="true" />
+          <Property Name="EmployeeID" Type="Int32" />
+          <Property Name="OrderDate" Type="DateTime" Precision="3" />
+          <Property Name="RequiredDate" Type="DateTime" Precision="3" />
+          <Property Name="ShippedDate" Type="DateTime" Precision="3" />
+          <Property Name="ShipVia" Type="Int32" />
+          <Property Name="Freight" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="ShipName" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+          <Property Name="ShipAddress" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
+          <Property Name="ShipCity" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="ShipRegion" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="ShipPostalCode" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="ShipCountry" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="CompanyName" Type="String" Nullable="false" MaxLength="40" FixedLength="false" Unicode="true" />
+          <Property Name="Address" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
+          <Property Name="City" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="Region" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="PostalCode" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="Country" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Product_Sales_for_19971">
+          <Key>
+            <PropertyRef Name="CategoryName" />
+            <PropertyRef Name="ProductName" />
+          </Key>
+          <Property Name="CategoryName" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="ProductName" Type="String" Nullable="false" MaxLength="40" FixedLength="false" Unicode="true" />
+          <Property Name="ProductSales" Type="Decimal" Precision="19" Scale="4" />
+        </EntityType>
+        <EntityType Name="Products_Above_Average_Price1">
+          <Key>
+            <PropertyRef Name="ProductName" />
+          </Key>
+          <Property Name="ProductName" Type="String" Nullable="false" MaxLength="40" FixedLength="false" Unicode="true" />
+          <Property Name="UnitPrice" Type="Decimal" Precision="19" Scale="4" />
+        </EntityType>
+        <EntityType Name="Products_by_Category1">
+          <Key>
+            <PropertyRef Name="CategoryName" />
+            <PropertyRef Name="ProductName" />
+            <PropertyRef Name="Discontinued" />
+          </Key>
+          <Property Name="CategoryName" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="ProductName" Type="String" Nullable="false" MaxLength="40" FixedLength="false" Unicode="true" />
+          <Property Name="QuantityPerUnit" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="UnitsInStock" Type="Int16" />
+          <Property Name="Discontinued" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Sales_by_Category1">
+          <Key>
+            <PropertyRef Name="CategoryID" />
+            <PropertyRef Name="CategoryName" />
+            <PropertyRef Name="ProductName" />
+          </Key>
+          <Property Name="CategoryID" Type="Int32" Nullable="false" />
+          <Property Name="CategoryName" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="ProductName" Type="String" Nullable="false" MaxLength="40" FixedLength="false" Unicode="true" />
+          <Property Name="ProductSales" Type="Decimal" Precision="19" Scale="4" />
+        </EntityType>
+        <EntityType Name="Sales_Totals_by_Amount1">
+          <Key>
+            <PropertyRef Name="OrderID" />
+            <PropertyRef Name="CompanyName" />
+          </Key>
+          <Property Name="SaleAmount" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="OrderID" Type="Int32" Nullable="false" />
+          <Property Name="CompanyName" Type="String" Nullable="false" MaxLength="40" FixedLength="false" Unicode="true" />
+          <Property Name="ShippedDate" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="Summary_of_Sales_by_Quarter1">
+          <Key>
+            <PropertyRef Name="OrderID" />
+          </Key>
+          <Property Name="ShippedDate" Type="DateTime" Precision="3" />
+          <Property Name="OrderID" Type="Int32" Nullable="false" />
+          <Property Name="Subtotal" Type="Decimal" Precision="19" Scale="4" />
+        </EntityType>
+        <EntityType Name="Summary_of_Sales_by_Year1">
+          <Key>
+            <PropertyRef Name="OrderID" />
+          </Key>
+          <Property Name="ShippedDate" Type="DateTime" Precision="3" />
+          <Property Name="OrderID" Type="Int32" Nullable="false" />
+          <Property Name="Subtotal" Type="Decimal" Precision="19" Scale="4" />
+        </EntityType>
+        <Association Name="FK_Order_Details_Orders1">
+          <End Type="NorthwindModel.Order" Role="Order" Multiplicity="1" />
+          <End Type="NorthwindModel.Order_Detail1" Role="Order_Detail1" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Order">
+              <PropertyRef Name="OrderID" />
+            </Principal>
+            <Dependent Role="Order_Detail1">
+              <PropertyRef Name="OrderID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Order_Details_Products1">
+          <End Type="NorthwindModel.Product" Role="Product" Multiplicity="1" />
+          <End Type="NorthwindModel.Order_Detail1" Role="Order_Detail1" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Product">
+              <PropertyRef Name="ProductID" />
+            </Principal>
+            <Dependent Role="Order_Detail1">
+              <PropertyRef Name="ProductID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Territories_Region1">
+          <End Type="NorthwindModel.Region1" Role="Region1" Multiplicity="1" />
+          <End Type="NorthwindModel.Territory" Role="Territory" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Region1">
+              <PropertyRef Name="RegionID" />
+            </Principal>
+            <Dependent Role="Territory">
+              <PropertyRef Name="RegionID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -1275,17 +1861,6 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="Order_Details">
-      <EntityTypeMapping TypeName="IsTypeOf(NorthwindModel.Order_Detail)">
-        <MappingFragment StoreEntitySet="Order_Details">
-          <ScalarProperty Name="OrderID" ColumnName="OrderID" />
-          <ScalarProperty Name="ProductID" ColumnName="ProductID" />
-          <ScalarProperty Name="UnitPrice" ColumnName="UnitPrice" />
-          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
-          <ScalarProperty Name="Discount" ColumnName="Discount" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="Orders">
       <EntityTypeMapping TypeName="IsTypeOf(NorthwindModel.Order)">
         <MappingFragment StoreEntitySet="Orders">
@@ -1319,14 +1894,6 @@
           <ScalarProperty Name="UnitsOnOrder" ColumnName="UnitsOnOrder" />
           <ScalarProperty Name="ReorderLevel" ColumnName="ReorderLevel" />
           <ScalarProperty Name="Discontinued" ColumnName="Discontinued" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="Regions">
-      <EntityTypeMapping TypeName="IsTypeOf(NorthwindModel.Region)">
-        <MappingFragment StoreEntitySet="Regions">
-          <ScalarProperty Name="RegionID" ColumnName="RegionID" />
-          <ScalarProperty Name="RegionDescription" ColumnName="RegionDescription" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -1366,210 +1933,309 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="Alphabetical_list_of_products">
-      <EntityTypeMapping TypeName="IsTypeOf(NorthwindModel.Alphabetical_list_of_product)">
-        <MappingFragment StoreEntitySet="Alphabetical_list_of_products">
-          <ScalarProperty Name="ProductID" ColumnName="ProductID" />
-          <ScalarProperty Name="ProductName" ColumnName="ProductName" />
-          <ScalarProperty Name="Discontinued" ColumnName="Discontinued" />
-          <ScalarProperty Name="CategoryName" ColumnName="CategoryName" />
-          <ScalarProperty Name="SupplierID" ColumnName="SupplierID" />
-          <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
-          <ScalarProperty Name="QuantityPerUnit" ColumnName="QuantityPerUnit" />
-          <ScalarProperty Name="UnitPrice" ColumnName="UnitPrice" />
-          <ScalarProperty Name="UnitsInStock" ColumnName="UnitsInStock" />
-          <ScalarProperty Name="UnitsOnOrder" ColumnName="UnitsOnOrder" />
-          <ScalarProperty Name="ReorderLevel" ColumnName="ReorderLevel" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="Category_Sales_for_1997">
-      <EntityTypeMapping TypeName="IsTypeOf(NorthwindModel.Category_Sales_for_1997)">
-        <MappingFragment StoreEntitySet="Category_Sales_for_1997">
-          <ScalarProperty Name="CategoryName" ColumnName="CategoryName" />
-          <ScalarProperty Name="CategorySales" ColumnName="CategorySales" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="Current_Product_Lists">
-      <EntityTypeMapping TypeName="IsTypeOf(NorthwindModel.Current_Product_List)">
-        <MappingFragment StoreEntitySet="Current_Product_Lists">
-          <ScalarProperty Name="ProductID" ColumnName="ProductID" />
-          <ScalarProperty Name="ProductName" ColumnName="ProductName" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="Customer_and_Suppliers_by_Cities">
-      <EntityTypeMapping TypeName="IsTypeOf(NorthwindModel.Customer_and_Suppliers_by_City)">
-        <MappingFragment StoreEntitySet="Customer_and_Suppliers_by_Cities">
-          <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
-          <ScalarProperty Name="Relationship" ColumnName="Relationship" />
-          <ScalarProperty Name="City" ColumnName="City" />
-          <ScalarProperty Name="ContactName" ColumnName="ContactName" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="Invoices">
-      <EntityTypeMapping TypeName="IsTypeOf(NorthwindModel.Invoice)">
-        <MappingFragment StoreEntitySet="Invoices">
-          <ScalarProperty Name="CustomerName" ColumnName="CustomerName" />
-          <ScalarProperty Name="Salesperson" ColumnName="Salesperson" />
-          <ScalarProperty Name="OrderID" ColumnName="OrderID" />
-          <ScalarProperty Name="ShipperName" ColumnName="ShipperName" />
-          <ScalarProperty Name="ProductID" ColumnName="ProductID" />
-          <ScalarProperty Name="ProductName" ColumnName="ProductName" />
-          <ScalarProperty Name="UnitPrice" ColumnName="UnitPrice" />
-          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
-          <ScalarProperty Name="Discount" ColumnName="Discount" />
-          <ScalarProperty Name="ShipName" ColumnName="ShipName" />
-          <ScalarProperty Name="ShipAddress" ColumnName="ShipAddress" />
-          <ScalarProperty Name="ShipCity" ColumnName="ShipCity" />
-          <ScalarProperty Name="ShipRegion" ColumnName="ShipRegion" />
-          <ScalarProperty Name="ShipPostalCode" ColumnName="ShipPostalCode" />
-          <ScalarProperty Name="ShipCountry" ColumnName="ShipCountry" />
-          <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
-          <ScalarProperty Name="Address" ColumnName="Address" />
-          <ScalarProperty Name="City" ColumnName="City" />
-          <ScalarProperty Name="Region" ColumnName="Region" />
-          <ScalarProperty Name="PostalCode" ColumnName="PostalCode" />
-          <ScalarProperty Name="Country" ColumnName="Country" />
-          <ScalarProperty Name="OrderDate" ColumnName="OrderDate" />
-          <ScalarProperty Name="RequiredDate" ColumnName="RequiredDate" />
-          <ScalarProperty Name="ShippedDate" ColumnName="ShippedDate" />
-          <ScalarProperty Name="ExtendedPrice" ColumnName="ExtendedPrice" />
-          <ScalarProperty Name="Freight" ColumnName="Freight" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="Order_Details_Extendeds">
-      <EntityTypeMapping TypeName="IsTypeOf(NorthwindModel.Order_Details_Extended)">
-        <MappingFragment StoreEntitySet="Order_Details_Extendeds">
-          <ScalarProperty Name="OrderID" ColumnName="OrderID" />
-          <ScalarProperty Name="ProductID" ColumnName="ProductID" />
-          <ScalarProperty Name="ProductName" ColumnName="ProductName" />
-          <ScalarProperty Name="UnitPrice" ColumnName="UnitPrice" />
-          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
-          <ScalarProperty Name="Discount" ColumnName="Discount" />
-          <ScalarProperty Name="ExtendedPrice" ColumnName="ExtendedPrice" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="Order_Subtotals">
-      <EntityTypeMapping TypeName="IsTypeOf(NorthwindModel.Order_Subtotal)">
-        <MappingFragment StoreEntitySet="Order_Subtotals">
-          <ScalarProperty Name="OrderID" ColumnName="OrderID" />
-          <ScalarProperty Name="Subtotal" ColumnName="Subtotal" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="Orders_Qries">
-      <EntityTypeMapping TypeName="IsTypeOf(NorthwindModel.Orders_Qry)">
-        <MappingFragment StoreEntitySet="Orders_Qries">
-          <ScalarProperty Name="OrderID" ColumnName="OrderID" />
-          <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
-          <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
-          <ScalarProperty Name="EmployeeID" ColumnName="EmployeeID" />
-          <ScalarProperty Name="OrderDate" ColumnName="OrderDate" />
-          <ScalarProperty Name="RequiredDate" ColumnName="RequiredDate" />
-          <ScalarProperty Name="ShippedDate" ColumnName="ShippedDate" />
-          <ScalarProperty Name="ShipVia" ColumnName="ShipVia" />
-          <ScalarProperty Name="Freight" ColumnName="Freight" />
-          <ScalarProperty Name="ShipName" ColumnName="ShipName" />
-          <ScalarProperty Name="ShipAddress" ColumnName="ShipAddress" />
-          <ScalarProperty Name="ShipCity" ColumnName="ShipCity" />
-          <ScalarProperty Name="ShipRegion" ColumnName="ShipRegion" />
-          <ScalarProperty Name="ShipPostalCode" ColumnName="ShipPostalCode" />
-          <ScalarProperty Name="ShipCountry" ColumnName="ShipCountry" />
-          <ScalarProperty Name="Address" ColumnName="Address" />
-          <ScalarProperty Name="City" ColumnName="City" />
-          <ScalarProperty Name="Region" ColumnName="Region" />
-          <ScalarProperty Name="PostalCode" ColumnName="PostalCode" />
-          <ScalarProperty Name="Country" ColumnName="Country" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="Product_Sales_for_1997">
-      <EntityTypeMapping TypeName="IsTypeOf(NorthwindModel.Product_Sales_for_1997)">
-        <MappingFragment StoreEntitySet="Product_Sales_for_1997">
-          <ScalarProperty Name="CategoryName" ColumnName="CategoryName" />
-          <ScalarProperty Name="ProductName" ColumnName="ProductName" />
-          <ScalarProperty Name="ProductSales" ColumnName="ProductSales" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="Products_Above_Average_Prices">
-      <EntityTypeMapping TypeName="IsTypeOf(NorthwindModel.Products_Above_Average_Price)">
-        <MappingFragment StoreEntitySet="Products_Above_Average_Prices">
-          <ScalarProperty Name="ProductName" ColumnName="ProductName" />
-          <ScalarProperty Name="UnitPrice" ColumnName="UnitPrice" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="Products_by_Categories">
-      <EntityTypeMapping TypeName="IsTypeOf(NorthwindModel.Products_by_Category)">
-        <MappingFragment StoreEntitySet="Products_by_Categories">
-          <ScalarProperty Name="CategoryName" ColumnName="CategoryName" />
-          <ScalarProperty Name="ProductName" ColumnName="ProductName" />
-          <ScalarProperty Name="Discontinued" ColumnName="Discontinued" />
-          <ScalarProperty Name="QuantityPerUnit" ColumnName="QuantityPerUnit" />
-          <ScalarProperty Name="UnitsInStock" ColumnName="UnitsInStock" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="Sales_by_Categories">
-      <EntityTypeMapping TypeName="IsTypeOf(NorthwindModel.Sales_by_Category)">
-        <MappingFragment StoreEntitySet="Sales_by_Categories">
-          <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
-          <ScalarProperty Name="CategoryName" ColumnName="CategoryName" />
-          <ScalarProperty Name="ProductName" ColumnName="ProductName" />
-          <ScalarProperty Name="ProductSales" ColumnName="ProductSales" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="Sales_Totals_by_Amounts">
-      <EntityTypeMapping TypeName="IsTypeOf(NorthwindModel.Sales_Totals_by_Amount)">
-        <MappingFragment StoreEntitySet="Sales_Totals_by_Amounts">
-          <ScalarProperty Name="OrderID" ColumnName="OrderID" />
-          <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
-          <ScalarProperty Name="SaleAmount" ColumnName="SaleAmount" />
-          <ScalarProperty Name="ShippedDate" ColumnName="ShippedDate" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="Summary_of_Sales_by_Quarters">
-      <EntityTypeMapping TypeName="IsTypeOf(NorthwindModel.Summary_of_Sales_by_Quarter)">
-        <MappingFragment StoreEntitySet="Summary_of_Sales_by_Quarters">
-          <ScalarProperty Name="OrderID" ColumnName="OrderID" />
-          <ScalarProperty Name="ShippedDate" ColumnName="ShippedDate" />
-          <ScalarProperty Name="Subtotal" ColumnName="Subtotal" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="Summary_of_Sales_by_Years">
-      <EntityTypeMapping TypeName="IsTypeOf(NorthwindModel.Summary_of_Sales_by_Year)">
-        <MappingFragment StoreEntitySet="Summary_of_Sales_by_Years">
-          <ScalarProperty Name="OrderID" ColumnName="OrderID" />
-          <ScalarProperty Name="ShippedDate" ColumnName="ShippedDate" />
-          <ScalarProperty Name="Subtotal" ColumnName="Subtotal" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <AssociationSetMapping Name="CustomerCustomerDemo" TypeName="NorthwindModel.CustomerCustomerDemo" StoreEntitySet="CustomerCustomerDemo">
-      <EndProperty Name="CustomerDemographics">
-        <ScalarProperty Name="CustomerTypeID" ColumnName="CustomerDemographics_CustomerTypeID" />
-      </EndProperty>
-      <EndProperty Name="Customers">
-        <ScalarProperty Name="CustomerID" ColumnName="Customers_CustomerID" />
-      </EndProperty>
-    </AssociationSetMapping>
+      </AssociationSetMapping>
     <AssociationSetMapping Name="EmployeeTerritories" TypeName="NorthwindModel.EmployeeTerritories" StoreEntitySet="EmployeeTerritories">
-      <EndProperty Name="Employees">
-        <ScalarProperty Name="EmployeeID" ColumnName="Employees_EmployeeID" />
-      </EndProperty>
-      <EndProperty Name="Territories">
-        <ScalarProperty Name="TerritoryID" ColumnName="Territories_TerritoryID" />
-      </EndProperty>
-    </AssociationSetMapping>
+      </AssociationSetMapping>
+          <AssociationSetMapping Name="CustomerCustomerDemo1" TypeName="NorthwindModel.CustomerCustomerDemo1" StoreEntitySet="CustomerCustomerDemo">
+            <EndProperty Name="Customer">
+              <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+            </EndProperty>
+            <EndProperty Name="CustomerDemographic">
+              <ScalarProperty Name="CustomerTypeID" ColumnName="CustomerTypeID" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="EmployeeTerritories1" TypeName="NorthwindModel.EmployeeTerritories1" StoreEntitySet="EmployeeTerritories">
+            <EndProperty Name="Territory">
+              <ScalarProperty Name="TerritoryID" ColumnName="TerritoryID" />
+            </EndProperty>
+            <EndProperty Name="Employee">
+              <ScalarProperty Name="EmployeeID" ColumnName="EmployeeID" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <FunctionImportMapping FunctionImportName="CustOrderHist1" FunctionName="NorthwindModel.Store.CustOrderHist">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="NorthwindModel.CustOrderHist1_Result">
+                <ScalarProperty Name="ProductName" ColumnName="ProductName" />
+                <ScalarProperty Name="Total" ColumnName="Total" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="CustOrdersDetail1" FunctionName="NorthwindModel.Store.CustOrdersDetail">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="NorthwindModel.CustOrdersDetail1_Result">
+                <ScalarProperty Name="ProductName" ColumnName="ProductName" />
+                <ScalarProperty Name="UnitPrice" ColumnName="UnitPrice" />
+                <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+                <ScalarProperty Name="Discount" ColumnName="Discount" />
+                <ScalarProperty Name="ExtendedPrice" ColumnName="ExtendedPrice" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="CustOrdersOrders1" FunctionName="NorthwindModel.Store.CustOrdersOrders">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="NorthwindModel.CustOrdersOrders1_Result">
+                <ScalarProperty Name="OrderID" ColumnName="OrderID" />
+                <ScalarProperty Name="OrderDate" ColumnName="OrderDate" />
+                <ScalarProperty Name="RequiredDate" ColumnName="RequiredDate" />
+                <ScalarProperty Name="ShippedDate" ColumnName="ShippedDate" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="Employee_Sales_by_Country1" FunctionName="NorthwindModel.Store.Employee_Sales_by_Country">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="NorthwindModel.Employee_Sales_by_Country1_Result">
+                <ScalarProperty Name="Country" ColumnName="Country" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="ShippedDate" ColumnName="ShippedDate" />
+                <ScalarProperty Name="OrderID" ColumnName="OrderID" />
+                <ScalarProperty Name="SaleAmount" ColumnName="SaleAmount" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="Sales_by_Year1" FunctionName="NorthwindModel.Store.Sales_by_Year">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="NorthwindModel.Sales_by_Year1_Result">
+                <ScalarProperty Name="ShippedDate" ColumnName="ShippedDate" />
+                <ScalarProperty Name="OrderID" ColumnName="OrderID" />
+                <ScalarProperty Name="Subtotal" ColumnName="Subtotal" />
+                <ScalarProperty Name="Year" ColumnName="Year" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="SalesByCategory1" FunctionName="NorthwindModel.Store.SalesByCategory">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="NorthwindModel.SalesByCategory1_Result">
+                <ScalarProperty Name="ProductName" ColumnName="ProductName" />
+                <ScalarProperty Name="TotalPurchase" ColumnName="TotalPurchase" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="Ten_Most_Expensive_Products1" FunctionName="NorthwindModel.Store.Ten_Most_Expensive_Products">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="NorthwindModel.Ten_Most_Expensive_Products1_Result">
+                <ScalarProperty Name="TenMostExpensiveProducts" ColumnName="TenMostExpensiveProducts" />
+                <ScalarProperty Name="UnitPrice" ColumnName="UnitPrice" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="usp_SuppliersIncomeInTimeRange" FunctionName="NorthwindModel.Store.usp_SuppliersIncomeInTimeRange">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="NorthwindModel.usp_SuppliersIncomeInTimeRange_Result">
+                <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+                <ScalarProperty Name="OrderDate" ColumnName="OrderDate" />
+                <ScalarProperty Name="Total_Price" ColumnName="Total Price" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <EntitySetMapping Name="Order_Detail1">
+            <EntityTypeMapping TypeName="NorthwindModel.Order_Detail1">
+              <MappingFragment StoreEntitySet="Order Details">
+                <ScalarProperty Name="Discount" ColumnName="Discount" />
+                <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+                <ScalarProperty Name="UnitPrice" ColumnName="UnitPrice" />
+                <ScalarProperty Name="ProductID" ColumnName="ProductID" />
+                <ScalarProperty Name="OrderID" ColumnName="OrderID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Region1">
+            <EntityTypeMapping TypeName="NorthwindModel.Region1">
+              <MappingFragment StoreEntitySet="Region">
+                <ScalarProperty Name="RegionDescription" ColumnName="RegionDescription" />
+                <ScalarProperty Name="RegionID" ColumnName="RegionID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Alphabetical_list_of_product1">
+            <EntityTypeMapping TypeName="NorthwindModel.Alphabetical_list_of_product1">
+              <MappingFragment StoreEntitySet="Alphabetical list of products">
+                <ScalarProperty Name="CategoryName" ColumnName="CategoryName" />
+                <ScalarProperty Name="Discontinued" ColumnName="Discontinued" />
+                <ScalarProperty Name="ReorderLevel" ColumnName="ReorderLevel" />
+                <ScalarProperty Name="UnitsOnOrder" ColumnName="UnitsOnOrder" />
+                <ScalarProperty Name="UnitsInStock" ColumnName="UnitsInStock" />
+                <ScalarProperty Name="UnitPrice" ColumnName="UnitPrice" />
+                <ScalarProperty Name="QuantityPerUnit" ColumnName="QuantityPerUnit" />
+                <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
+                <ScalarProperty Name="SupplierID" ColumnName="SupplierID" />
+                <ScalarProperty Name="ProductName" ColumnName="ProductName" />
+                <ScalarProperty Name="ProductID" ColumnName="ProductID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Category_Sales_for_19971">
+            <EntityTypeMapping TypeName="NorthwindModel.Category_Sales_for_19971">
+              <MappingFragment StoreEntitySet="Category Sales for 1997">
+                <ScalarProperty Name="CategorySales" ColumnName="CategorySales" />
+                <ScalarProperty Name="CategoryName" ColumnName="CategoryName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Current_Product_List1">
+            <EntityTypeMapping TypeName="NorthwindModel.Current_Product_List1">
+              <MappingFragment StoreEntitySet="Current Product List">
+                <ScalarProperty Name="ProductName" ColumnName="ProductName" />
+                <ScalarProperty Name="ProductID" ColumnName="ProductID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Customer_and_Suppliers_by_City1">
+            <EntityTypeMapping TypeName="NorthwindModel.Customer_and_Suppliers_by_City1">
+              <MappingFragment StoreEntitySet="Customer and Suppliers by City">
+                <ScalarProperty Name="Relationship" ColumnName="Relationship" />
+                <ScalarProperty Name="ContactName" ColumnName="ContactName" />
+                <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+                <ScalarProperty Name="City" ColumnName="City" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Invoice1">
+            <EntityTypeMapping TypeName="NorthwindModel.Invoice1">
+              <MappingFragment StoreEntitySet="Invoices">
+                <ScalarProperty Name="Freight" ColumnName="Freight" />
+                <ScalarProperty Name="ExtendedPrice" ColumnName="ExtendedPrice" />
+                <ScalarProperty Name="Discount" ColumnName="Discount" />
+                <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+                <ScalarProperty Name="UnitPrice" ColumnName="UnitPrice" />
+                <ScalarProperty Name="ProductName" ColumnName="ProductName" />
+                <ScalarProperty Name="ProductID" ColumnName="ProductID" />
+                <ScalarProperty Name="ShipperName" ColumnName="ShipperName" />
+                <ScalarProperty Name="ShippedDate" ColumnName="ShippedDate" />
+                <ScalarProperty Name="RequiredDate" ColumnName="RequiredDate" />
+                <ScalarProperty Name="OrderDate" ColumnName="OrderDate" />
+                <ScalarProperty Name="OrderID" ColumnName="OrderID" />
+                <ScalarProperty Name="Salesperson" ColumnName="Salesperson" />
+                <ScalarProperty Name="Country" ColumnName="Country" />
+                <ScalarProperty Name="PostalCode" ColumnName="PostalCode" />
+                <ScalarProperty Name="Region" ColumnName="Region" />
+                <ScalarProperty Name="City" ColumnName="City" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="CustomerName" ColumnName="CustomerName" />
+                <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+                <ScalarProperty Name="ShipCountry" ColumnName="ShipCountry" />
+                <ScalarProperty Name="ShipPostalCode" ColumnName="ShipPostalCode" />
+                <ScalarProperty Name="ShipRegion" ColumnName="ShipRegion" />
+                <ScalarProperty Name="ShipCity" ColumnName="ShipCity" />
+                <ScalarProperty Name="ShipAddress" ColumnName="ShipAddress" />
+                <ScalarProperty Name="ShipName" ColumnName="ShipName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Order_Details_Extended1">
+            <EntityTypeMapping TypeName="NorthwindModel.Order_Details_Extended1">
+              <MappingFragment StoreEntitySet="Order Details Extended">
+                <ScalarProperty Name="ExtendedPrice" ColumnName="ExtendedPrice" />
+                <ScalarProperty Name="Discount" ColumnName="Discount" />
+                <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+                <ScalarProperty Name="UnitPrice" ColumnName="UnitPrice" />
+                <ScalarProperty Name="ProductName" ColumnName="ProductName" />
+                <ScalarProperty Name="ProductID" ColumnName="ProductID" />
+                <ScalarProperty Name="OrderID" ColumnName="OrderID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Order_Subtotal1">
+            <EntityTypeMapping TypeName="NorthwindModel.Order_Subtotal1">
+              <MappingFragment StoreEntitySet="Order Subtotals">
+                <ScalarProperty Name="Subtotal" ColumnName="Subtotal" />
+                <ScalarProperty Name="OrderID" ColumnName="OrderID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Orders_Qry1">
+            <EntityTypeMapping TypeName="NorthwindModel.Orders_Qry1">
+              <MappingFragment StoreEntitySet="Orders Qry">
+                <ScalarProperty Name="Country" ColumnName="Country" />
+                <ScalarProperty Name="PostalCode" ColumnName="PostalCode" />
+                <ScalarProperty Name="Region" ColumnName="Region" />
+                <ScalarProperty Name="City" ColumnName="City" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+                <ScalarProperty Name="ShipCountry" ColumnName="ShipCountry" />
+                <ScalarProperty Name="ShipPostalCode" ColumnName="ShipPostalCode" />
+                <ScalarProperty Name="ShipRegion" ColumnName="ShipRegion" />
+                <ScalarProperty Name="ShipCity" ColumnName="ShipCity" />
+                <ScalarProperty Name="ShipAddress" ColumnName="ShipAddress" />
+                <ScalarProperty Name="ShipName" ColumnName="ShipName" />
+                <ScalarProperty Name="Freight" ColumnName="Freight" />
+                <ScalarProperty Name="ShipVia" ColumnName="ShipVia" />
+                <ScalarProperty Name="ShippedDate" ColumnName="ShippedDate" />
+                <ScalarProperty Name="RequiredDate" ColumnName="RequiredDate" />
+                <ScalarProperty Name="OrderDate" ColumnName="OrderDate" />
+                <ScalarProperty Name="EmployeeID" ColumnName="EmployeeID" />
+                <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+                <ScalarProperty Name="OrderID" ColumnName="OrderID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Product_Sales_for_19971">
+            <EntityTypeMapping TypeName="NorthwindModel.Product_Sales_for_19971">
+              <MappingFragment StoreEntitySet="Product Sales for 1997">
+                <ScalarProperty Name="ProductSales" ColumnName="ProductSales" />
+                <ScalarProperty Name="ProductName" ColumnName="ProductName" />
+                <ScalarProperty Name="CategoryName" ColumnName="CategoryName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Products_Above_Average_Price1">
+            <EntityTypeMapping TypeName="NorthwindModel.Products_Above_Average_Price1">
+              <MappingFragment StoreEntitySet="Products Above Average Price">
+                <ScalarProperty Name="UnitPrice" ColumnName="UnitPrice" />
+                <ScalarProperty Name="ProductName" ColumnName="ProductName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Products_by_Category1">
+            <EntityTypeMapping TypeName="NorthwindModel.Products_by_Category1">
+              <MappingFragment StoreEntitySet="Products by Category">
+                <ScalarProperty Name="Discontinued" ColumnName="Discontinued" />
+                <ScalarProperty Name="UnitsInStock" ColumnName="UnitsInStock" />
+                <ScalarProperty Name="QuantityPerUnit" ColumnName="QuantityPerUnit" />
+                <ScalarProperty Name="ProductName" ColumnName="ProductName" />
+                <ScalarProperty Name="CategoryName" ColumnName="CategoryName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Sales_by_Category1">
+            <EntityTypeMapping TypeName="NorthwindModel.Sales_by_Category1">
+              <MappingFragment StoreEntitySet="Sales by Category">
+                <ScalarProperty Name="ProductSales" ColumnName="ProductSales" />
+                <ScalarProperty Name="ProductName" ColumnName="ProductName" />
+                <ScalarProperty Name="CategoryName" ColumnName="CategoryName" />
+                <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Sales_Totals_by_Amount1">
+            <EntityTypeMapping TypeName="NorthwindModel.Sales_Totals_by_Amount1">
+              <MappingFragment StoreEntitySet="Sales Totals by Amount">
+                <ScalarProperty Name="ShippedDate" ColumnName="ShippedDate" />
+                <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+                <ScalarProperty Name="OrderID" ColumnName="OrderID" />
+                <ScalarProperty Name="SaleAmount" ColumnName="SaleAmount" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Summary_of_Sales_by_Quarter1">
+            <EntityTypeMapping TypeName="NorthwindModel.Summary_of_Sales_by_Quarter1">
+              <MappingFragment StoreEntitySet="Summary of Sales by Quarter">
+                <ScalarProperty Name="Subtotal" ColumnName="Subtotal" />
+                <ScalarProperty Name="OrderID" ColumnName="OrderID" />
+                <ScalarProperty Name="ShippedDate" ColumnName="ShippedDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Summary_of_Sales_by_Year1">
+            <EntityTypeMapping TypeName="NorthwindModel.Summary_of_Sales_by_Year1">
+              <MappingFragment StoreEntitySet="Summary of Sales by Year">
+                <ScalarProperty Name="Subtotal" ColumnName="Subtotal" />
+                <ScalarProperty Name="OrderID" ColumnName="OrderID" />
+                <ScalarProperty Name="ShippedDate" ColumnName="ShippedDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
   </EntityContainerMapping>
 </Mapping></edmx:Mappings>
   </edmx:Runtime>
